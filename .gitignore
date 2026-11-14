@@ -51,3 +51,6 @@ desktop.ini
 # ---- 第三方运行时的本机状态（含绝对路径与 uuid） ----
 Ultralytics/settings.json
 Ultralytics/*.json
+
+# WORKLOG.md 是仓库内的权威副本；上级目录那份是历史工作副本
+!WORKLOG.md
