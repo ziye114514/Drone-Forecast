@@ -1,7 +1,7 @@
 """Reuse frozen45 CUDA graph implementation with only the ONNX artifact changed."""
 from pathlib import Path
 import datetime,hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage45'),str(ROOT/'research/stage44')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage45'),str(ROOT/'research/stage44')]
 import graph45,common44
 from graph45 import load,save,sha
 OUT=ROOT.parent/'output/stage46_fp16_graph_20261019';MODEL=OUT/'weights/best_fp16.onnx'

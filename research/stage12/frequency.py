@@ -22,7 +22,7 @@ from collections import deque
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'src'), str(ROOT / 'research/stage9')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'src'), str(ROOT / 'research/stage9')]
 from recovery import RecoveryFrontend, PARAMS  # noqa: E402
 from event_drone_forecast.raw_io import open_raw, raw_chunks  # noqa: E402
 from event_drone_forecast.paper_config import PaperConfig  # noqa: E402

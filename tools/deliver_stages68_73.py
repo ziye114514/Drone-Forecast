@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage73'),str(ROOT/'research/stage71')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage73'),str(ROOT/'research/stage71')]
 import study73 as latest
 import study71 as actual
 OUT=latest.OUT

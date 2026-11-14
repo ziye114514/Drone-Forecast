@@ -1,7 +1,7 @@
 """Matched-calibration counterfactuals, before any target read."""
 from pathlib import Path
 import sys,json,copy
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_force167 import OUT
 from visible_force_dynamics import evaluate_visible
 from replay_gated_nn166 import guard

@@ -8,7 +8,7 @@ from pathlib import Path
 import ast,copy,inspect,sys,textwrap
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage58'),str(ROOT/'research/stage104')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage58'),str(ROOT/'research/stage104')]
 import geometry58,rigid104
 from event_drone_forecast.geometry import _curved_points,_coverage
 

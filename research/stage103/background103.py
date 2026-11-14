@@ -6,7 +6,7 @@ from predictions. Only supplied past target ROI is excluded in this diagnostic.
 from pathlib import Path
 import argparse,datetime,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage88')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage88')]
 from inventory88 import save,load,sha,parse,unique_rows
 from event_drone_forecast.raw_io import raw_chunks
 OUT=ROOT.parent/'output/stage103_background_motion_audit_20261022'

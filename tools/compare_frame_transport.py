@@ -6,7 +6,7 @@ so this is NOT a performance benchmark. There is no NN, label or output input.
 """
 from pathlib import Path
 import hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_process import ProcessReplay
 
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from check_three_continuation import initialized
 from partial_arc_information import update
 

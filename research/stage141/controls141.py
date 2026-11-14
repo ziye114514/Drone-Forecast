@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage141')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage141')]
 from native_axis141 import NativeAxis,native79,PARAMS
 OUT=ROOT.parent/'output/stage141_periodic_axis_20261024'
 def main():

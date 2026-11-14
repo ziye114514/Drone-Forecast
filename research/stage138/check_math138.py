@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage138')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage138')]
 from objective138 import FixedObjective,fast137
 from tiles138 import TileOps
 OUT=ROOT.parent/'output/stage138_shared_objective_20261024'

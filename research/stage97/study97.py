@@ -3,7 +3,7 @@ from pathlib import Path
 from types import FunctionType
 import argparse,datetime,json,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage88'),str(ROOT/'research/stage94')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage88'),str(ROOT/'research/stage94')]
 from inventory88 import load,save,sha
 from projected97 import ProjectedPaired
 from paired88 import prior,minimal_q

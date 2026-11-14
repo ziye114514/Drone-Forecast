@@ -1,7 +1,7 @@
 """Report the fixed-reference contract and its small, mixed accuracy effects."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from pure_visibility170 import window
 from rotor_support_front import accumulate
 OUT=ROOT.parent/'output/layout176_20261107'

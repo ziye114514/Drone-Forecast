@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from continuous_five_circle import ContinuousFiveCircle
 from probe_continuous_structure import geometry
 from research.stage146.branches146 import BranchGeometry,plane_axis

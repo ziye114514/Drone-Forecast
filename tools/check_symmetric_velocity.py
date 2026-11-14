@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_local_flow import velocity_coefficient
 OUT=ROOT.parent/'output/symmetric_velocity_20261026';OUT.mkdir(exist_ok=False)
 c=dict(position=[40.,60.],velocity=[100.,-20.],acceleration=[0.,0.],conditional_scale_rate=None)

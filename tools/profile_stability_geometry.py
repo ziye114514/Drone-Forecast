@@ -6,7 +6,7 @@ read-only. The same public SDK filter, counts and five-circle state are used.
 from pathlib import Path
 import os,sys,json,cProfile,pstats,io,time
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 import numpy as np
 import cv2
 from fast_structure_front import FastStructure

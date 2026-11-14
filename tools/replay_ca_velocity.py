@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from live_ca_velocity import CAVelocityMotion
 from summarize_live_pilot import reference_at,stats,read_rows
@@ -14,7 +14,7 @@ design=dict(mechanism='Reuse existing six-state constant-acceleration filter; re
     initial_pv_variance=10000.,initial_acceleration_variance=6400.**2,
     labels_used_for_filtering=False,parameter_sweep=False,
     provisional_gate='Both primary independent-clock .4s mean errors decrease; neither .1s mean worsens by more than1px. No promotion from frozen replay alone.',
-    candidate_source_sha256=hashlib.sha256((ROOT/'live_ca_velocity.py').read_bytes()).hexdigest(),
+    candidate_source_sha256=hashlib.sha256((ROOT/'core/live_ca_velocity.py').read_bytes()).hexdigest(),
     reused_filter_source_sha256=hashlib.sha256((ROOT/'src/event_drone_forecast/motion.py').read_bytes()).hexdigest())
 (OUT/'design.json').write_text(json.dumps(design,indent=2),encoding='utf-8')
 results={}

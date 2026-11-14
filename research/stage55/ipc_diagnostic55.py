@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse, datetime, hashlib, json, sys, traceback
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_roi_forecast as runner
 
 def main(output):

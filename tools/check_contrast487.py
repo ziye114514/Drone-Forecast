@@ -1,7 +1,7 @@
 """Known local contrast changes and translation, not real-event force truth."""
 from pathlib import Path
 import sys,json,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from local_contrast_motion import normalize
 from rotor_support_front import estimate_region_translation
 

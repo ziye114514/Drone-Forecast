@@ -1,7 +1,7 @@
 """One missing-thrust mechanism on fixed observations, labels read last."""
 from pathlib import Path
 import sys,json,time,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from responsive_force import DampedResponsiveForce
 from unknown_force_feedback import UnknownForceFeedback
 from compare_final_pipeline import score

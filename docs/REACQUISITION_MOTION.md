@@ -32,7 +32,7 @@
 ## 复现
 
 ```powershell
-python run_fast_structure.py --raw '<event.raw>' --output '<新目录>' `
+python core/run_fast_structure.py --raw '<event.raw>' --output '<新目录>' `
   --start 110 --duration 8 --target-candidate --sdk-avx2 `
   --rigid-motion --structure-guided-nn --paced
 ```

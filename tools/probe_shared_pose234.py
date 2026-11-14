@@ -2,7 +2,7 @@
 from pathlib import Path
 import os,sys,json,hashlib
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from probe_helix_cpu233 import probe
 from pure_visibility170 import window
 OUT=ROOT.parent/'output/pose234_20261108'

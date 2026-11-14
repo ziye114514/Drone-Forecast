@@ -2,7 +2,7 @@
 from pathlib import Path
 import collections,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage123')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage123')]
 from study123 import OUT,LABELS,CASES,METHODS,verify,rows,save,sha
 
 def stretches(rr,predicate):

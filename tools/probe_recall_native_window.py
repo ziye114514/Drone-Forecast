@@ -11,7 +11,7 @@ import sys
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 for k,v in dict(YOLO_OFFLINE='true',YOLO_AUTOINSTALL='false',
                YOLO_CONFIG_DIR=str(ROOT/'.cache/ultralytics'),CUDA_CACHE_PATH=str(ROOT/'.cache/cuda')).items():os.environ[k]=v
 

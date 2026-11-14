@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[2];OUT=ROOT.parent/'output/stage128_RAW_in
 def main():
     protocol=json.loads((OUT/'protocol128.json').read_text('utf-8'))
     for case in ['extension2','negative5','prefix_natural6']:
-        c=protocol['cases'][case];args=[sys.executable,str(ROOT/'run_independent_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
+        c=protocol['cases'][case];args=[sys.executable,str(ROOT/'core/run_independent_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
         if not case.startswith('prefix'):args.append('--preview')
         print('PREDICT',case,flush=True)
         with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as log:

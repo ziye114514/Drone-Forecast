@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT.parent/'output/stage4_skeleton_pilot_20261016'
-sys.path.insert(0,str(ROOT/'research/stage4'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage4'))
 from study import ARMS, CASES, verify, save
 from tracker import Skeleton
 

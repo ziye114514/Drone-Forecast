@@ -3,7 +3,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage84'),str(ROOT/'research/stage92'),str(ROOT/'research/stage74')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage84'),str(ROOT/'research/stage92'),str(ROOT/'research/stage74')]
 from batched84 import OnlineExtras as Previous
 from hybrid74 import ControlledFilter,prior
 from router92 import Router92

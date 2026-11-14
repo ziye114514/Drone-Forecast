@@ -6,7 +6,7 @@ scores actual publication+0.4, not the older source-observation+0.4 endpoint.
 from pathlib import Path
 import argparse,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at,stats
 
 

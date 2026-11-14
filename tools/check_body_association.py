@@ -1,7 +1,7 @@
 from pathlib import Path
 import os,sys
 os.environ['YOLO_OFFLINE']='true';os.environ['YOLO_AUTOINSTALL']='false'
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import numpy as np
 from body_association import BodyAssociation
 

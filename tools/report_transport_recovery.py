@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at
 OUT=ROOT.parent/'output/reacquisition_motion_20261029'
 TRANS=ROOT.parent/'output/transport_stability_20261029'

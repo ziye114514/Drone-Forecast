@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,collections,datetime,hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage130'),str(ROOT/'research/stage124')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage130'),str(ROOT/'research/stage124')]
 from motion130 import Optimized,PARAMS
 from study124 import CASES,OUT as BODY,rows,save,sha,stable
 INPUT=ROOT.parent/'output/stage129_FOV_guard_20261024';REFERENCE=ROOT.parent/'output/stage128_RAW_independent_support_20261023/scores128.json'

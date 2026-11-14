@@ -1,7 +1,7 @@
 """Matched zero-input control on the actual native-cache run; no labels."""
 from pathlib import Path
 import sys,json,hashlib
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from replay_coupled_source168 import replay
 from replay_gated_nn166 import guard
 from run_rotor_only import serial

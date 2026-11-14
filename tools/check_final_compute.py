@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,os,json,time
 for variable in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):os.environ[variable]='1'
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from fast_structure_front import FastStructure
 from fast_geometry_compute import percentile_pair_linear,split_contour_fast
 from research.stage147.curvature147 import split_contour

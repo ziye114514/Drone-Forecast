@@ -4,7 +4,7 @@ from types import FunctionType
 import argparse,datetime,inspect,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage94'),str(ROOT/'research/stage99'),str(ROOT/'research/stage88')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage94'),str(ROOT/'research/stage99'),str(ROOT/'research/stage88')]
 import download94,study94,score88
 from inventory88 import save,load,sha,parse,unique_rows
 from rotor_input99 import RotorActivity,RotorPaired

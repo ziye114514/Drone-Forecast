@@ -5,7 +5,7 @@ import cv2, numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT.parent/'output/stage147_curvature_split_20261024'
 OLD = ROOT.parent/'output/stage146_threshold_branches_20261024'
-sys.path[:0] = [str(ROOT/'src'), str(ROOT/'research/stage147'), str(ROOT/'research/stage129')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT/'src'), str(ROOT/'research/stage147'), str(ROOT/'research/stage129')]
 from curvature147 import CurvatureFrontend, split_contour
 from branches146 import ThresholdFrontend
 from boundary129 import bounded

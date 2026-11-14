@@ -3,7 +3,7 @@ import os
 for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ[key]='1'
 from pathlib import Path
 import sys,time,json,cProfile,pstats,io
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 
 if __name__=='__main__':

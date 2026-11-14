@@ -50,7 +50,7 @@ def main():
         else:
             if (run/'run_manifest.json').exists():raise RuntimeError(f'Partial/existing run: {run}; inspect before retry.')
             print(f'BEGIN train{sid}',flush=True)
-            subprocess.run([sys.executable,str(ROOT/'run.py'),'--raw',RAWS[sid],
+            subprocess.run([sys.executable,str(ROOT/'core/run.py'),'--raw',RAWS[sid],
                             '--output',str(run),'--config',str(config)],check=True)
         labels=WORK/'output/raw_only_project/evaluation_data'/f'train{sid}.json'
         subprocess.run([sys.executable,str(ROOT/'tools/evaluate.py'),'--run',str(run),'--labels',str(labels)],check=True)

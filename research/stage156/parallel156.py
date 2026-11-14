@@ -7,7 +7,7 @@ from pathlib import Path
 import sys,time
 from concurrent.futures import ThreadPoolExecutor
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage138'),str(ROOT/'research/stage136'),str(ROOT/'research/stage129')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage138'),str(ROOT/'research/stage136'),str(ROOT/'research/stage129')]
 from tiles138 import TileFrontend,count_detect,occupancy_detect,MergeRecovery,polarity
 from boundary129 import bounded
 from fast_geometry136 import baseline_for

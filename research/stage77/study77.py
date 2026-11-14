@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,sys,time
 import numpy as np
 from separated77 import *
-sys.path[:0]=[str(ROOT/'research/stage76'),str(ROOT/'research/stage75'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage76'),str(ROOT/'research/stage75'),str(ROOT/'research/stage22')]
 import diagnose76 as audit
 import study75 as actual
 base=actual.cache

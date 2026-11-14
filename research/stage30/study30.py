@@ -2,7 +2,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,importlib.util,json
 
 ROOT=Path(__file__).resolve().parents[2]
-spec=importlib.util.spec_from_file_location('raw_physical30',ROOT/'run_adaptive_physics.py');pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)
+spec=importlib.util.spec_from_file_location('raw_physical30',ROOT/'core/run_adaptive_physics.py');pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)
 OUT=ROOT.parent/'output/stage30_raw_adaptive_physics_20261018'
 CASES={'clear6':dict(start=22.,duration=2.,input_folder='stage12_clear_22_27_20261017'),
     'side6':dict(start=108.,duration=5.,input_folder='stage12_side_108_120_20261017')}

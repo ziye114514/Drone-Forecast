@@ -1,7 +1,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'research/stage142'),str(ROOT/'research/stage135')]
+ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage142'),str(ROOT/'research/stage135')]
 from feature_model142 import Model,PARAMS
 from predictor135 import forecast
 OUT=WORK/'output/stage142_frequency_model_pilot_20261024'

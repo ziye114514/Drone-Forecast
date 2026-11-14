@@ -38,13 +38,13 @@
 
 ```powershell
 # 当前等价计算优化；使用本机已配置的SDK Python运行。
-python run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_new_run --async-nn --paced
+python core/run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_new_run --async-nn --paced
 
 # 保留原计算路径，同步NN用于严格同输入检查。
-python run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 2 --output ../output/my_reference --reference-compute --paced --verify-frames
+python core/run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 2 --output ../output/my_reference --reference-compute --paced --verify-frames
 
 # 实验：把不改变规则的SDK过滤移入解码进程。
-python run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_prefilter --prefilter-decode --async-nn --paced
+python core/run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_prefilter --prefilter-decode --async-nn --paced
 ```
 
 输出目录必须是新目录。帧哈希验证有额外开销，预览也会增加写盘与绘制成本。异步NN的回包时机受调度影响，不能把异步版与同步版当逐帧相同观测；异步的最终检测质量单独评分。

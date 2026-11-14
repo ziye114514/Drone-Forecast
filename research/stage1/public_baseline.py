@@ -7,7 +7,7 @@ from pathlib import Path
 import hashlib,json,subprocess,sys,zipfile
 import cv2,numpy as np
 from run_study import OUT,ROOT,save,csvsave
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.motion import extrapolate,KinematicFilter
 from event_drone_forecast.config import Config
 from event_drone_forecast.raw_io import open_raw,raw_chunks
@@ -26,7 +26,7 @@ def main():
             no_official_benchmark_claim=True))
         (dest/'public_baseline_source.py').write_bytes(Path(__file__).read_bytes())
     if not (run/'summary.json').exists():
-        subprocess.run([sys.executable,str(ROOT/'run_paper.py'),'--raw',str(folder/'events.raw'),
+        subprocess.run([sys.executable,str(ROOT/'core/run_paper.py'),'--raw',str(folder/'events.raw'),
                         '--output',str(run),'--duration','20'],check=True)
     meta=json.loads((run/'run_manifest.json').read_text());assert meta['inference_external_inputs']==[str((folder/'events.raw').resolve())]
     # Evaluation-only process begins here.

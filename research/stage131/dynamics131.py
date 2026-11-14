@@ -8,7 +8,7 @@ from functools import lru_cache
 import sys
 import numpy as np
 from scipy.linalg import expm
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage130')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage130')]
 from motion130 import RelativeVelocity,update,KF
 PARAMS=dict(acceleration_decay_tau_s=.2,stationary_acceleration_sigma_px_s2=6400.,forecast_acceleration_cap_px_s2=2500.,
     source='tau=.2s existing physical-adaptation memory; sigma6400 original107 CV process scale; cap2500 original paper config. Fixed before131 outcomes; no endpoint grid search.',

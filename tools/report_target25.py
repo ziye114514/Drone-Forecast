@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from audit_target25 import read,continuity
 OUT=ROOT.parent/'output/target25_continuity_20261031'
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage80')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage80')]
 import run_exact_forecast as entry
 import study80 as base
 load=base.load;save=base.save;sha=base.sha;rows=base.rows
@@ -32,7 +32,7 @@ def verify():
         st=Path(f).stat();assert m==dict(bytes=st.st_size,mtime_ns=st.st_mtime_ns)
     return p
 def run(case):
-    p=verify();cfg=p['cases'][case];args=[sys.executable,str(ROOT/'run_exact_forecast.py'),'--raw',cfg['raw'],
+    p=verify();cfg=p['cases'][case];args=[sys.executable,str(ROOT/'core/run_exact_forecast.py'),'--raw',cfg['raw'],
         '--output',str(OUT/case),'--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix') and case!='negative5':args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

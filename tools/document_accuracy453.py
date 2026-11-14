@@ -92,7 +92,7 @@ if __name__=='__main__':
     p=WORK/'output/checkpoints/latest_handoff.json';j=json.loads(p.read_text('utf8'));j.update(timestamp=datetime.now().isoformat(),objective_completed=False,
         in_progress=anonymous is None,background_jobs=[] if anonymous else [dict(session_id=12852,task='anonymous456 CPU')],running_jobs=[] if anonymous else [12852],experiments_running=[] if anonymous else ['anonymous456'],
         status='Actual-grid original102 all available, mean33.199150;30px/new-video gate unmet. Local geometry454 regressed. No FPS work.',
-        candidate_entry=str(ROOT/'run_rotor_accuracy_candidate.py'),current_status_document=str(ROOT/'docs/HANDOFF_20261110_ACCURACY453.md'),latest_report=str(out/'index.html'),
+        candidate_entry=str(ROOT/'core/run_rotor_accuracy_candidate.py'),current_status_document=str(ROOT/'docs/HANDOFF_20261110_ACCURACY453.md'),latest_report=str(out/'index.html'),
         current_precision_mean_px=primary['mean'],aggregate_same102=primary,candidate_scores={n:d['cases'][n]['accuracy451']['original_available'] for n in names},
         current_user_stage='441-456 accuracy-first; original102 retained; actual proof452 passed',
         current_precision_p95_px=float(np.percentile([q['error_px'] for n in names for q in d['cases'][n]['accuracy451']['records'] if q['valid'] and q['t'] in {r['t'] for r in json.loads((WORK/'output/reference429_20261110/results.json').read_text('utf8'))['cases'][n]['control410']['records'] if r['valid']}],95)),

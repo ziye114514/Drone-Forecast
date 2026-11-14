@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys,time,copy
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from fast_force_response import FastForceResponse
 from responsive_force import ResponsiveForce,DampedResponsiveForce,CalibratedResponsiveForce,InnovationResidualForce,WindowResidualForce
 from compare_final_pipeline import score

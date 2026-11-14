@@ -1,7 +1,7 @@
 """One physical state-feedback mechanism on frozen current observations."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_fast_structure import PhysicalPositionState
 from force_position_state import ForceDrivenNoiseKF
 from responsive_force import DampedResponsiveForce

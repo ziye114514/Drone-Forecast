@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from native_latest_frequency import LatestFrequency
 from live_frequency_pixels import latest_pixels
 from native_counts_numba import NumbaCounter

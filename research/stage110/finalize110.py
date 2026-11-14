@@ -4,7 +4,7 @@ import datetime,hashlib,json,re,sys,zipfile
 from html.parser import HTMLParser
 from urllib.parse import unquote,urlparse
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage110'),str(ROOT/'research/stage109')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage110'),str(ROOT/'research/stage109')]
 from study110 import OUT,verify,save,sha
 AUDIT=ROOT.parent/'output/stage109_rotor_extraction_audit_20261022'
 DIAG=ROOT.parent/'output/stage111_conic_budget_diagnostic_20261022'

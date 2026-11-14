@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_decode import native_batches
 from sdk_activity_backend import SDKActivityAVX2
 from metavision_sdk_core import BaseFrameGenerationAlgorithm

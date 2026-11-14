@@ -5,7 +5,7 @@ from types import FunctionType
 import inspect,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage71'),str(ROOT/'research/stage72'),str(ROOT/'research/stage70')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage71'),str(ROOT/'research/stage72'),str(ROOT/'research/stage70')]
 from online71 import OnlineExtras as OriginalExtras
 from increment72 import IncrementForecast,ADDED as DELTAS
 import activity68

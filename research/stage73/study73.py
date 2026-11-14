@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,subprocess,sys
 import cv2
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage73'),str(ROOT/'research/stage72'),str(ROOT/'research/stage71'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage73'),str(ROOT/'research/stage72'),str(ROOT/'research/stage71'),str(ROOT/'research/stage22')]
 import run_force_innovation_forecast as entry
 import study72 as cache
 import study71 as previous
@@ -34,7 +34,7 @@ def verify():
     p=load(OUT/'protocol.json');assert p['source_hashes']==sources();return p
 def run(case):
     verify();cfg=CASES[case]
-    args=[sys.executable,str(ROOT/'run_force_innovation_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
+    args=[sys.executable,str(ROOT/'core/run_force_innovation_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if case!='negative5':args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

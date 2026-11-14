@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from probe_same_window_motion import replay
 from probe_contained_reanchor import OPTIONS
 from diagnose_maneuver_horizon import SPECS

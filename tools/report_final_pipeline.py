@@ -5,7 +5,7 @@ import ast,hashlib,html,json,re,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORKSPACE=ROOT.parent
 OUT=WORKSPACE/'output/final_pipeline_speed_20261027'
-sys.path.insert(0,str(ROOT/'tools'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'tools'))
 from compare_final_pipeline import score
 
 

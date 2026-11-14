@@ -5,7 +5,7 @@ import copy, sys
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage84'),str(ROOT/'research/stage72')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage84'),str(ROOT/'research/stage72')]
 from batched84 import BatchedSeparatedBank
 from increment72 import IncrementForecast, Gain, prior
 

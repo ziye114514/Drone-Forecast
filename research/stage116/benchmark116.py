@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage113')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage113')]
 from study113 import geom,rows,save,sha,SUPPORT
 OUT=ROOT.parent/'output/stage116_analytic_solver_benchmark_20261022'
 CASES={'clear6':[30,70,110,150,190,230],'continuous6':[100,160,210,310,380,440]}

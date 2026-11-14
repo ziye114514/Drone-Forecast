@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy,hashlib,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from visible_force_dynamics import VisibleForceDynamics,evaluate_visible
 from run_rotor_only import serial
 from replay_gated_nn166 import guard

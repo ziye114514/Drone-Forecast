@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT.parent/'output/paper_reproduction_v030'
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.motion import extrapolate
 from paper_experiment import csvsave,readlines
 

@@ -4,7 +4,7 @@ import argparse,datetime,hashlib,importlib.util,json,sys
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-spec=importlib.util.spec_from_file_location('raw_research_pipeline',ROOT/'run_research_forecast.py')
+spec=importlib.util.spec_from_file_location('raw_research_pipeline',ROOT/'core/run_research_forecast.py')
 pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)
 OUT=ROOT.parent/'output/stage24_raw_pipeline_20261018'
 CASES={'self_clear':dict(raw='E:/dataset/train/6/media/event.raw',start=22.,duration=2.,rotor_features=True,role='Regression against staged observations and forecasts.'),

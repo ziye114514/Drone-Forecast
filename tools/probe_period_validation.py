@@ -11,7 +11,7 @@ from pathlib import Path
 from collections import deque
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT)]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from live_decode import native_batches
 from rotor_support_front import PARAMS,accumulate,density_mask
 from predictive_harmonics import predictive_harmonics

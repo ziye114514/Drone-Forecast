@@ -9,7 +9,7 @@ from pathlib import Path
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage66')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage66')]
 from periodicity66 import spectrum,peak,PARAMS as OLD
 
 PARAMS=dict(window_us=160000,bin_us=100,grid=[6,3],max_events=450000,

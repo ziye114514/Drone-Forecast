@@ -1,7 +1,7 @@
 """Matched process control and rate ablation; never used for target fitting."""
 from pathlib import Path
 import sys,json,numpy as np,copy,hashlib,argparse
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from separated_force_response import SeparatedForceObserver
 from force_process_controls201 import MatchedIsotropicControl
 from physical_publication import evaluate

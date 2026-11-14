@@ -4,7 +4,7 @@ from collections import Counter
 import argparse, datetime, hashlib, json, os, sys, time
 import cv2, numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage62'),str(ROOT/'research/stage6'),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage62'),str(ROOT/'research/stage6'),str(ROOT/'src')]
 import study62 as previous
 from silhouette import body_measurement, PARAMS as BODY_PARAMS
 from event_drone_forecast.raw_io import open_raw,raw_chunks

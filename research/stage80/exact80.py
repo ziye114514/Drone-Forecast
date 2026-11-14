@@ -8,7 +8,7 @@ from pathlib import Path
 from types import FunctionType,SimpleNamespace
 import copy,inspect,sys,textwrap
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage74'),str(ROOT/'research/stage73'),str(ROOT/'research/stage72'),str(ROOT/'research/stage70'),str(ROOT/'research/stage69')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage74'),str(ROOT/'research/stage73'),str(ROOT/'research/stage72'),str(ROOT/'research/stage70'),str(ROOT/'research/stage69')]
 from online78 import OnlineExtras as OriginalExtras
 from online73 import _tone_globals
 import activity68

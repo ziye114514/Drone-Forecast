@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,sys
 import cv2
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage60'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage60'))
 import rotor_worker60 as previous
 from packets54 import PacketReader
 from roi55 import validate_hint_request

@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'research/stage140')]
+ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage140')]
 from visible140 import Predictor,VisibleGate
 OUT=WORK/'output/stage140_visible_fallback_20261024';OLD=WORK/'output/stage135_optimized_forecast_20261024'
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))

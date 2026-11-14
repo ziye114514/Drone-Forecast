@@ -3,7 +3,7 @@ from pathlib import Path
 import datetime,hashlib,json,sys,zipfile
 from html.parser import HTMLParser
 from urllib.parse import unquote,urlparse
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage122')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage122')]
 from delivery122 import OUT,load,save
 import study122
 
@@ -51,7 +51,7 @@ def main():
     archive=cp/f'research_through_stage122_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")}.zip'
     h.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=122,completed=sorted(set(h['completed']+list(range(119,123)))),
         latest_full_forecast_stage=122,latest_cached_forecast_stage=121,latest_diagnostic_stage=121,latest_RAW_geometry_stage=122,
-        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'run_validated_structure_forecast.py'),experimental_RAW_stage=122,
+        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'core/run_validated_structure_forecast.py'),experimental_RAW_stage=122,
         latest_checks=str(OUT/'delivery_checks122.json'),in_progress=[],experiments_running=[],default_promoted=False,
         completed_scope='119 partial3-conic/affine controls;120 RAW68;121 past full-view leave-one-out adequacy selection;122 RAW69 with selector.',
         completion_scope='Narrow innovation candidate implemented with controls; real consistency only, synthetic truth separately. No blind efficacy/trueCOM/extreme-side/realtime proof.',
@@ -67,7 +67,7 @@ def main():
         '119 frozen-prose edge_on interval mismatch35..104 vs frozen code45..99; reported actual55',
         '121 selector real always affine, ideal normal always conic; no same-real-sequence switching superiority proven']))
     save(cp/'latest_handoff.json',h)
-    files=[status,log,readme,cp/'latest_handoff.json',ROOT/'run_partial_structure_forecast.py',ROOT/'run_validated_structure_forecast.py']
+    files=[status,log,readme,cp/'latest_handoff.json',ROOT/'core/run_partial_structure_forecast.py',ROOT/'core/run_validated_structure_forecast.py']
     folders=[ROOT/'research'/f'stage{s}' for s in range(119,123)]+[ROOT.parent/'output'/n for n in ['stage119_partial_conics_20261023','stage120_RAW_partial_structure_20261023','stage121_causal_model_validation_20261023','stage122_RAW_validated_structure_20261023']]
     for folder in folders:
         files.extend(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ['.jsonl','.mp4'] and p.name not in ['recovery_manifest122.json','final_checks122.json'])

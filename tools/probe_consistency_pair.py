@@ -3,7 +3,7 @@ from pathlib import Path
 from multiprocessing import shared_memory
 import hashlib,json,subprocess,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 from forecast_runtime import resolve
 from run_live_forecast import receive
@@ -22,7 +22,7 @@ def body(boxes,t):
     return dict(t=t,detected=True,bbox=b.tolist(),confidence=selected['confidence'],center=((b[:2]+b[2:])/2).tolist())
 
 try:
-    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'live_worker.py'),'--shared-memory',memory.name,
+    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'core/live_worker.py'),'--shared-memory',memory.name,
         '--weights',runtime['detector_weights'],'--expected-sha256',runtime['detector_sha256'],'--cache-dir',runtime['cache_dir'],
         '--center-ensemble-weights',exports['consistency']['model'],'--center-ensemble-sha256',exports['consistency']['sha256']],
         stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=log,text=True,encoding='utf-8',bufsize=1,

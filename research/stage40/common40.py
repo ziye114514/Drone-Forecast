@@ -1,7 +1,7 @@
 """A fixed record-disjoint, weak-box domain adaptation experiment."""
 from pathlib import Path
 import datetime,hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage37'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage37'))
 import common37
 OUT=ROOT.parent/'output/stage40_record_split_finetune_20261018'
 LABELS=ROOT.parent/'output/raw_only_project/evaluation_data'

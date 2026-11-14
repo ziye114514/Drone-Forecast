@@ -1,7 +1,7 @@
 """Original shared RAW worker with paired observations; no cached hints/labels."""
 from pathlib import Path
 import argparse,hashlib,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage57'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage57'))
 import rotor_worker57 as previous
 from packets54 import PacketReader
 from roi55 import validate_hint_request

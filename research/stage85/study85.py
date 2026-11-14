@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,inspect,sys,textwrap
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage81'),str(ROOT/'research/stage84')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage81'),str(ROOT/'research/stage84')]
 import run_batched_forecast as entry
 import study81 as frozen81
 import study84 as module84

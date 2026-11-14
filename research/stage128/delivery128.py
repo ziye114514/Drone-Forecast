@@ -1,7 +1,7 @@
 """Completed-result report; findings are read from checked artifacts."""
 from pathlib import Path
 import html,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage128')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage128')]
 from study124 import OUT as INPUT,rows,save
 from study128 import OUT,CASES,verify
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))

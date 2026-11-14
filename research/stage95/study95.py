@@ -4,7 +4,7 @@ from types import FunctionType
 import argparse,datetime,inspect,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage94'),str(ROOT/'research/stage88')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage94'),str(ROOT/'research/stage88')]
 import study94 as old
 from inventory88 import load,save,sha,parse,unique_rows
 import score88

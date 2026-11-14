@@ -18,7 +18,7 @@ def main():
                  side=(110., ROOT.parent / 'output/stage156_parallel_geometry_20261024/side/predictions.jsonl'))
     reports = {}
     for name, (start, reference) in cases.items():
-        cmd = [sys.executable, '-X', 'utf8', str(ROOT / 'forecast.py'), 'run',
+        cmd = [sys.executable, '-X', 'utf8', str(ROOT/'core/forecast.py'), 'run',
                '--config', str(ROOT / 'configs/local.json'),
                '--raw', 'E:/dataset/train/6/media/event.raw', '--output', str(out / name),
                '--start', str(start), '--duration', '.4', '--profile', 'research',

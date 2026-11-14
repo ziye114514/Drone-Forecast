@@ -6,7 +6,7 @@ import hashlib,html,json,sys
 import cv2
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;OUT=WORK/'output/five_circle_v3_20261026'
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from five_circle_model import diagonal_center
 
 

@@ -8,8 +8,8 @@ from pathlib import Path
 import collections,hashlib,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'external/evperiscope/scripts'))
-sys.path.insert(0,str(ROOT/'research/stage5'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'external/evperiscope/scripts'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage5'))
 from detect import EvPropDet
 from study import OUT,RAW,save
 from event_drone_forecast.raw_io import open_raw,raw_chunks

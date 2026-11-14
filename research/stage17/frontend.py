@@ -5,7 +5,7 @@ import cv2,numpy as np
 from scipy.ndimage import label
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage9'),str(ROOT/'research/stage8')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage9'),str(ROOT/'research/stage8')]
 from recovery import RecoveryFrontend
 from polarity import counts
 from event_drone_forecast.rotor_sensing import PaperPerception

@@ -11,6 +11,6 @@ for name,raw,start,duration in [
     out=OUT/(name+a.suffix)
     if (out/'completion.json').exists():continue
     print(json.dumps(dict(starting=name)),flush=True)
-    result=subprocess.run([sys.executable,str(ROOT/'run_optimized_forecast.py'),'--raw',raw,'--output',str(out),
+    result=subprocess.run([sys.executable,str(ROOT/'core/run_optimized_forecast.py'),'--raw',raw,'--output',str(out),
                            '--start',str(start),'--duration',str(duration),'--rotor-temporal','--preview'])
     if result.returncode:raise SystemExit(result.returncode)

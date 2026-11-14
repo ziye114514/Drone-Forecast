@@ -6,7 +6,7 @@ import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
 WORK=ROOT.parent;OUT=WORK/'output/stage147_curvature_split_20261024'
 OLD=WORK/'output/stage146_threshold_branches_20261024'
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage146'),str(ROOT/'research/stage147')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage146'),str(ROOT/'research/stage147')]
 from analyse146 import load,score,references,CASES as CASES146
 from probe147 import js
 CASES=dict(clear=('clear4',400),side=('side4',475),train2=('train2_4',300),fred0=('fred0_4',150))

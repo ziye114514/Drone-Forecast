@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'src'), str(ROOT / 'research/stage21')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'src'), str(ROOT / 'research/stage21')]
 from windows21 import Observer, RecoveryFrontend
 from event_drone_forecast.raw_io import open_raw, raw_chunks
 

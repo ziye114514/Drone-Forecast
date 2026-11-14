@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,subprocess,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage70'),str(ROOT/'research/stage69'),str(ROOT/'research/stage68'),str(ROOT/'research/stage64'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage70'),str(ROOT/'research/stage69'),str(ROOT/'research/stage68'),str(ROOT/'research/stage64'),str(ROOT/'research/stage22')]
 import run_event_force_forecast as entry
 import study70 as cache
 base=cache.base;activity=cache.previous.activity;body=cache.previous.body
@@ -32,7 +32,7 @@ def verify():
     p=load(OUT/'protocol.json');assert p['source_hashes']==sources();return p
 def run(case):
     verify();cfg=CASES[case];folder=OUT/case
-    args=[sys.executable,str(ROOT/'run_event_force_forecast.py'),'--raw',cfg['raw'],'--output',str(folder),
+    args=[sys.executable,str(ROOT/'core/run_event_force_forecast.py'),'--raw',cfg['raw'],'--output',str(folder),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix') and case!='negative5':args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

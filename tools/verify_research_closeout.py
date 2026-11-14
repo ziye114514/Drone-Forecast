@@ -39,8 +39,8 @@ if __name__=='__main__':
             changed.append(p.relative_to(BASE).as_posix())
     assert set(changed)<= {'README.md','NOTICE.md','SOURCE_PROVENANCE.json','SOURCE_MANIFEST.json','.github/workflows/synthetic.yml'},changed
     q=OUT/'src/event_drone_forecast/rotor_observation'
-    assert sha(q/'five_circle_model.py')==sha(ROOT/'five_circle_model.py')
-    assert (q/'evidence.py').read_text('utf-8').replace('from .five_circle_model import','from five_circle_model import')==(ROOT/'rotor_evidence.py').read_text('utf-8')
+    assert sha(q/'five_circle_model.py')==sha(ROOT/'core/five_circle_model.py')
+    assert (q/'evidence.py').read_text('utf-8').replace('from .five_circle_model import','from five_circle_model import')==(ROOT/'core/rotor_evidence.py').read_text('utf-8')
     missing=[];links=0;private=[];compiled=0
     forbidden={'.raw','.onnx','.pt','.pth','.dll','.pyd','.pdf','.pyc'}
     for p in OUT.rglob('*'):

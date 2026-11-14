@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at,stats
 from physical_publication import evaluate
 

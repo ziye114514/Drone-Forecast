@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,copy,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from rotor_force_observer import RotorForceObserver
 from relative_rotor_observer import RelativeRotorForceObserver
 from physical_publication import evaluate

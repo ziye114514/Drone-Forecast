@@ -1,7 +1,7 @@
 """Record a verifier-only repair; frozen forecasting sources stay unchanged."""
 from pathlib import Path
 import datetime,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage120')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage120')]
 import study120 as s
 p=json.loads((s.OUT/'protocol120.json').read_text('utf-8'));new=s.sources();old=p['sources'];key=Path(s.__file__).relative_to(ROOT).as_posix()
 assert {k:v for k,v in old.items() if k!=key}=={k:v for k,v in new.items() if k!=key}

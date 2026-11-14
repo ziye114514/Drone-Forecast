@@ -2,7 +2,7 @@
 from pathlib import Path
 import os,sys,json,numpy as np
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from angular_phase_candidates import ring_phase_candidates
 from ellipse_visibility import ellipse_fov_clipped
 OUT=ROOT.parent/'output/angular228_20261108'

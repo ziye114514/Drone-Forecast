@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage146'),str(ROOT/'research/stage129')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage146'),str(ROOT/'research/stage129')]
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 from metavision_sdk_core import BaseFrameGenerationAlgorithm
 from metavision_sdk_cv import ActivityNoiseFilterAlgorithm

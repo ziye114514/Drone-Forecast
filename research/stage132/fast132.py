@@ -8,7 +8,7 @@ from pathlib import Path
 from collections import deque
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage130'),str(ROOT/'research/stage23')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage130'),str(ROOT/'research/stage23')]
 from motion130 import RelativeVelocity,SimpleKF
 from robust23 import robust_acceleration,cap,PARAMS as ROBUST
 PARAMS=dict(acceleration='Actual unchanged23 robust_acceleration/cap; .35s history,6 points/.16s, Huber1.345*6px, error-based shrink. Keep fast107 state untouched by uncertain acceleration.',

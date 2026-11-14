@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 import sys
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage129')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage129')]
 from branches146 import BranchObserver, render_panel
 from polarity import counts
 from event_drone_forecast.raw_io import open_raw, raw_chunks

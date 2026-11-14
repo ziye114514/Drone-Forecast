@@ -11,7 +11,7 @@ def load(p):return json.loads(p.read_text(encoding='utf-8'))
 def save(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def module():
-    spec=importlib.util.spec_from_file_location('shared_raw47',ROOT/'run_shared_body_forecast.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+    spec=importlib.util.spec_from_file_location('shared_raw47',ROOT/'core/run_shared_body_forecast.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 def sources():
     m=module();ns,memory,workers=m.build(32,False,True);assert not memory and not workers;result=ns['fingerprints']();result['research/stage47/study47.py']=sha(Path(__file__));return result
 def freeze():

@@ -27,7 +27,7 @@ def main():
     old=ROOT.parent/'output/flow_acceleration_20261026/actual_side_headless/source_snapshot/src/event_drone_forecast/position'
     unchanged={p.name:p.read_bytes()==(ROOT/'src/event_drone_forecast/position'/p.name).read_bytes() for p in old.glob('*.py')}
     assert len(unchanged)==7 and all(unchanged.values())
-    for p in [ROOT/'continuous_five_circle.py',ROOT/'shared_arc_recovery.py',ROOT/'fast_structure_front.py',ROOT/'live_structure_bridge.py',ROOT/'run_fast_structure.py']:
+    for p in [ROOT/'core/continuous_five_circle.py',ROOT/'core/shared_arc_recovery.py',ROOT/'core/fast_structure_front.py',ROOT/'core/live_structure_bridge.py',ROOT/'core/run_fast_structure.py']:
         py_compile.compile(str(p),doraise=True)
     fig,axes=plt.subplots(1,3,figsize=(14,3.8),constrained_layout=True)
     c=replay['results']['clear_release_v2'];x=np.arange(2)

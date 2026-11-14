@@ -4,7 +4,7 @@ import cv2,numpy as np
 from body35 import ROOT,PARAMS,EventImages,BodyTracker
 from checks35 import run as checks
 
-sys.path[:0]=[str(ROOT/'research/stage34'),str(ROOT/'research/stage23')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage34'),str(ROOT/'research/stage23')]
 import study34
 import robust23
 OUT=ROOT.parent/'output/stage35_body_feature_flow_20261018';CASES=dict(study34.CASES)

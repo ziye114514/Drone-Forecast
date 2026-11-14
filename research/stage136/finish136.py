@@ -48,7 +48,7 @@ def main():
         path.write_text(intro+'以下129及更早为历史。\n\n'+path.read_text('utf-8'),'utf-8')
     handoff.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=136,algorithm_stage=135,latest_full_forecast_stage=136,experimental_RAW_stage=136,
         latest_RAW_geometry_stage=136,latest_diagnostic_stage=136,latest_full_forecast_report=str(report),latest_report=str(report),latest_checks=str(OUT/'final_checks136.json'),
-        experimental_RAW_entry=str(ROOT/'run_optimized_forecast.py'),recommended_forecast_research_stage=135,latest_completed_stages=list(range(130,137)),execution_status='checkpoint_ready',research_objective_status='incomplete',
+        experimental_RAW_entry=str(ROOT/'core/run_optimized_forecast.py'),recommended_forecast_research_stage=135,latest_completed_stages=list(range(130,137)),execution_status='checkpoint_ready',research_objective_status='incomplete',
         next_action='Implement shared ROI support/geometry computation in the lean RAW runner; keep full-boundary guards and current measurement qualification. One fixed short clip for forecast/runtime comparison, no expansion of old control tree. Then side-line normals + temporal periodicity; density alone is not thrust/RPM.',
         completion_scope='Optimization135: relative geometry velocity + robust acceleration rollout after learned guarded structure; unmodeled CV. Actual RAW lean v1/v3 400+400, prefix60, negative30 complete; actual0.4s same11 futureBOX33.679->30.834px. Current235.6ms, not realtime. Other exposed clips replay-only and unchanged; side/RPM/physics/generalization incomplete.',
         source_summary_files=[str(worklog),str(WORK/'PROJECT_STATUS_20261022.md'),str(ROOT/'README.md'),str(ROOT/'research/stage135/README.md')],
@@ -60,7 +60,7 @@ def main():
     handoff.pop('archive',None);handoff.pop('archive_sha256',None);handoff['zip_verified']=False;save(handoffpath,handoff)
     save(OUT/'final_checks136.json',dict(report_local_links_checked=checked,actual_RAW890_complete=True,current_full_RAW400=True,predictor_difference=0,actual_future_scores=str(OUT/'actual_RAW_scores136.json'),video_preview_visually_checked=True,all_video_frames_decoded=True,source_fingerprints_current=True,raw_size_mtime_unchanged=True,RAW_bytewise_checksum_not_performed=True,side_improved=False,realtime=False,default_promoted=False,running_jobs=[]))
     current={}
-    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',handoffpath,ROOT/'run_optimized_forecast.py']:
+    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',handoffpath,ROOT/'core/run_optimized_forecast.py']:
         current[p.relative_to(WORK).as_posix()]=p.read_bytes()
     for stage in range(130,137):
         for p in (ROOT/f'research/stage{stage}').rglob('*'):

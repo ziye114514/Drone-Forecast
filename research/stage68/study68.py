@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,sys,time
 import numpy as np
 from activity68 import *
-sys.path.insert(0,str(ROOT/'research/stage64'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage64'))
 import study64 as old
 from compensation64 import PastVelocity
 from event_drone_forecast.raw_io import open_raw,raw_chunks

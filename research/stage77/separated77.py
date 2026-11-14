@@ -9,7 +9,7 @@ from types import SimpleNamespace
 import copy,hashlib,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'research/stage74'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage74'))
 from hybrid74 import ControlledFilter,DualBank,IMMEstimator,prior
 VENDOR=ROOT/'external/filterpy_mmae_upstream'
 SNAPSHOT=json.loads((VENDOR/'UPSTREAM_SNAPSHOT.json').read_text('utf-8'))

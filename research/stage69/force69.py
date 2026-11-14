@@ -9,7 +9,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage62'),str(ROOT/'research/stage68'),str(ROOT/'research/stage6')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage62'),str(ROOT/'research/stage68'),str(ROOT/'research/stage6')]
 from independent62 import Managed62,Selector,MODELS as ORIGINAL_MODELS,prior
 from feedback52 import DelayedFeedback
 from activity68 import Reference

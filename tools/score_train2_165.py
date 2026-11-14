@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_rotor164 import score
 from score_publication165 import score as actual_score
 from compare_final_pipeline import stats

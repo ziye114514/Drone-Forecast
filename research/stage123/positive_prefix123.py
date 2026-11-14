@@ -1,7 +1,7 @@
 """Supplement inactive extension prefix with an activated natural-model prefix."""
 from pathlib import Path
 import datetime,json,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage123')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage123')]
 from study123 import OUT,entry,rows,save,stable,verify
 def main():
     verify();protocol=OUT/'positive_prefix_protocol123.json'
@@ -11,7 +11,7 @@ def main():
     dest=OUT/'raw/prefix_natural6'
     if not dest.exists():
         with (OUT/'positive_prefix_parent.log').open('x',encoding='utf-8') as f:
-            result=subprocess.run([sys.executable,str(ROOT/'run_validated_structure_forecast.py'),'--raw','E:/dataset/train/6/media/event.raw','--output',str(dest),'--start','22','--duration','1.2','--verify-frames'],stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+            result=subprocess.run([sys.executable,str(ROOT/'core/run_validated_structure_forecast.py'),'--raw','E:/dataset/train/6/media/event.raw','--output',str(dest),'--start','22','--duration','1.2','--verify-frames'],stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         assert result.returncode==0
     else:assert (dest/'completion.json').is_file(),'Existing incomplete run is not overwritten'
     rr=rows(dest/'observations_forecasts.jsonl');full=rows(OUT/'raw/natural6/observations_forecasts.jsonl')[:60];assert len(rr)==len(full)==60;names=set();current=validation=0

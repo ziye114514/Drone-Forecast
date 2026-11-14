@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse, collections, copy, datetime, hashlib, json, sys, time
 import cv2, numpy as np
 from inventory88 import ROOT, OUT, OLD, save, load, sha, parse, unique_rows
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage82'),str(ROOT/'research/stage6')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage82'),str(ROOT/'research/stage6')]
 from paired88 import Paired, METHODS, PARAMS, controls, minimal_q, prior
 from stream82 import StreamingActivity
 from silhouette import body_measurement

@@ -63,7 +63,7 @@ if '../stage53_raw_joint_physics_20261020/' not in page:page=page.replace('<div 
 page=page.replace('../../PROJECT_STATUS_20261020.md','../../PROJECT_STATUS_20261021.md')
 overview.write_text(page,encoding='utf-8')
 
-sys.path.insert(0,str(ROOT/'research/stage53'));import study53 as current
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage53'));import study53 as current
 current.verify();current.previous.verify()  # Includes immutable old sensing/position/control inputs.
 folder=current.OUT;summary_counts=dict(parent=0,native10=0,videos=0,positive_native10_exact=0)
 for case,cfg in current.CASES.items():

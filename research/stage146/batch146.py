@@ -22,7 +22,7 @@ for name, raw, start, duration in CASES:
         print(json.dumps(dict(case=name, already_completed=True)), flush=True)
         continue
     print(json.dumps(dict(case=name, status='starting', raw=raw, start=start, duration=duration)), flush=True)
-    result = subprocess.run([sys.executable, str(ROOT/'run_optimized_forecast.py'), '--raw', raw,
+    result = subprocess.run([sys.executable, str(ROOT/'core/run_optimized_forecast.py'), '--raw', raw,
                              '--output', str(destination), '--start', str(start), '--duration', str(duration),
                              '--rotor-branches', '--rotor-threshold', '4', '--preview'])
     if result.returncode:

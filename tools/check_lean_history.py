@@ -1,7 +1,7 @@
 """Same last-state semantics and exact final costs/counters; no speed claim."""
 from pathlib import Path
 import copy,json,pickle,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from forecast_output import LeanHistory
 
 

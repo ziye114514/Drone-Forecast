@@ -12,7 +12,7 @@ from collections import deque
 import json,sys,time
 import numpy as np
 from scipy.ndimage import label
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT)]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from live_decode import native_batches
 from rotor_support_front import RotorSupportTracker,fit_disc_candidates
 

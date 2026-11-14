@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage85')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage85')]
 import study85 as prior
 from raw_forecast_api import forecast_raw
 load=prior.load;save=prior.save;sha=prior.sha;rows=prior.rows
@@ -10,7 +10,7 @@ OUT=ROOT.parent/'output/stage87_process_safe_api_20261022'
 CASES=dict(clear6=dict(raw='E:/dataset/train/6/media/event.raw',start=22.,duration=.24),
            side6=dict(raw='E:/dataset/train/6/media/event.raw',start=108.,duration=.24))
 def sources():
-    result=prior.sources();result['raw_forecast_api.py']=sha(ROOT/'raw_forecast_api.py');result['research/stage87/study87.py']=sha(__file__);return result
+    result=prior.sources();result['raw_forecast_api.py']=sha(ROOT/'core/raw_forecast_api.py');result['research/stage87/study87.py']=sha(__file__);return result
 def freeze():
     prior.verify();assert not OUT.exists() and (prior.OUT/'checks85.json').is_file()
     p=load(prior.OUT/'protocol.json')

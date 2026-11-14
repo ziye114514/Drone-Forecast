@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,hashlib,html,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage60')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage60')]
 import study60 as previous
 import isolated60
 import preline61 as preline

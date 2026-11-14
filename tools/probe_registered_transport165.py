@@ -4,7 +4,7 @@ from multiprocessing import shared_memory
 import ctypes as C
 import sys,time,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from rotor_cuda_device import DeviceRotorFront
 from rotor_cuda_worker import DTYPE,CAPACITY
 

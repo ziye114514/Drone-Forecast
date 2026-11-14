@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,importlib.util,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage54'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage54'))
 from packets54 import Publisher
 spec=importlib.util.spec_from_file_location('frozen_inside17_for55',ROOT/'research/stage17/frontend.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
 inside=old.inside

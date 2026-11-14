@@ -9,7 +9,7 @@ from matplotlib import font_manager
 from matplotlib.patches import Ellipse
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from rotor_only_front import filtered_rgb
 from physical_publication import evaluate
 from compare_final_pipeline import reference_at

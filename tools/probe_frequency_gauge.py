@@ -5,7 +5,7 @@ annotation, learned force value, or future outcome chooses a frequency gauge.
 """
 from pathlib import Path
 import copy,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from prepare_fred_transfer import OUT
 from visibility_period import VisibilityPeriodProxy,ConservativeSlotPeriodProxy
 from axis_amplitude_bridge import AxisAmplitudeBridge

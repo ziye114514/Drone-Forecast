@@ -39,7 +39,7 @@ def main():
     worklog=WORK/'WORKLOG.md';text=worklog.read_text('utf-8');assert '## 138. 137：' not in text;worklog.write_text(text.rstrip()+'\n\n## 138. 137：几何计算加速\n\n'+intro,'utf-8')
     for path in [WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md']:path.write_text(intro+'以下136及更早为历史。\n\n'+path.read_text('utf-8'),'utf-8')
     handoff.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=137,algorithm_stage=135,geometry_execution_stage=137,latest_full_forecast_stage=137,experimental_RAW_stage=137,latest_RAW_geometry_stage=137,latest_RAW_pilot_stage=137,latest_diagnostic_stage=137,
-        latest_full_forecast_report=str(report),latest_report=str(report),latest_checks=str(OUT/'final_checks137.json'),experimental_RAW_entry=str(ROOT/'run_optimized_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'run_optimized_forecast.py'),latest_completed_stages=[137],
+        latest_full_forecast_report=str(report),latest_report=str(report),latest_checks=str(OUT/'final_checks137.json'),experimental_RAW_entry=str(ROOT/'core/run_optimized_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'core/run_optimized_forecast.py'),latest_completed_stages=[137],
         next_action='Implement ROI shared support while retaining global threshold statistics; contours crossing ROI must fall back to global. Preserve full boundary and lock gates. Continue with side-line normals and genuine periodic evidence, not raw event count as thrust. One small fixed clip per actual change; no growth of historical control tree.',
         completion_scope='137 actual execution optimization only: same135 prediction/129 qualification; batched fixed-shape Jacobian +124 count mask reuse +unused occupancy quantile removal. Common100 step233.279->189.984ms;geometry171.640->117.788. Full400180.659ms; forecasts maxdiff1.75e-11px,0.4s30.834px. RAW580 plus profiled100; side50 only unchanged body/forecast, no side physics improvement. Still not realtime or independent innovation result.',
         source_summary_files=[str(worklog),str(WORK/'PROJECT_STATUS_20261022.md'),str(ROOT/'README.md'),str(ROOT/'research/stage137/README.md')],running_jobs=[],report_local_links_checked=checked,
@@ -50,7 +50,7 @@ def main():
     handoff.pop('archive',None);handoff.pop('archive_sha256',None);handoff['zip_verified']=False;save(hpath,handoff)
     save(OUT/'final_checks137.json',dict(report_links_checked=checked,all_four_completed_runs_checked=True,actual_RAW580_plus_profile100=True,current_full400=True,source_fingerprints_unchanged=True,raw_size_mtime_unchanged=True,RAW_bytewise_checksum_not_done=True,plots_preview_visually_checked=True,video400_decoded=True,prediction_improvement_this_stage=False,realtime=False,running_jobs=[]))
     current={}
-    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'run_optimized_forecast.py',ROOT/'research/stage136/run_optimized_forecast_v3.py']:current[p.relative_to(WORK).as_posix()]=p.read_bytes()
+    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'core/run_optimized_forecast.py',ROOT/'research/stage136/run_optimized_forecast_v3.py']:current[p.relative_to(WORK).as_posix()]=p.read_bytes()
     for folder in [ROOT/'research/stage137',OUT]:
         for p in folder.rglob('*'):
             if p.is_file() and '__pycache__' not in p.parts and p.suffix.lower() in ['.py','.json','.html','.png','.log','.md','.pstats']:current[p.relative_to(WORK).as_posix()]=p.read_bytes()

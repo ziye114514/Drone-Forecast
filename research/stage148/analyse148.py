@@ -5,7 +5,7 @@ import sys,json,hashlib,argparse
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;OUT=WORK/'output/stage148_temporal_rotors_20261024'
 OLD=WORK/'output/stage147_curvature_split_20261024'
-sys.path[:0]=[str(ROOT/'research/stage146'),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage146'),str(ROOT/'src')]
 from analyse146 import load,score,references,CASES as META
 def js(value):return json.dumps(value,ensure_ascii=False,indent=2,default=lambda x:x.item() if isinstance(x,np.generic) else x.tolist())
 

@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import Counter
 import argparse,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_scale_rollout import ScaleRolloutMotion,scale_predictions
 from live_local_flow import velocity_coefficient
 from summarize_live_pilot import reference_at,stats,read_rows

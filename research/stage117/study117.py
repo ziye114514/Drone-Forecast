@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,copy,datetime,hashlib,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage117'),str(ROOT/'research/stage113'),str(ROOT/'research/stage110')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage117'),str(ROOT/'research/stage113'),str(ROOT/'research/stage110')]
 from fixed117 import FixedModel,fit_fixed,PARAMS,geom,DERIVED_FIXED_SOURCE
 from study113 import stable,CenterBank,NAMES,SUPPORT
 from study110 import OUT as OLD,CASES

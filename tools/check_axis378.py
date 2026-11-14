@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,argparse,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT),str(ROOT/'tools')]
 from check_continuation340 import frame
 from model_axis_transport import circle_tensor,transform_tensor,ModelAxisTransport
 

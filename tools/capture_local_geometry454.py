@@ -1,7 +1,7 @@
 """Six original RAWs, one geometry policy, all inference before references."""
 from pathlib import Path
 import os,subprocess,sys,json,hashlib,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from local_conic_opportunity import nonflat_contour_present
 from extend_inverse321 import references

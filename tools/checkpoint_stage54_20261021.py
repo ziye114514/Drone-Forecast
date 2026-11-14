@@ -63,7 +63,7 @@ page,n=re.subn(r'<div class="lead">.*?</div>(?=<div class="grid">)',lambda _:lea
 if '../stage54_single_decode_deploy_20261021/' not in page:page=page.replace('<div class="grid">','<div class="grid"><article><h2><a href="../stage54_single_decode_deploy_20261021/部署结果图与前缀校验说明.html">54 · 完整部署、单次解码与实际耗时</a></h2><p>全部物理功能保持，语义前缀/未来评分回归；单步未稳定加速，原padding校验失败与修正保留。</p></article>',1)
 overview.write_text(page,encoding='utf-8')
 
-sys.path.insert(0,str(ROOT/'research/stage54'));import study54 as current
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage54'));import study54 as current
 current.verify();current.previous.verify();current.previous.previous.verify()
 folder=current.OUT;counts=dict(parent=0,native10=0,video=0)
 for case in current.CASES:
@@ -85,7 +85,7 @@ for p in [overview,*folder.glob('*.html')]:
     for ref in re.findall(r'(?:href|src)="([^"]+)"',p.read_text(encoding='utf-8')):
         if '://' not in ref and not ref.startswith('#'):assert (p.parent/ref).exists(),(p,ref)
 summary.update(next_action='Stage55 not started. Prioritize past-body-only-box guided current10ms rotor geometry, reuse17 inside,25% margin/160ms expiry, original raw frequency history. ROI-off exact54; ROI-on same-position true future/empty/prefix. Do not compare opaque cross-decode padding SHA; retain per-transfer byte checksum. Do not claim shared stable per-step speedup.',
-    latest_entry=str(ROOT/'run_deploy_forecast.py'),verified_counts=counts,prefix_byte_failure_preserved=True,semantic_prefix_verified=True,
+    latest_entry=str(ROOT/'core/run_deploy_forecast.py'),verified_counts=counts,prefix_byte_failure_preserved=True,semantic_prefix_verified=True,
     experiments_running=[],current_status_document=str(status),last_goal_turn_classification='progress: complete15-model single-branch/single-decode RAW deployment,1265 actual ticks, true future regression and verified padding-only validation repair completed')
 save(summary_path,summary)
 files=set(ROOT.glob('*.py'))|set(ROOT.glob('*.md'))|set(PROJECT.glob('PROJECT_STATUS*.md'))|{worklog}

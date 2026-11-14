@@ -1,7 +1,7 @@
 """One fixed fallback hypothesis on exposed scenes, no parameter search."""
 from pathlib import Path
 import sys,json
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from position_net_force import PositionNetForce
 from compare_final_pipeline import reference_at
 from score_fred_adaptation import matched

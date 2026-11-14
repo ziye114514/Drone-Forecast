@@ -1,7 +1,7 @@
 """Exact ON/OFF counts on fixed native events; component timing only."""
 from pathlib import Path
 import sys,json,time,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from fast_structure_front import count_pair,roi_bounds,NativeROI,FastStructure
 from check_final_compute import compare
 from native_counts_numba import NumbaCounter

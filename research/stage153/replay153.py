@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_optimized_forecast as main
 from lm153 import install,restore
 main.install_shared_objective()

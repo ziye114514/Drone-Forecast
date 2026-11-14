@@ -4,7 +4,7 @@ import copy,importlib.util,sys
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 spec=importlib.util.spec_from_file_location('robust23_physics27',ROOT/'research/stage23/robust23.py')
 robust=importlib.util.module_from_spec(spec);spec.loader.exec_module(robust)
 from event_drone_forecast.paper_config import PaperConfig

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage79'),str(ROOT/'research/stage88'),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage79'),str(ROOT/'research/stage88'),str(ROOT/'src')]
 from native79 import engine,checked_process,summarize,synthetic
 from hist89 import PeriodHistogram,PARAMS
 from inventory88 import save,load,sha

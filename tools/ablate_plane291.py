@@ -1,7 +1,7 @@
 """Same learned memory and observations; fixed-up plane diagnostic control."""
 from pathlib import Path
 import sys,json,copy,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from identifiable_tangent_memory import IdentifiableTangentMemory,adapt
 from replay_joint236 import source
 from physical_publication import evaluate

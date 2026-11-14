@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import deque
 import sys,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage88'),str(ROOT/'research/stage82'),str(ROOT/'research/stage72')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage88'),str(ROOT/'research/stage82'),str(ROOT/'research/stage72')]
 from paired88 import Paired
 from increment72 import ContinuousFrequency
 from stream82 import StreamingActivity

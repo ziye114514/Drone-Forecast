@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,copy,datetime,inspect,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage88'),str(ROOT/'research/stage89'),str(ROOT/'research/stage93'),str(ROOT/'research/stage92'),str(ROOT/'research/stage82'),str(ROOT/'research/stage6'),str(ROOT/'research/stage79')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage88'),str(ROOT/'research/stage89'),str(ROOT/'research/stage93'),str(ROOT/'research/stage92'),str(ROOT/'research/stage82'),str(ROOT/'research/stage6'),str(ROOT/'research/stage79')]
 from inventory88 import save,load,sha,parse,unique_rows
 from paired88 import Paired,prior
 from stream82 import StreamingActivity

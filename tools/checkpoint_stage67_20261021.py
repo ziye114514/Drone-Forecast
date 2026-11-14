@@ -2,7 +2,7 @@
 from pathlib import Path
 import datetime,hashlib,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'tools'),*[str(ROOT/'research'/f'stage{n}') for n in [64,65,66,67]]]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools'),*[str(ROOT/'research'/f'stage{n}') for n in [64,65,66,67]]]
 import checkpoint_stage63_20261021 as old
 import study64 as motion
 import study65 as forecast
@@ -55,8 +55,8 @@ def run():
         stage67_extra_aperiodic_false_acceptances=31,stage67_extra_aperiodic_controls=40,
         default_promoted=False,new_thrust_input_enabled=False,
         latest_report=str(report),local_report_links_checked=len(parser.local),
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),
-        experimental_RAW_entry=str(ROOT/'run_axis_forecast.py'),experimental_RAW_stage=62,
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),
+        experimental_RAW_entry=str(ROOT/'core/run_axis_forecast.py'),experimental_RAW_stage=62,
         experimental_cache_predictor=str(ROOT/'research/stage65/partial65.py'),
         terminal_batches=[6771,48939,32697,32032],inventory_file=str(periodic.OUT/'process_inventory_20261021.json'),
         retained_failed_attempts=prior.get('retained_failures',[]),

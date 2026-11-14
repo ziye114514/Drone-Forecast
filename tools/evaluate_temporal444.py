@@ -5,7 +5,7 @@ for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ
 import sys,json,hashlib,numpy as np,cv2
 from functools import partial
 from PIL import Image,ImageDraw,ImageFont
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from rotor_cuda_worker import CudaRotorFrontWorker
 from observed_rotor_predictor import ProjectionQualifiedObservedPredictor
 from temporal_rotor_birth import TemporalBirthContinuation

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from propeller_physics import thrust_newtons,parallel_allocation,wrench,infer_missing_thrust,static_coefficient_curve
 from rotor_thrust_bank import RotorThrustBankProxy
 from axis_amplitude_bridge import AxisAmplitudeBridge

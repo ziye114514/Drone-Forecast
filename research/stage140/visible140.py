@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import deque
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage139')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage139')]
 from dense139 import DenseGate as OriginalGate,Original,PARAMS as PREVIOUS,forecast
 PARAMS=dict(PREVIOUS,visibility='Every detected body box in the same.35s fit window must lie strictly inside sensor pixel-center limits, reusing129 FOV convention. A truncated appearance box cannot qualify extra acceleration.',
     sensor=[1280,720],design='139 failure is known before this change: unmodeled dense fit alone is unsafe. One FOV-based reliability refinement; no new numeric threshold/endpoint rule.')

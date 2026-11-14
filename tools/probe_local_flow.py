@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import Counter
 import hashlib,json,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT)]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from live_decode import native_batches
 from live_local_flow import FeatureFlow,event_support,summarize_sparse,box
 from metavision_sdk_cv import ActivityNoiseFilterAlgorithm,SparseOpticalFlowAlgorithm,SparseOpticalFlowConfigPreset

@@ -4,7 +4,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage27'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage27'))
 import physics27 as prior
 
 HISTORY=['cv','bounded_acc','trusted_acc']

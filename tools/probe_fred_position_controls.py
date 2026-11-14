@@ -10,7 +10,7 @@ import json
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from prepare_fred_transfer import parse,OUT
 from run_fast_structure import PhysicalPositionState
 from unknown_force_feedback import UnknownForceFeedback

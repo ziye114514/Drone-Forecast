@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,copy,datetime,json,sys,time
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage110'),str(ROOT/'research/stage104')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage110'),str(ROOT/'research/stage104')]
 from study110 import OUT as INPUT,save,sha,rows
 import rigid104,geometry58
 

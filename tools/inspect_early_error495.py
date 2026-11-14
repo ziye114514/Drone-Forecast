@@ -5,7 +5,7 @@ No parameter changes and no read of the reserved acquisition.
 """
 from pathlib import Path
 import sys,json,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 
 def center(count,floor):

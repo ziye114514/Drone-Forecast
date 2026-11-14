@@ -3,7 +3,7 @@ from pathlib import Path
 import html,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage118'),str(ROOT/'research/stage117'),str(ROOT/'research/stage110')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage118'),str(ROOT/'research/stage117'),str(ROOT/'research/stage110')]
 from study118 import OUT,verify,CASES,rows,save,stable
 from study117 import OUT as MODEL
 BASE=ROOT.parent/'output'

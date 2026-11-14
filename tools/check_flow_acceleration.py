@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_flow_acceleration import FlowAcceleration,DESIGN
 OUT=ROOT.parent/'output/flow_acceleration_20261026';OUT.mkdir(exist_ok=False)
 def sequence(acceleration,stationary_positions=False,policy='position-consistent'):

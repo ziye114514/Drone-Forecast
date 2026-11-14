@@ -1,7 +1,7 @@
 """One RAW accuracy run on all6, not an FPS benchmark or cached score claim."""
 from pathlib import Path
 import os,subprocess,sys,json,hashlib,time,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from extend_inverse321 import references
 from score_rotor164 import score
@@ -19,7 +19,7 @@ if __name__=='__main__':
     progress={};ns=('13','15','16','11','3','4')
     for n in ns:
         raw=Path(f'E:/dataset/experiment/{n}/media/event.raw');assert raw.is_file()
-        command=[sys.executable,str(ROOT/'run_rotor_projection_candidate.py'),'--raw',str(raw),'--start','10','--duration','6','--output',str(out/f'recording{n}'),
+        command=[sys.executable,str(ROOT/'core/run_rotor_projection_candidate.py'),'--raw',str(raw),'--start','10','--duration','6','--output',str(out/f'recording{n}'),
             '--gpu-python',protocol['GPU_python'],'--rotor-native-geometry-dll',str(ROOT.parent/'output/uncertainty216_20261108/geometry_kernels.dll')]
         print(n,'actual RAW beginning',flush=True)
         with (out/f'run{n}.log').open('w',encoding='utf8') as log:

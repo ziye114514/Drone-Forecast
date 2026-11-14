@@ -16,7 +16,7 @@ frozen ones, and the base arm must reproduce the published number first.
 from pathlib import Path
 import json,sys,collections
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from visibility_period import LegacyPeriodProxy,force_input
 from probe_same_window_motion import replay
 from compare_final_pipeline import score,reference_at

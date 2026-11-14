@@ -2,7 +2,7 @@
 from pathlib import Path
 import importlib.util,hashlib,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_scale_rollout import ScaleRolloutMotion
 from live_local_flow import velocity_coefficient
 from summarize_live_pilot import read_rows
@@ -42,8 +42,8 @@ for repetition in range(5):
 summary={n:dict(n=len(v),median_ms=float(np.median(v)),p95_ms=float(np.percentile(v,95))) for n,v in timings.items()}
 report=dict(replay=replay,branches=branches,known_endpoint_and_complementary_axis_cases_exact=True,
     actual_coefficients_and_audits_exact=True,timing=summary,alternating_fixed_five_pairs=True,
-    source_frozen_sha256=hashlib.sha256(frozen.read_bytes()).hexdigest(),source_new_sha256=hashlib.sha256((ROOT/'live_local_flow.py').read_bytes()).hexdigest(),
+    source_frozen_sha256=hashlib.sha256(frozen.read_bytes()).hexdigest(),source_new_sha256=hashlib.sha256((ROOT/'core/live_local_flow.py').read_bytes()).hexdigest(),
     RAW_or_GPU_started=False,labels_read=False,scope='CPU solver cost only on fixed current states; not whole-pipeline latency or a new accuracy gain.')
 (OUT/'comparison.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
-(OUT/'source_new.py').write_bytes((ROOT/'live_local_flow.py').read_bytes());(OUT/'source_frozen.py').write_bytes(frozen.read_bytes())
+(OUT/'source_new.py').write_bytes((ROOT/'core/live_local_flow.py').read_bytes());(OUT/'source_frozen.py').write_bytes(frozen.read_bytes())
 print(json.dumps(report),flush=True)

@@ -1,7 +1,7 @@
 """One fixed calibration mechanism on saved outputs, all labels after freeze."""
 from pathlib import Path
 import json,sys,time,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from horizon_force_calibration import HorizonForceCalibration
 from prepare_fred_transfer import OUT as FRED,parse
 from score_fred_transfer import score as score_fred

@@ -1,7 +1,7 @@
 """Profile only the current geometry step in one real RAW run, not FPS."""
 from pathlib import Path
 import sys,cProfile,pstats,io,json,runpy
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from fast_structure_front import FastStructure
 
 
@@ -14,7 +14,7 @@ def main(output,extra=()):
         finally:profiler.disable()
     FastStructure.step=measured
     try:
-        sys.argv=[str(ROOT/'run_fast_structure.py'),'--raw','E:/dataset/train/6/media/event.raw',
+        sys.argv=[str(ROOT/'core/run_fast_structure.py'),'--raw','E:/dataset/train/6/media/event.raw',
             '--output',str(out/'raw'),'--start','26','--duration','2','--goal-profile','--paced',*extra]
         runpy.run_path(sys.argv[0],run_name='__main__')
     finally:FastStructure.step=original

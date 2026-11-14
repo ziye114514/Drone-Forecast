@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from harmonic_arc_split import split_original_arcs
 
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,inspect,sys,textwrap
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage80'),str(ROOT/'research/stage82')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage80'),str(ROOT/'research/stage82')]
 import study80 as frozen80
 import study82 as module82
 import batched84

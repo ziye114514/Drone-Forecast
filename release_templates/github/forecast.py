@@ -1,7 +1,7 @@
 """Public source launcher. Help/dry-run never import SDK/CUDA or read RAW contents."""
 from pathlib import Path
 import argparse,hashlib,json,os,shutil,subprocess,sys
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]
 REFERENCE='ed8016494a798df884573ffbbcec0e69d1331886da3222909e90135048c0f7a4'
 
 
@@ -74,7 +74,7 @@ def main(argv=None):
         if not model.is_file():raise ValueError('Compatible weights are not bundled. See docs/MODEL_CARD.md: '+str(model))
         actual=hashlib.sha256(model.read_bytes()).hexdigest()
         if actual!=cfg['detector_sha256']:raise ValueError('Weight SHA256 mismatch; use the exact hash of your compatible model')
-        command=[cfg['sdk_python'],'-X','utf8',str(ROOT/'run_fast_structure.py'),
+        command=[cfg['sdk_python'],'-X','utf8',str(ROOT/'core/run_fast_structure.py'),
             '--raw',str(raw),'--output',str(out),'--start',str(a.start),'--duration',str(a.duration),'--hz',str(a.hz),
             '--gpu-python',cfg['gpu_python'],'--detector-weights',str(model),'--detector-sha256',actual,
             '--cache-dir',cfg['cache_dir'],'--async-nn','--paced']

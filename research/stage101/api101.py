@@ -1,7 +1,7 @@
 """Actual two-call93 API regression in one clean parent process."""
 from pathlib import Path
 import datetime,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from complementary_raw_api import forecast_raw
 OUT=ROOT.parent/'output/stage101_complementary_API_20261022'
 
@@ -14,7 +14,7 @@ def sha(p):return __import__('hashlib').sha256(p.read_bytes()).hexdigest()
 def main():
     assert not OUT.exists()
     forbidden=[m for m in sys.modules if m.split('.')[0] in ['numpy','cv2','torch','metavision_sdk_cv','metavision_core']];assert not forbidden
-    sources={str(p):sha(p) for p in [Path(__file__),ROOT/'complementary_raw_api.py',ROOT/'raw_forecast_api.py']}
+    sources={str(p):sha(p) for p in [Path(__file__),ROOT/'core/complementary_raw_api.py',ROOT/'core/raw_forecast_api.py']}
     save(OUT/'protocol101.json',dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_hashes=sources,
         design='One clean stdlib parent, two real RAW93 child calls, exact all55/learning comparison to93; parent IO after each; existing-output and nonRAW rejection.',
         cases=[dict(name='clear6',start=22.,duration=.24),dict(name='side6',start=108.,duration=.24)],default_promoted=False))

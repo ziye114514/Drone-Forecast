@@ -1,7 +1,7 @@
 """Bounded causal force/state/side-qualification checks; no dataset labels."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from responsive_force import ResponsiveForce,DampedResponsiveForce,WindowResidualForce
 from force_position_state import ForceDrivenNoiseKF
 from live_structure_bridge import NoiseKF

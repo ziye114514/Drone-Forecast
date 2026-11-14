@@ -1,7 +1,7 @@
 """Fixed development inputs; online response learned only from matured observations."""
 from pathlib import Path
 import sys,json
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from adaptive_force_memory import AdaptiveForceMemory
 from compare_final_pipeline import score
 def main(output):

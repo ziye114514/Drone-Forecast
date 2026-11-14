@@ -9,7 +9,7 @@ from pathlib import Path
 import inspect,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage88'),str(ROOT/'research/stage69')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage88'),str(ROOT/'research/stage69')]
 from paired88 import Paired
 from force69 import Direction
 

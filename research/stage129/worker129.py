@@ -5,7 +5,7 @@ is retained/hash-frozen. No extra raw decoder or heavyweight child process.
 """
 from pathlib import Path
 import argparse,ast,inspect,sys,textwrap
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage128'),str(ROOT/'research/stage129')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage128'),str(ROOT/'research/stage129')]
 import worker128
 from boundary129 import Guarded
 class AddGuard(ast.NodeTransformer):

@@ -4,7 +4,7 @@ import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,copy,numpy as np
 from scipy.integrate import solve_ivp
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from conditional_unknown_force import ConditionalUnknownForce
 from learned_rotor_predictor import load_model
 from physical_publication import evaluate,freeze,publication

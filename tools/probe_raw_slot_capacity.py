@@ -6,7 +6,7 @@ timings are NOT full-pipeline FPS or a clean isolated throughput benchmark.
 from pathlib import Path
 import argparse,os,sys,json,hashlib,time,numpy as np
 for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[key]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from fast_raw_reader import ProcessRAW
 OUT=ROOT.parent/'output/transport_stability_20261029'
 

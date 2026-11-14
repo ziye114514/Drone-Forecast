@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # Importing the report builder does not execute it. Run separately before this tool.
     expected = [
         OUT / 'index.html', OUT / 'geometry_value.png', OUT / 'DECISION_STATUS.json',
-        OUT / 'final_source_hashes.json', ROOT / 'rotor_evidence.py',
+        OUT / 'final_source_hashes.json', ROOT/'core/rotor_evidence.py',
         ROOT / 'docs/ROTOR_MODEL_V1.md', ROOT / 'docs/HANDOFF_20261105_DECISION169.md',
         OUT / 'exports/clear/rotor_model.jsonl', OUT / 'exports/pure_side/rotor_model.jsonl',
     ]

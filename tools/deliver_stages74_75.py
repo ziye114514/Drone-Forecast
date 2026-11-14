@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage75'),str(ROOT/'research/stage74')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage75'),str(ROOT/'research/stage74')]
 import study75 as actual
 import study74 as forecast
 OUT=actual.OUT;load=actual.load;save=actual.save;sha=actual.sha;rows=actual.rows

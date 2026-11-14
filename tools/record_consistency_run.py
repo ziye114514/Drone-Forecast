@@ -44,7 +44,7 @@ decision=dict(variant='accumulated_v3_consistency',retained_as_selectable_varian
 stub=OUT/'dry_run_only.raw';stub.write_bytes(b'');checks={}
 try:
     for name,extra in [('default',[]),('v3',['--live-revision','accumulated_v3_consistency']),('original',['--profile','live-baseline'])]:
-        result=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
+        result=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'core/forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
             '--raw',str(stub),'--output',str(OUT/(name+'_not_created')),'--dry-run']+extra,cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
         assert result.returncode==0,result.stderr
         data=json.loads(result.stdout);assert not data['raw_events_read'];argv=data['argv']

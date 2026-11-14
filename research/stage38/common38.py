@@ -1,7 +1,7 @@
 from pathlib import Path
 import hashlib,json,sys
 
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage37'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage37'))
 import common37
 OUT=ROOT.parent/'output/stage38_noise_scale_detector_20261018';OLD=common37.OUT;CASES=common37.CASES
 PARAMS=dict(divisors=[1,4,8],activity_filter=[False,True],activity_threshold_us=10000,windows_us=[10000,50000],context_us=60000,

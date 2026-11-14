@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,time,cProfile,pstats,io,json,hashlib
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import live_decode
 original=live_decode.native_batches
 OUT=ROOT.parent/'output/read249_20261108';OUT.mkdir(exist_ok=False)

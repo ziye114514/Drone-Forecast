@@ -20,7 +20,7 @@ METHODS=['neighbor20','layout20'];load=scorer.load;save=scorer.save;sha=scorer.s
 
 
 def sources():
-    ff=[Path(__file__),Path(__file__).with_name('structured26.py'),ROOT/'run_structured_forecast.py']
+    ff=[Path(__file__),Path(__file__).with_name('structured26.py'),ROOT/'core/run_structured_forecast.py']
     result={str(p.relative_to(ROOT)):sha(p) for p in ff}
     for p,v in load(ROOT.parent/'output/stage25_controlled_occlusion_20261018/protocol.json')['source_hashes'].items():assert sha(ROOT/p)==v;result[p]=v
     return result

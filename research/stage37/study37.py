@@ -3,7 +3,7 @@ import cv2,numpy as np
 from common37 import ROOT,OUT,CASES,PARAMS,load,save,sha,sources,verify
 from checks37 import run as checks
 from render37 import past,render
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.raw_io import open_raw
 
 

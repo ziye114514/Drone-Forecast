@@ -21,7 +21,7 @@ m['tracks']['accumulated_v7_flow_acceleration']=v
 path.write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 stub=OUT/'dry_run_only.raw';stub.write_bytes(b'')
 try:
-    p=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
+    p=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'core/forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
         '--raw',str(stub),'--output',str(OUT/'dry_run_not_created'),'--live-revision','accumulated_v7_flow_acceleration','--dry-run'],capture_output=True,text=True,encoding='utf-8',cwd=ROOT)
     assert p.returncode==0,p.stderr;d=json.loads(p.stdout);assert not d['raw_events_read'];argv=d['argv']
     for flag,value in [('--local-flow','klt'),('--flow-preparation','gpu-overlap'),('--flow-acceleration','position-consistent')]:assert argv[argv.index(flag)+1]==value

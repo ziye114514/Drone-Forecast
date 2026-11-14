@@ -14,7 +14,7 @@ import numpy as np
 from scipy.ndimage import gaussian_filter1d
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT/'src'), str(ROOT/'research/stage146')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT/'src'), str(ROOT/'research/stage146')]
 from branches146 import ThresholdFrontend, BranchObserver as Observer146, BranchGeometry as Geometry146
 from event_drone_forecast.geometry import _fit, _distance, _coverage, _uncertainty
 

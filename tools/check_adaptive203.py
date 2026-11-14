@@ -1,7 +1,7 @@
 """Public observer parity, source-time causality and finite mixture forecasts."""
 from pathlib import Path
 import sys,json,copy,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from adaptive_response_observer import AdaptiveResponseObserver
 from physical_publication import evaluate,freeze
 from run_rotor_only import RotorPredictor

@@ -1,6 +1,6 @@
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-p=ROOT/'run_optimized_forecast.py'
+p=ROOT/'core/run_optimized_forecast.py'
 s=p.read_text(encoding='utf8')
 out=ROOT.parent/'output/stage149_inertia_scale_20261024'
 out.mkdir(exist_ok=True)
@@ -16,7 +16,7 @@ change("rotor_temporal=False):","rotor_temporal=False,rotor_inertia=False,previe
 change("    rotor_curvature = rotor_curvature or rotor_temporal","    rotor_temporal = rotor_temporal or rotor_inertia\n    if not 0 < preview_window_ms <= 20: raise ValueError('Preview window must be in (0,20] ms')\n    rotor_curvature = rotor_curvature or rotor_temporal")
 change("        branch_observer=BranchObserver(w,h,rotor_threshold,rotor_adaptive)",
 """        if rotor_inertia:
-            sys.path.insert(0,str(ROOT/'research/stage149'))
+            sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage149'))
             from observer149 import BranchObserver,PARAMS as INERTIA_PARAMS
             BRANCH_PARAMS=dict(BRANCH_PARAMS,inertia149=INERTIA_PARAMS)
         branch_observer=BranchObserver(w,h,rotor_threshold,rotor_adaptive)""")

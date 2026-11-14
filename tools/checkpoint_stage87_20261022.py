@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import datetime,hashlib,html,json,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path.insert(0,str(ROOT/'research/stage87'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage87'))
 import study87
 load=study87.load;save=study87.save;sha=study87.sha;OUT=study87.OUT
 class Links(HTMLParser):
@@ -47,7 +47,7 @@ def run():
     summary=dict(prior);summary.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=87,
         completed=list(range(19,88)),execution_status='checkpoint_ready',in_progress=[],experiments_running=[],
         completed_scope=prior['completed_scope']+'87 independent-process API and real two-call parent IO validation.',
-        latest_API_stage=87,experimental_API_entry=str(ROOT/'raw_forecast_api.py'),latest_API_report=str(report),
+        latest_API_stage=87,experimental_API_entry=str(ROOT/'core/raw_forecast_api.py'),latest_API_report=str(report),
         API_checks=checks,latest_full_forecast_stage=85,latest_cached_forecast_stage=84,latest_full_forecast_report=str(full),
         local_report_links_checked=prior['local_report_links_checked']+len(parser.local),inventory_file=str(OUT/'process_inventory_20261022.json'),
         prior_archive=prior['archive'],prior_archive_sha256=prior['archive_sha256'],
@@ -61,7 +61,7 @@ def run():
             assert hashlib.sha256(zipped.read(name)).hexdigest()==value
             p=PROJECT/name
             if p.is_file():files.add(p)
-    files.update([ROOT/'raw_forecast_api.py',Path(__file__),readme,status,worklog])
+    files.update([ROOT/'core/raw_forecast_api.py',Path(__file__),readme,status,worklog])
     files.update(p for p in (ROOT/'research/stage87').rglob('*') if p.suffix in ['.py','.md'] and '__pycache__' not in p.parts)
     for pattern in ['*.json','*.html','*.log']:files.update(p for p in OUT.rglob(pattern) if p.stat().st_size<2_000_000)
     archive=BASE/'checkpoints'/('research_through_stage87_'+datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f')+'.zip')

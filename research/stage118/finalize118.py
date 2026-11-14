@@ -4,7 +4,7 @@ import datetime,hashlib,json,sys,zipfile
 from html.parser import HTMLParser
 from urllib.parse import unquote,urlparse
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage118'),str(ROOT/'research/stage109')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage118'),str(ROOT/'research/stage109')]
 from study118 import OUT,verify,save,sha
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))
 
@@ -61,7 +61,7 @@ def main():
     archive=checkpoint/f'research_through_stage118_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")}.zip'
     h.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=118,completed=sorted(set(h['completed']+list(range(112,119)))),
         latest_full_forecast_stage=118,latest_cached_forecast_stage=117,latest_diagnostic_stage=116,latest_RAW_geometry_stage=118,
-        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'run_learned_structure_forecast.py'),experimental_RAW_stage=118,
+        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'core/run_learned_structure_forecast.py'),experimental_RAW_stage=118,
         latest_checks=str(OUT/'delivery_checks118.json'),in_progress=[],experiments_running=[],default_promoted=False,
         completed_scope='112 native supports;113 robust support/uncertainty controls;114/115 weak-boundary failed pilot;116 analytic benchmark;117 learned fixed structure;118 actualRAW67 forecasts.',
         completion_scope='Faithful structural memory implemented and tested; clear local effect tiny, no first side model, no independent RPM benefit/realtime/original-method proof.',
@@ -75,7 +75,7 @@ def main():
         '117':dict(cached_current=1155,independent_prefixes=120,synthetic_frames=400),'118':dict(RAW_parent=550,original_video_frames=430,new_overlay_frames=430,old_branches=64,new_branches=3)})
     h['retained_failed_attempts']=list(dict.fromkeys(h['retained_failed_attempts']+['113 actual contour/arc fitting worsened clear forecast21.64px; no promotion','115 weak-boundary C success failed full-window forecast22.86px; no promotion','117 local shape covariance excludes learned-structure error; side no first model']))
     save(checkpoint/'latest_handoff.json',h)
-    files=[status,log,readme,ROOT/'run_learned_structure_forecast.py',checkpoint/'latest_handoff.json']
+    files=[status,log,readme,ROOT/'core/run_learned_structure_forecast.py',checkpoint/'latest_handoff.json']
     directories=[ROOT/'research'/f'stage{s}' for s in range(112,119)]
     directories += [base/name for name in ['stage112_observed_support_20261022','stage113_joint_observed_arcs_20261022','stage114_weak_boundary_pilot_20261022','stage115_RAW_weak_support_20261022','stage116_analytic_solver_benchmark_20261022','stage117_persistent_structure_20261022','stage118_RAW_learned_structure_20261022']]
     for folder in directories:

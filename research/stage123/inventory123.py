@@ -1,7 +1,7 @@
 """Audit historical RAW exposure from saved metadata, never infer unseen by name."""
 from pathlib import Path
 import datetime,json,re,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage109')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage109')]
 from audit109 import save,sha
 OUT=ROOT.parent/'output/stage123_frozen_extension_20261023'
 

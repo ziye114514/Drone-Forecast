@@ -1,7 +1,7 @@
 """One physical-response hypothesis; no parameter search or target fitting."""
 from pathlib import Path
 import sys,json,numpy as np,hashlib,argparse,time,copy
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from normal_dynamic_response import DynamicNormalResponseObserver
 from physical_publication import evaluate
 from run_rotor_only import serial

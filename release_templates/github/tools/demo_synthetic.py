@@ -1,7 +1,7 @@
 """Run the included real algorithm controls without camera/SDK/CUDA/weights."""
 from pathlib import Path
 import argparse,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 
 
 def main():

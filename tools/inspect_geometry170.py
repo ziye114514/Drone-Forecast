@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,hashlib
 import numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from fast_structure_front import FastStructure,roi_bounds
 from run_rotor_only import serial
 from research.stage147.curvature147 import notches

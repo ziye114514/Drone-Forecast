@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage135'),str(ROOT/'research/stage124')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage135'),str(ROOT/'research/stage124')]
 from publication135 import Publication
 from study124 import save,stable
 OUT=ROOT.parent/'output/stage135_optimized_forecast_20261024'

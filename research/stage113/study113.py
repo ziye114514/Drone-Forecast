@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,collections,copy,datetime,hashlib,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage113'),str(ROOT/'research/stage112'),str(ROOT/'research/stage110'),str(ROOT/'research/stage107')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage113'),str(ROOT/'research/stage112'),str(ROOT/'research/stage110'),str(ROOT/'research/stage107')]
 import support113 as geom
 from capture112 import OUT as SUPPORT
 from study110 import OUT as OLD,CASES

@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'research/stage5'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage5'))
 from study import OUT,CASES,ARMS,save,verify,make_world
 from projective import project,ellipse_points,ProjectiveFour
 

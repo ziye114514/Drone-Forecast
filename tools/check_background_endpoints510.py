@@ -1,7 +1,7 @@
 """Known dense GLS solution for two shared image-error channels."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from background_relative_force import BackgroundReference
 
 if __name__=='__main__':

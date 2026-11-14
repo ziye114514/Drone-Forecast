@@ -5,7 +5,7 @@ trajectory errors are read when fitting. This does not calibrate uncertainty.
 """
 from pathlib import Path
 import hashlib,json,os,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 os.environ['YOLO_OFFLINE']='true';os.environ['YOLO_AUTOINSTALL']='false';os.environ['YOLO_CONFIG_DIR']=str(ROOT/'.cache/ultralytics')
 
 

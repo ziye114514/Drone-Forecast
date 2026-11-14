@@ -6,7 +6,7 @@ manual target, reserved video, parameter sweep or favorable replacement window.
 from pathlib import Path
 import os,sys,subprocess,json,hashlib,copy,numpy as np
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from capture_training400 import TRAINING,EVALUATION
 from replay_endpoint432 import run
@@ -50,7 +50,7 @@ if __name__=='__main__':
     groups=[];manifest={};capture={}
     for n in TRAINING:
         folder=out/f'recording{n}'
-        cmd=[sys.executable,str(ROOT/'run_rotor_local_contrast_candidate.py'),'--raw',f'E:/dataset/experiment/{n}/media/event.raw',
+        cmd=[sys.executable,str(ROOT/'core/run_rotor_local_contrast_candidate.py'),'--raw',f'E:/dataset/experiment/{n}/media/event.raw',
              '--start','10','--duration','30','--output',str(folder),'--gpu-python',
              'C:/Users/子夜/AppData/Local/Programs/Python/Python313/python.exe','--rotor-native-geometry-dll',
              str(ROOT.parent/'output/uncertainty216_20261108/geometry_kernels.dll')]

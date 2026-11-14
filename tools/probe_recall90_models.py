@@ -4,7 +4,7 @@ The previous per-frame33ms cache and model provenance are fixed before scoring.
 """
 from pathlib import Path
 import hashlib,json,os,sys,time
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 os.environ['YOLO_OFFLINE']='true';os.environ['YOLO_AUTOINSTALL']='false'
 os.environ['YOLO_CONFIG_DIR']=str(ROOT/'.cache/ultralytics')
 

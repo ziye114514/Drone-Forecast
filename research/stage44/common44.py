@@ -1,7 +1,7 @@
 """Fixed native-input comparison of existing PyTorch and ONNX Runtime backends."""
 from pathlib import Path
 import datetime,hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage43'),str(ROOT/'research/stage41')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage43'),str(ROOT/'research/stage41')]
 import common41
 OUT=ROOT.parent/'output/stage44_onnx_backend_20261019';INPUT=common41.OUT
 PARAMS=dict(export_shape=[384,640],opset=17,precision='float32',dynamic=False,simplify=False,nms_export=False,batch=1,

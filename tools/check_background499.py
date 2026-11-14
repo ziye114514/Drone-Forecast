@@ -1,7 +1,7 @@
 """Coordinate, shared-uncertainty control and publication-order checks."""
 from pathlib import Path
 import sys,json,copy,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from background_relative_force import BackgroundReference
 from physical_publication import evaluate,freeze
 from native_fov_observation import project

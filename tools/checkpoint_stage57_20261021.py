@@ -2,7 +2,7 @@
 from pathlib import Path
 import datetime,hashlib,importlib.util,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path.insert(0,str(ROOT/'research/stage57'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage57'))
 import study57 as current
 import delivery57 as delivery
 import density_probe57 as density
@@ -55,7 +55,7 @@ def run():
         for ref in re.findall(r'(?:href|src)="([^"]+)"',path.read_text(encoding='utf-8')):
             if '://' not in ref and not ref.startswith('#'):assert (path.parent/ref).exists(),(path,ref)
     summary.update(next_action='Stage58 not started. Verify/pin reusable author code for projected-circle centers and coplanar conic ambiguity; check real RAW intrinsic metadata. Start with49 known projection/noise/edge-on controls, then current RAW observability/sensitivity without claiming true pose/RPM. Extra conic constraints must be independent of arbitrary-four-point homography fit. No virtual measured rotors or lowered gates.',
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_entry=str(ROOT/'run_candidate_forecast.py'),latest_report=str(folder/'实验结论与密度阈值诊断.html'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_entry=str(ROOT/'core/run_candidate_forecast.py'),latest_report=str(folder/'实验结论与密度阈值诊断.html'),
         verified_counts=counts,separate_density_probe_native10=400,density_probe=probe,exact_full15_and_lifecycle_cases=exact_cases,
         score_rows=360,exact_baseline_or_history_rows=252,future_three_way=load(folder/'three_way_results.json')['table'],default_promoted=False,
         all_current_events_preserved=True,experiments_running=[],terminal_batches=[35676,20880,27526],current_status_document=str(PROJECT/'PROJECT_STATUS_20261021.md'),

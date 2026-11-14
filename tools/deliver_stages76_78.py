@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output'
-sys.path[:0]=[str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage76')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage76')]
 import study78 as actual
 import study77 as cached
 import diagnose76 as audit

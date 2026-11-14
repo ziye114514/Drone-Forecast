@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage44'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage44'))
 import common44
 OUT=ROOT.parent/'output/stage45_cuda_graph_20261019'
 PARAMS=dict(use_tf32=0,enable_cuda_graph=[0,1],intra_threads=2,inter_threads=1,shape=[1,3,384,640],output_shape=[1,5,5040],warmup=5,repetitions=5,

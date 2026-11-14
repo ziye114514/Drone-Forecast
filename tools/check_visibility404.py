@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,copy,argparse,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from learned_rotor_predictor import load_model
 from visibility_response import VisibilityResponse
 from plane_conditioned_response import PlaneResponse

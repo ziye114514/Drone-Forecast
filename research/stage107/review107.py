@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage107')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage107')]
 from event_drone_forecast.raw_io import open_raw
 from study107 import OUT,SCREEN,rows,save
 

@@ -52,21 +52,21 @@ flowchart TD
 
 ```text
 python -m pip install -e .
-python forecast.py doctor --base-only
-python forecast.py demo --output outputs/demo_01
+python core/forecast.py doctor --base-only
+python core/forecast.py demo --output outputs/demo_01
 python -m unittest discover -s tests -v
 ```
 
 真实RAW见 [安装与运行](docs/GETTING_STARTED.md)。保留原配置入口：
 
 ```text
-python forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/baseline_01 --profile baseline
+python core/forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/baseline_01 --profile baseline
 ```
 
 新版联合候选：
 
 ```text
-python forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/candidate_01 --profile candidate --sdk-avx2 --no-frame-verification
+python core/forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/candidate_01 --profile candidate --sdk-avx2 --no-frame-verification
 ```
 
 `--sdk-avx2`需另行本地构建和合法SDK；未构建时去掉该项，不能照搬对应性能数字。

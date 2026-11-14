@@ -2,7 +2,7 @@
 from pathlib import Path
 import importlib.util, json, re, sys
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path.insert(0,str(ROOT/'research/stage56'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage56'))
 import study56 as current
 
 def load(path):return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -27,7 +27,7 @@ def run():
     def routed(path,value):
         if isinstance(value,dict) and 'last_completed_stage' in value:
             assert value['last_completed_stage']==56 and not value['in_progress']
-            value.update(next_action=next_action,latest_full_RAW_stage=55,latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),
+            value.update(next_action=next_action,latest_full_RAW_stage=55,latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),
                 latest_full_prediction_report=str(current.previous.OUT/'桨盘提取对照结果与固定时刻画面.html'),latest_association_report=str(current.OUT/'第五十六阶段ROI机架关联复用报告.html'),
                 verified_association_cached_ticks=2600,association_prefix_ticks=720,association_changed_ticks=0,stage56_new_frequency_or_forecast_executed=False,
                 stage55_full_RAW_counts=original_handoff['verified_counts'],stage55_future_04s=original_handoff['future_04s_selected'],default_promoted=False,

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time,importlib.util
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from event_drone_forecast import geometry as current
 from fast_structure_front import count_pair,roi_bounds,NativeROI
 from live_decode import native_batches

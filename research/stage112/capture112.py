@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,copy,datetime,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage110'),str(ROOT/'research/stage109')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage110'),str(ROOT/'research/stage109')]
 from merge110 import MergeRecovery
 from study110 import CASES,OUT as OLD
 from audit109 import save,sha,rows

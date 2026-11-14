@@ -3,7 +3,7 @@ from pathlib import Path
 from types import FunctionType
 import argparse,datetime,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage81'),str(ROOT/'research/stage82')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage81'),str(ROOT/'research/stage82')]
 import run_stream_forecast as entry
 import study81 as frozen81
 import study82 as module82

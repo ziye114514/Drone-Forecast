@@ -1,7 +1,7 @@
 """Apply the same force mechanism to the stronger existing pure-rotor state."""
 from pathlib import Path
 import sys,json,hashlib
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_force167 import replay,pure_observation,OUT
 from replay_gated_nn166 import guard
 from run_rotor_only import serial

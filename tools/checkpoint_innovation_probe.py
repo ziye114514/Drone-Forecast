@@ -3,7 +3,7 @@ from pathlib import Path
 import copy,datetime,json,re,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import predictions
 from summarize_live_pilot import reference_at,stats,read_rows
 

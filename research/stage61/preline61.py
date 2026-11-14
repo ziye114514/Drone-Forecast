@@ -3,7 +3,7 @@ from pathlib import Path
 import ast,copy,inspect,sys,textwrap
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage57'),str(ROOT/'research/stage60')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage57'),str(ROOT/'research/stage60')]
 from gating57 import CandidateFrontend
 from frontend60 import LineFrontend
 from event_drone_forecast.rotor_sensing import PaperPerception

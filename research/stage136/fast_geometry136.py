@@ -7,7 +7,7 @@ Before structure learning or after identity expiry, original free fit remains.
 """
 from pathlib import Path
 import ast,inspect,sys,textwrap
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage113')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage113')]
 import support113 as geom
 class Preflight(ast.NodeTransformer):
     def __init__(self):self.changed=0

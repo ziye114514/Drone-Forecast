@@ -100,7 +100,7 @@ if __name__=='__main__':
     state.update(timestamp='2026-11-10',objective_completed=False,account_quota_exhaustion_verified=False,
         status='Current user-directed accuracy batch: integrated429 mean34.607px,30px/new-video unmet. FPS deferred. Old formal goal usageLimited is not an account-quota claim.',
         project_work_state='accuracy_first_user_directed_work',latest_report=str(out/'index.html'),
-        candidate_entry=str(ROOT/'run_rotor_observation_candidate.py'),preserved_candidate_entry=str(ROOT/'run_rotor_learned_candidate.py'),
+        candidate_entry=str(ROOT/'core/run_rotor_observation_candidate.py'),preserved_candidate_entry=str(ROOT/'core/run_rotor_learned_candidate.py'),
         current_precision_mean_px=now['mean'],current_precision_p95_px=now['p95'],aggregate_same102=now,
         candidate_scores={n:dict(result['cases'][n]['qualified429']['same_original_origins']) for n in order},
         detection_front_changed_in_this_batch=True,FPS_optimization_allowed=False,FPS_work_deferred_until_30px_and_new_video=True,

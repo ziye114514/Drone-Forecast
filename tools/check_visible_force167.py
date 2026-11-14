@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,copy
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from visible_force_dynamics import VisibleForceDynamics,evaluate_visible,scale_aware_gain
 from flow_identifiable_gain import fit_gain
 

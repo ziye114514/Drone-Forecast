@@ -8,7 +8,7 @@ from types import FunctionType
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage82'),str(ROOT/'research/stage80')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage82'),str(ROOT/'research/stage80')]
 import stream82
 import exact80
 from hybrid74 import DualBank,HybridForecast

@@ -4,7 +4,7 @@ import inspect, sys, textwrap
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'research/stage52'), str(ROOT / 'research/stage29')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'research/stage52'), str(ROOT / 'research/stage29')]
 from feedback52 import Predictor52, Managed52, prior
 from select29 import Selector, MODELS
 

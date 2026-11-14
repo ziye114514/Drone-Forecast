@@ -3,7 +3,7 @@ import argparse, datetime, sys
 import cv2
 from pathlib import Path
 import study62 as current
-ROOT=current.ROOT;sys.path.insert(0,str(ROOT))
+ROOT=current.ROOT;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_axis_forecast as runner
 OUT=current.OUT/'raw'
 REFERENCE=current.REFERENCE
@@ -18,7 +18,7 @@ SCHEDULE=['pilot_shared_clear6','clear6','side6','train3','negative5','prefix_si
 
 def sources():
     result=current.sources()
-    for p in [Path(__file__),ROOT/'run_axis_forecast.py']:
+    for p in [Path(__file__),ROOT/'core/run_axis_forecast.py']:
         result[p.relative_to(ROOT).as_posix()]=sha(p)
     return result
 

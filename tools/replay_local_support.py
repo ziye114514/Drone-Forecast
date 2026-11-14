@@ -6,7 +6,7 @@ a batch are absent, so the cache must not be used for RPM/periodicity analysis.
 from pathlib import Path
 import argparse,hashlib,json,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_local_flow import FeatureFlow
 parser=argparse.ArgumentParser();parser.add_argument('--cache-json',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
 parser.add_argument('--spatial-diagnostics',action='store_true');args=parser.parse_args()

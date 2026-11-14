@@ -21,8 +21,8 @@ def run():
     block+='<p>新鲜轴状态不等于已验证姿态质量。侧视175个新鲜轴状态时刻中91个同时没有新鲜频率、157个没有四桨同时可见；3号84个中分别47和81个。独立准入仍需几何质量、当前支持、时间期限和原延迟反馈/预热，不是删除所有质量约束。另估算过去CV速度对应10ms平移中位clear1.50/side3.07/train35.70px，3号沿轴平移约当前major的17.7%；只是补偿可行性线索，未测真实模糊或收益，原21已实现warp且旧warp20无统一收益。</p><p><a href="feature_gate_audit61.json">已有准入代码与当前状态诊断</a> · <a href="motion_feasibility61.json">仅过去速度的平移尺度诊断</a></p>'
     marker='<h2>0.4秒同目标未来误差</h2>';assert page.count(marker)==1;page=page.replace(marker,block+marker,1);pagepath.write_text(page,encoding='utf-8')
     current.save(OUT/'conclusion_full61.json',dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),helper_sha256=current.sha(Path(__file__)),input_delivery_sha256=current.sha(OUT/'full_future_delivery61.json'),
-        measured_forecast_gain_substantial=False,pairing_promoted=False,preferred_research_baseline_entry=str(current.ROOT/'run_stable_paired_forecast.py'),preferred_line_mode='off',
-        legacy_default_entry_retained=str(current.ROOT/'run_deploy_forecast.py'),production_accuracy_upgrade_claim=False,
+        measured_forecast_gain_substantial=False,pairing_promoted=False,preferred_research_baseline_entry=str(current.ROOT/'core/run_stable_paired_forecast.py'),preferred_line_mode='off',
+        legacy_default_entry_retained=str(current.ROOT/'core/run_deploy_forecast.py'),production_accuracy_upgrade_claim=False,
         physical_usage04=dict(train3=train,side6=side),joint_success_changed_rows=success_changes,
         feature_gate_audit_sha256=current.sha(OUT/'feature_gate_audit61.json'),motion_feasibility_sha256=current.sha(OUT/'motion_feasibility61.json'),
         next_step='First isolate original27 shared frequency/axis gate on adaptive_axis_only with original28/52 predictor, geometry-only axis quality/current support, unchanged quality values/warmup/delayed feedback. Keep RPM branches and six histories exact; include pure-history/equal-fallback controls. Existing51 already preserves axis/model across rotor epochs; do not repeat it. Only if pose support remains insufficient reuse6 whole-body PCA/LSD with NN identity. No fabricated centers/RPM or lower layout gates.'))

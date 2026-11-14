@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage80')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage80')]
 import exact80
 
 PARAMS=dict(window_us=160000,maximum_events=450000,packet_us=20000,

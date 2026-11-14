@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,shutil,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_roi_refine import crop_transform,DESIGN
 PARENT=WORK/'output/stage40_record_split_finetune_20261018'
 OUT=WORK/'output/roi_augmented_detector_20261026';OUT.mkdir(exist_ok=False)

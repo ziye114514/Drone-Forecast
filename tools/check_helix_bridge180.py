@@ -1,7 +1,7 @@
 """Known synthetic rotor only: bridge geometry, frequency convention and guards."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from helixtrack_adapter import HelixCore
 from event_drone_forecast.geometry import _distance
 OUT=ROOT.parent/'output/helix_bridge180_20261107'

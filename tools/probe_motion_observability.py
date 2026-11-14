@@ -5,7 +5,7 @@ import json
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from probe_same_window_motion import replay
 from compare_final_pipeline import score, stats
 from score_fred_transfer import score as score_fred

@@ -69,7 +69,7 @@ if __name__=='__main__':
 
 '''+s,'utf8')
     p=WORK/'output/checkpoints/latest_handoff.json';j=json.loads(p.read_text('utf8'));j.update(in_progress=False,background_jobs=[],running_jobs=[],experiments_running=[],objective_completed=False,
-        candidate_entry=str(ROOT/'run_rotor_projection_candidate.py'),latest_report=str(out/'index.html'),current_precision_mean_px=primary['mean'],aggregate_same102=primary,
+        candidate_entry=str(ROOT/'core/run_rotor_projection_candidate.py'),latest_report=str(out/'index.html'),current_precision_mean_px=primary['mean'],aggregate_same102=primary,
         candidate_scores={n:c['cases'][n]['qualified']['same_original_origins'] for n in c['cases']},
         status='Batch432-440 complete: cached original102 mean34.295; same actualRAW101 old34.162 to new33.396. One original missing, target30/new-video unmet. FPS deferred.',
         current_user_stage='432-440 complete; all jobs exited; accurate original102 and actual101 metrics separated',

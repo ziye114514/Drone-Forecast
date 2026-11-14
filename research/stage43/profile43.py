@@ -23,7 +23,7 @@ def verify():
     p=load(OUT/'protocol.json');assert sources()==p['source_hashes'];return p
 
 def instrument():
-    path=ROOT/'run_body_forecast.py';source=path.read_text(encoding='utf-8')
+    path=ROOT/'core/run_body_forecast.py';source=path.read_text(encoding='utf-8')
     changes=[
       ("str(ROOT/'research/stage42/worker42.py')","str(ROOT/'research/stage43/worker_profile43.py')"),
       ("else dict(t=t,detected=False,rotors=[])\n                noise.process_events", "else dict(t=t,detected=False,rotors=[]);mark_geometry=time.perf_counter()\n                noise.process_events"),

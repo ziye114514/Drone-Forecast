@@ -13,7 +13,7 @@ cases=[('clear','E:/dataset/train/6/media/event.raw',22.,2.),
        ('side','E:/dataset/train/6/media/event.raw',110.,4.),
        ('train2','E:/dataset/train/2/aligned/event.raw',40.,4.)]
 for name,raw,start,duration in cases:
-    cmd=[sys.executable,'-X','utf8',str(ROOT/'forecast.py'),'run','--config',str(ROOT/'configs/local.json'),
+    cmd=[sys.executable,'-X','utf8',str(ROOT/'core/forecast.py'),'run','--config',str(ROOT/'configs/local.json'),
          '--profile','live','--raw',raw,'--output',str(OUT/name),'--start',str(start),
          '--duration',str(duration),'--preview','--verify-frames']
     # Demonstrate continuous native-frequency feeding in just the side window.

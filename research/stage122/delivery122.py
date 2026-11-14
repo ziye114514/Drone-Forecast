@@ -2,7 +2,7 @@
 from pathlib import Path
 import html,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage122'),str(ROOT/'research/stage119')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage122'),str(ROOT/'research/stage119')]
 from study122 import OUT,verify,rows,save,stable,CASES
 from study119 import OUT as PARTIAL,REFERENCE,NAMES
 VALID=ROOT.parent/'output/stage121_causal_model_validation_20261023'

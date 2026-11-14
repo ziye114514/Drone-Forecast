@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time,copy
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from shared_image_motion import SharedImageMotion
 from run_fast_structure import PhysicalPositionState
 from flow_force_balance import FlowBalancedForce

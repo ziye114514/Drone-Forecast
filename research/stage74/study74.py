@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,sys,time
 import numpy as np
 from hybrid74 import *
-sys.path[:0]=[str(ROOT/'research/stage73'),str(ROOT/'research/stage62'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage73'),str(ROOT/'research/stage62'),str(ROOT/'research/stage22')]
 import study73 as previous
 from independent62 import Managed62,Selector
 base=previous.base;load=base.load;save=base.save;sha=base.sha;rows=base.rows

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage88'),str(ROOT/'research/stage93')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage88'),str(ROOT/'research/stage93')]
 from inventory88 import save,load,sha
 from online93 import NAMES
 import run_complementary_forecast as entry
@@ -87,7 +87,7 @@ def check(case):
 
 def run(case):
     p=verify();cfg=p['cases'][case]
-    args=[sys.executable,str(ROOT/'run_complementary_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
+    args=[sys.executable,str(ROOT/'core/run_complementary_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix_'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

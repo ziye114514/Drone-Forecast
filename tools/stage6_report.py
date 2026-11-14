@@ -5,7 +5,7 @@ import cv2,numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'research/stage6'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage6'))
 from study import OUT,CASES,save,verify
 
 def records(c):return [json.loads(l) for l in (OUT/c/'trace.jsonl').open()]
@@ -208,7 +208,7 @@ def validate_and_package():
             if p.is_file() and p.name!='completion.json':z.write(p,Path('evidence')/p.relative_to(OUT))
         for p in (ROOT/'research/stage6').iterdir():
             if p.is_file():z.write(p,Path('source/research/stage6')/p.name)
-        for p in [ROOT/'run_body_axis.py',ROOT/'tools/stage6_report.py',ROOT/'research/stage4/tracker.py']:
+        for p in [ROOT/'core/run_body_axis.py',ROOT/'tools/stage6_report.py',ROOT/'research/stage4/tracker.py']:
             z.write(p,Path('source')/p.relative_to(ROOT))
         for p in (ROOT/'src/event_drone_forecast').glob('*.py'):z.write(p,Path('source/src/event_drone_forecast')/p.name)
     with zipfile.ZipFile(dest) as z:assert z.testzip() is None

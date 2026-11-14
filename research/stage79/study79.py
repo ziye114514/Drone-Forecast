@@ -4,7 +4,7 @@ import argparse,datetime,hashlib,json,sys,time
 import numpy as np
 from native79 import *
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage64')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage64')]
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 from compensation64 import PastVelocity
 PREV=ROOT.parent/'output/stage78_RAW_separated_forecast_20261021'

@@ -9,7 +9,7 @@ from pathlib import Path
 from collections import deque
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage132')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage132')]
 from fast132 import Fast,forecast,cap
 PARAMS=dict(cap_before_uncertainty_shrink=True,velocity_trend_window_s=.08,minimum_trend_span_s=.04,minimum_trend_points=3,maximum_gap_s=.04000001,
     rule='Cap robust acceleration first, shrink by its standard-error variance. Keep each component only if current short-window velocity slope agrees; bound its magnitude by that slope. No label-derived threshold.',

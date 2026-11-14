@@ -3,7 +3,7 @@ import argparse,datetime,importlib.util,json,sys,time
 import numpy as np
 from noise39 import StreamFilter,PARAMS,checks
 
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage9'),str(ROOT/'research/stage23'),str(ROOT/'research/stage22')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage9'),str(ROOT/'research/stage23'),str(ROOT/'research/stage22')]
 from recovery import RecoveryFrontend
 from robust23 import Predictor,MODELS
 from event_drone_forecast.raw_io import open_raw,raw_chunks

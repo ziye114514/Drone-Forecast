@@ -2,10 +2,10 @@
 from pathlib import Path
 import argparse,datetime,importlib.util,json,sys
 
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage30'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage30'))
 import study30
 pipeline=study30.pipeline
-sys.path.insert(0,str(ROOT/'research/stage22'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage22'))
 spec=importlib.util.spec_from_file_location('sparse_score31',ROOT/'research/stage22/study22.py');scorer=importlib.util.module_from_spec(spec);spec.loader.exec_module(scorer)
 OUT=ROOT.parent/'output/stage31_cross_recording_physics_20261018'
 CASES={'train3':dict(raw='E:/dataset/train/3/aligned/event.raw',start=25.,duration=6.,role='Cross recording for physical/selector variants, earlier stage24 sampled this interval; not globally blind.')}

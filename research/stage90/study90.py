@@ -9,7 +9,7 @@ from types import FunctionType
 import argparse,copy,datetime,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage88'),str(ROOT/'research/stage74')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage88'),str(ROOT/'research/stage74')]
 from hybrid74 import ControlledFilter
 from inventory88 import save,load,sha,parse,unique_rows
 import score88

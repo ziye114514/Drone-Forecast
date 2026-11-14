@@ -16,7 +16,7 @@ RAW接线：新开关1.2秒36时刻完成，32当前整机观测、28有效预�
 使用：
 
 ```text
-python run_fast_structure.py --raw data/event.raw --output outputs/new_run --start 26 --duration 1.2 --async-nn --paced --visibility-period
+python core/run_fast_structure.py --raw data/event.raw --output outputs/new_run --start 26 --duration 1.2 --async-nn --paced --visibility-period
 ```
 
 `--visibility-period`启用模型槽修复，未建模侧视仍保留原路径。

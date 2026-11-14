@@ -2,7 +2,7 @@
 from pathlib import Path
 import os,sys,json,time
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 import numpy as np
 from native_conic_residual import ConicResidual
 from event_drone_forecast.geometry import _distance,ellipse_points

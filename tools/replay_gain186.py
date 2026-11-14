@@ -1,7 +1,7 @@
 """Same frozen current phase observations; only the gain information policy."""
 from pathlib import Path
 import sys,json,copy,hashlib,numpy as np,argparse
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from phase_gain_observer import PhaseGainObserver
 from physical_publication import evaluate
 from run_rotor_only import serial

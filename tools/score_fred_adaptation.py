@@ -1,7 +1,7 @@
 """Score isolated adapted detector after RAW outputs are frozen."""
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from prepare_fred_transfer import parse,OUT as FRED
 from score_fred_transfer import score,reference
 from compare_final_pipeline import stats,score as manual_score,reference_at

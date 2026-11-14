@@ -1,7 +1,7 @@
 """Current appearance uncertainty on six actual RAWs; no FPS benchmark."""
 from pathlib import Path
 import os,subprocess,sys,json,hashlib,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from extend_inverse321 import references
 from score_rotor164 import score
@@ -15,7 +15,7 @@ if __name__=='__main__':
         source_time_accuracy_not_realtime_certificate=True,new_video_unread=True,FPS_work=False),indent=2),'utf8')
     ns=('13','15','16','11','3','4');progress={}
     for n in ns:
-        command=[sys.executable,str(ROOT/'run_rotor_polarity_candidate.py'),'--raw',f'E:/dataset/experiment/{n}/media/event.raw','--start','10','--duration','6','--output',str(out/f'recording{n}'),
+        command=[sys.executable,str(ROOT/'core/run_rotor_polarity_candidate.py'),'--raw',f'E:/dataset/experiment/{n}/media/event.raw','--start','10','--duration','6','--output',str(out/f'recording{n}'),
             '--gpu-python','C:/Users/子夜/AppData/Local/Programs/Python/Python313/python.exe','--rotor-native-geometry-dll',str(ROOT.parent/'output/uncertainty216_20261108/geometry_kernels.dll')]
         print(n,'RAW beginning',flush=True)
         with (out/f'run{n}.log').open('w',encoding='utf8') as log:result=subprocess.run(command,cwd=ROOT.parent,stdout=log,stderr=subprocess.STDOUT)

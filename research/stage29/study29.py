@@ -3,7 +3,7 @@ import argparse,datetime,importlib.util,json,sys
 from select29 import ROOT,PARAMS,MODELS,Selector,prior
 from checks29 import run as checks
 
-sys.path[:0]=[str(ROOT/'research/stage28')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage28')]
 import study28
 OUT=ROOT.parent/'output/stage29_delayed_model_weights_20261018';INPUT=study28.OUT
 CASES=study28.CASES;METHOD='canonical_static';load=study28.load;save=study28.save;sha=study28.sha

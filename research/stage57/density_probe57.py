@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,ast,copy,datetime,hashlib,sys
 import numpy as np
 import study57 as current
-sys.path[:0]=[str(current.ROOT/'research/stage8'),str(current.ROOT/'research/stage9'),str(current.ROOT/'research/stage55')]
+sys.path[:0]=[str(ROOT/'core'),str(current.ROOT/'research/stage8'),str(current.ROOT/'research/stage9'),str(current.ROOT/'research/stage55')]
 import polarity
 from recovery import RecoveryFrontend
 from roi55 import GeometryROI

@@ -1,7 +1,7 @@
 """Known-amplitude dense angular error propagation; no real accuracy claim."""
 from pathlib import Path
 import sys,numpy as np,json
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from shared_axis_error import SharedAxisMixin
 from normal_response_observer import NormalResponseObserver
 

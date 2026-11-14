@@ -4,7 +4,7 @@ for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.envir
 from pathlib import Path
 import sys,time,json,cProfile,pstats,io
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from rotor_cuda_worker import CudaRotorFrontWorker
 from rotor_support_front import estimate_region_translation
 

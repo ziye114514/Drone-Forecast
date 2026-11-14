@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,json,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(Path(__file__).parent),str(ROOT),str(ROOT/'research/stage79'),str(ROOT/'research/stage141')]
+sys.path[:0]=[str(ROOT/'core'),str(Path(__file__).parent),str(ROOT),str(ROOT/'research/stage79'),str(ROOT/'research/stage141')]
 from phase_state import RotorPhaseObserver
 from run_optimized_forecast import run
 from forecast import configuration

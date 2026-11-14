@@ -1,7 +1,7 @@
 """Acquisition latency, recovery priority, and no synthetic detections."""
 from pathlib import Path
 import json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from nn_search_schedule import acquisition_due
 
 

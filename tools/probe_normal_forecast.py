@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,collections
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from normal_turn_forecast import NormalTurnForecast
 from compare_final_pipeline import score,reference_at
 

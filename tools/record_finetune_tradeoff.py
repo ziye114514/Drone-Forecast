@@ -26,7 +26,7 @@ write(OUT/'retention_decision.json',adoption)
 stub=OUT/'dry_run_only.raw';stub.write_bytes(b'');checks={}
 try:
     for name,extra in [('default',[]),('v1',['--live-revision','accumulated_v1']),('v2',['--live-revision','accumulated_v2_finetune']),('original',['--profile','live-baseline'])]:
-        args=[sys.executable,'-X','utf8',str(ROOT/'forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
+        args=[sys.executable,'-X','utf8',str(ROOT/'core/forecast_mainline.py'),'run','--config',str(ROOT/'configs/local.json'),
             '--raw',str(stub),'--output',str(OUT/(name+'_not_created')),'--dry-run']+extra
         r=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8');assert r.returncode==0,r.stderr
         j=json.loads(r.stdout);argv=j['argv'];assert not j['raw_events_read'] and not (OUT/(name+'_not_created')).exists()

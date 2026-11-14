@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,numpy as np,cv2
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from isolated_rim_visibility import recover_isolated_rims
 from research.stage146.branches146 import three_affine_hypotheses
 from run_rotor_only import serial

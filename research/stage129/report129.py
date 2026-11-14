@@ -2,7 +2,7 @@
 from pathlib import Path
 import collections,html,json,math,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage129'),str(ROOT/'research/stage128')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage129'),str(ROOT/'research/stage128')]
 from study129 import OUT,CASES,verify,save,NAMES
 from study128 import OUT as OLD
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))

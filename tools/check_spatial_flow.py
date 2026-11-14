@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_flow_spatial import support,observation,DESIGN
 OUT=ROOT.parent/'output/spatial_flow_20261026';OUT.mkdir(exist_ok=False)
 center=np.array([100.,100.]);rng=np.random.default_rng(261026)

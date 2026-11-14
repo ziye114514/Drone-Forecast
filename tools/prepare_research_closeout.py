@@ -36,14 +36,14 @@ if __name__ == '__main__':
         lambda m:m.group(0) if '://' in m['url'] or m['url'].startswith('#') else m['pre']+'../'+m['url']+m['end'], legacy.read_text('utf-8')), 'utf-8')
     (OUT / 'SOURCE_MANIFEST.json').unlink()  # replaced by a new, non-self-referential manifest
     package = 'src/event_drone_forecast/rotor_observation/'
-    evidence = (ROOT / 'rotor_evidence.py').read_text('utf-8')
+    evidence = (ROOT/'core/rotor_evidence.py').read_text('utf-8')
     original_import = 'from five_circle_model import diagonal_center,FiveCircleModel,ellipse_tensors'
     assert evidence.count(original_import) == 1
     write(package + 'evidence.py', evidence.replace(original_import, 'from .five_circle_model import diagonal_center,FiveCircleModel,ellipse_tensors'))
-    shutil.copy2(ROOT / 'five_circle_model.py', OUT / package / 'five_circle_model.py')
+    shutil.copy2(ROOT/'core/five_circle_model.py', OUT / package / 'five_circle_model.py')
     write(package + '__init__.py', '"""Visibility-conditioned rotor evidence, not metric thrust estimation."""\nfrom .evidence import RotorEvidence, VisibilityLayout\n\n__all__ = ["RotorEvidence", "VisibilityLayout"]\n')
     checks = (ROOT / 'tools/check_rotor_evidence169.py').read_text('utf-8')
-    checks = checks.replace('sys.path.insert(0,str(ROOT))', "sys.path.insert(0,str(ROOT/'src'))")
+    checks = checks.replace('sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))', "sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))")
     checks = checks.replace('from rotor_evidence import', 'from event_drone_forecast.rotor_observation import')
     write('tools/check_rotor_observation.py', checks)
     # Keep the base component version; snapshot tag describes the new source assembly.
@@ -72,8 +72,8 @@ if __name__ == '__main__':
     write('rotor_demo.py', '''"""SDK/GPU-free replay of extracted candidates; not RAW detection or forecasting."""
 from pathlib import Path
 import argparse,json,sys
-ROOT=Path(__file__).resolve().parent
-sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.rotor_observation import RotorEvidence,VisibilityLayout
 
 def main():
@@ -236,8 +236,8 @@ RAW原生ON/OFF → 周期/密度支持与弧/椭圆候选 → 当前证据资�
     provenance = json.loads((OUT / 'SOURCE_PROVENANCE.json').read_text('utf-8'))
     provenance['research_snapshot_20261105'] = dict(
         frozen_base='v0.4.0-alpha.2 source manifest verified before copy',
-        geometry_files=[dict(destination=package+'evidence.py', original='rotor_evidence.py', original_sha256=sha(ROOT/'rotor_evidence.py'), adaptation='one relative import only'),
-                        dict(destination=package+'five_circle_model.py', original='five_circle_model.py', original_sha256=sha(ROOT/'five_circle_model.py'), adaptation='verbatim')],
+        geometry_files=[dict(destination=package+'evidence.py', original='rotor_evidence.py', original_sha256=sha(ROOT/'core/rotor_evidence.py'), adaptation='one relative import only'),
+                        dict(destination=package+'five_circle_model.py', original='five_circle_model.py', original_sha256=sha(ROOT/'core/five_circle_model.py'), adaptation='verbatim')],
         numeric_candidates_source_sha256=sha(source), numeric_candidates_filtered_fields=True,
         raw_runtime_unchanged=True, force_prediction_improvement_claimed=False)
     write('SOURCE_PROVENANCE.json', json.dumps(provenance, ensure_ascii=False, indent=2))

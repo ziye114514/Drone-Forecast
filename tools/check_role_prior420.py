@@ -1,7 +1,7 @@
 """A zero-innovation current image must not change its own propagation prior."""
 from pathlib import Path
 import sys,copy,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from coherent_gap_observer import ShortGapObserver
 
 if __name__=='__main__':

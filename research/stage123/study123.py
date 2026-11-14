@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage122')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage122')]
 import run_validated_structure_forecast as entry
 from study122 import rows,save,sha,stable
 OUT=ROOT.parent/'output/stage123_frozen_extension_20261023'
@@ -36,7 +36,7 @@ def verify():
     return p
 
 def run(case):
-    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_validated_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),
+    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_validated_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),
         '--start',str(c['start']),'--duration',str(c['duration']),'--dropout-mask','-1','--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:r=subprocess.run(args,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

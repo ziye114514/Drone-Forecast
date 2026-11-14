@@ -5,7 +5,7 @@ import cv2,numpy as np
 import study61 as current
 import runtime_full61
 from rotor_worker61 import worker_source
-ROOT=current.ROOT;sys.path.insert(0,str(ROOT));import run_stable_paired_forecast as runner
+ROOT=current.ROOT;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT));import run_stable_paired_forecast as runner
 OUT=current.OUT/'forecast';REF=current.isolated60.REF
 load=current.load;save=current.save;sha=current.sha;rows=current.rows
 HISTORY=['hold','cv','cv_hist_acc','bounded_acc','huber_acc','trusted_acc']
@@ -18,7 +18,7 @@ SCHEDULE=['pilot_off_clear6']+[f'{mode}_{c}' for c in ['clear6','side6','train3'
 
 def sources():
     r=current.sources()
-    for p in [Path(__file__),ROOT/'run_stable_paired_forecast.py',ROOT/'run_paired_forecast.py',ROOT/'research/stage60/rotor_worker60.py',*[Path(__file__).with_name(n) for n in ['rotor_worker61.py','runtime_full61.py']]]:r[p.relative_to(ROOT).as_posix()]=sha(p)
+    for p in [Path(__file__),ROOT/'core/run_stable_paired_forecast.py',ROOT/'core/run_paired_forecast.py',ROOT/'research/stage60/rotor_worker60.py',*[Path(__file__).with_name(n) for n in ['rotor_worker61.py','runtime_full61.py']]]:r[p.relative_to(ROOT).as_posix()]=sha(p)
     return r
 def freeze():
     current.verify();runtime=runtime_full61.verify();assert not OUT.exists()

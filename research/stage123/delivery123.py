@@ -1,7 +1,7 @@
 """Report frozen natural extension, including failures and sparse target coverage."""
 from pathlib import Path
 import html,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage123')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage123')]
 from study123 import OUT,CASES,METHODS,verify,rows,save
 from evaluate123 import state
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'research/stage79')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'research/stage79')]
 from rotor_cuda_worker import CudaRotorFrontWorker
 from rotor_support_front import accumulate,density_mask
 from rotor_only_front import native_reconstruction

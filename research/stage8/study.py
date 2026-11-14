@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,collections,datetime,hashlib,json,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.rotor_sensing import PaperPerception
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast.raw_io import open_raw,raw_chunks

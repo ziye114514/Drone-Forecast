@@ -5,7 +5,7 @@
 原`--target-candidate`保留。新增工作入口：
 
 ```powershell
-python run_fast_structure.py --raw '<event.raw>' --output '<新目录>' `
+python core/run_fast_structure.py --raw '<event.raw>' --output '<新目录>' `
   --start 26 --duration 4 --sdk-avx2 --structure-guided-nn --realtime30
 ```
 

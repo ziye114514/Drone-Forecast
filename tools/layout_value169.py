@@ -7,7 +7,7 @@ This is controlled missing geometry, NOT real occlusion or COM ground truth.
 from pathlib import Path
 import sys,json,copy,hashlib
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from five_circle_model import FiveCircleModel,diagonal_center
 from rotor_evidence import RotorEvidence,VisibilityLayout
 OUT=ROOT.parent/'output/decision169_20261105'

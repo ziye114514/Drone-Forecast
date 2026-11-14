@@ -2,7 +2,7 @@
 from pathlib import Path
 import datetime, hashlib, importlib.util, json, re, sys, zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path.insert(0,str(ROOT/'research/stage55'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage55'))
 import study55 as current
 import recorded_run55 as recorded
 import delivery55 as delivery
@@ -54,7 +54,7 @@ def run():
             if '://' not in ref and not ref.startswith('#'):assert (path.parent/ref).exists(),(path,ref)
     selected=[r for r in load(folder/'paired_results.json')['table'] if r['horizon']==.4 and r['case']!='negative5' and r['model'] in ['trusted_acc','adaptive_axis_freq','adaptive_all_mix']]
     summary.update(next_action='Stage56 not started. Reuse unchanged50 LayoutSlots on same55 current geometry with causally known body hints; compare33 association, initialization streak and independent prefix before deciding full RAW frequency/15-model evaluation. Do not relax shape/five-frame gates or treat inferred points as observations.',
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_entry=str(ROOT/'run_roi_forecast.py'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_entry=str(ROOT/'core/run_roi_forecast.py'),
         latest_report=str(folder/'桨盘提取对照结果与固定时刻画面.html'),verified_counts=counts,score_rows=360,exact_old_baseline_or_history_rows=252,
         true_RAW_prefix_parent=225,true_RAW_prefix_native10=450,separate_one_step_diagnostic=True,
         zero_new_ipc_parse_failures=True,original_first_step_failure_preserved=True,original_ipc_cause='Unresolved; raw offending line was not retained. No lenient parsing fix claimed.',

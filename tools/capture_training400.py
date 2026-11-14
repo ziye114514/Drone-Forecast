@@ -10,7 +10,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,hashlib,time,traceback,argparse
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from run_rotor_only import make_parser,run,SOURCE_FILES
 from conditional_unknown_force import teachers
 

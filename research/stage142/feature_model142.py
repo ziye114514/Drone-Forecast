@@ -7,7 +7,7 @@ rotors, true RPM or actual aggregate thrust are asserted by this adapter.
 from pathlib import Path
 import ast,copy,inspect,sys,textwrap
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src')]
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast import paper_physics as original
 PARAMS=dict(source='Actual existing ProjectedThrustModel, unchanged RLS delay.2s, warmup.6s, excitation.035, bounds, residual update and forgetting. Gate identifier renamed to feature_supported.',

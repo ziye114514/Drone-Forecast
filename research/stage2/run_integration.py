@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 from study import ROOT,OUT,save,digest,verify
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from run_hybrid import source_hashes
 
 def main():
@@ -20,6 +20,6 @@ def main():
         print('Integration frozen',flush=True);return
     protocol=json.loads(p.read_text());assert protocol['source_hashes']==source_hashes()
     case=protocol['cases'][a.action]
-    subprocess.run([sys.executable,str(ROOT/'run_hybrid.py'),'--raw',case['raw'],'--output',str(dest/a.action),'--duration',str(case['duration_s'])],check=True)
+    subprocess.run([sys.executable,str(ROOT/'core/run_hybrid.py'),'--raw',case['raw'],'--output',str(dest/a.action),'--duration',str(case['duration_s'])],check=True)
 
 if __name__=='__main__':main()

@@ -1,7 +1,7 @@
 """Clock advancement, immutable handoff and explicit missing-state behavior."""
 from pathlib import Path
 import sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from physical_publication import freeze,evaluate,publication
 
 

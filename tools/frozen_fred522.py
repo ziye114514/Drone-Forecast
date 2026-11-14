@@ -7,7 +7,7 @@ before this protocol. No NN, training or recording-specific inference rules.
 from pathlib import Path
 import os,sys,json,hashlib,subprocess,zipfile,shutil,re
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 
 if __name__=='__main__':

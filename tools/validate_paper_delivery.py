@@ -6,7 +6,7 @@ import hashlib,json,re,sys
 import cv2,numpy as np
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT.parent/'output/paper_reproduction_v030'
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.motion import extrapolate
 from paper_experiment import source_hash
 protocol=json.loads((OUT/'experiment_protocol.json').read_text(encoding='utf-8'))

@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,collections,datetime,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage133'),str(ROOT/'research/stage130')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage133'),str(ROOT/'research/stage130')]
 from predictor133 import Predictor,PARAMS,forecast
 from optimize130 import CASES,BODY,INPUT,REFERENCE,rows,save,sha,stable
 OUT=ROOT.parent/'output/stage133_adaptive_prediction_20261024'

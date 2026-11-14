@@ -8,7 +8,7 @@ from pathlib import Path
 import ast,copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage138'),str(ROOT/'research/stage119')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage138'),str(ROOT/'research/stage119')]
 import objective138
 import partial119
 fixed117=objective138.fixed117

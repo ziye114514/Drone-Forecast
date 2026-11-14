@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,os,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 OUT=WORK/'output/mixed_fp16_detector_v3_20261026';OUT.mkdir(exist_ok=False)
 os.environ.update(YOLO_OFFLINE='true',YOLO_AUTOINSTALL='false',YOLO_CONFIG_DIR=str(OUT/'local_config'),CUDA_CACHE_PATH=str(ROOT/'.cache/cuda'))
 PARENT=WORK/'output/equal_weight_detector_20261026';export=json.loads((PARENT/'export.json').read_text('utf-8'))

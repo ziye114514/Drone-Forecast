@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage79')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage79')]
 from live_decode import native_batches
 from live_pixel_axis import SDKFixedPixelAxis
 from live_frequency_pixels import latest_pixels

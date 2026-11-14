@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,html,json,os,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage57'),str(ROOT/'research/stage49')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage57'),str(ROOT/'research/stage49')]
 import study57 as previous
 import rigid49 as rigid
 import geometry58 as geom

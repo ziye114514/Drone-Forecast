@@ -6,7 +6,7 @@ change, not extra geometric evidence or a new learned motion prior.
 from pathlib import Path
 import ast,copy,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage138')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage138')]
 import objective138
 fixed117=objective138.fixed117
 PARAMS=dict(solver='LM for fixed eight-dimensional unbounded linear-loss objective',

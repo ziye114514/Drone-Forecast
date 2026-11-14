@@ -64,7 +64,7 @@ def main():
     h.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=108,
         completed=sorted(set(h['completed']+[106,107,108])),latest_full_forecast_stage=107,latest_cached_forecast_stage=107,
         latest_diagnostic_stage=108,latest_report=str(report),latest_full_forecast_report=str(report),
-        experimental_RAW_entry=str(ROOT/'run_center_bias_forecast.py'),experimental_RAW_stage=107,
+        experimental_RAW_entry=str(ROOT/'core/run_center_bias_forecast.py'),experimental_RAW_stage=107,
         completed_scope='106 continuousRAW screening,107 actual center/bias forecasts and all controls,108 current20ms geometry audit.',
         completion_scope='New filter implemented/tested. Side recovery, independentRPM gain and realtime general objective incomplete.',
         latest_checks=str(OUT/'delivery_checks107.json'),in_progress=[],experiments_running=[],default_promoted=False,
@@ -80,7 +80,7 @@ def main():
         '106 continuous window no initialization;108 longer current geometry max3 consecutive vs required5, no gate reduction',
         '107 side covariance worsened0.4s81.723→94.086; not promoted']
     save(checkpoint/'latest_handoff.json',h)
-    files=[status,log,ROOT/'README.md',ROOT/'run_center_bias_forecast.py',checkpoint/'latest_handoff.json']
+    files=[status,log,ROOT/'README.md',ROOT/'core/run_center_bias_forecast.py',checkpoint/'latest_handoff.json']
     for directory in [ROOT/'research/stage106',ROOT/'research/stage107',ROOT/'research/stage108',VENDOR]:
         files += [p for p in directory.rglob('*') if p.is_file() and '__pycache__' not in p.parts]
     for directory in [SCREEN,OUT,ROOT.parent/'output/stage108_current20_geometry_20261022']:

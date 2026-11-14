@@ -3,13 +3,13 @@ from pathlib import Path
 import json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage141')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage141')]
 from live_decode import native_batches
 from live_pixel_axis import SDKFixedPixelAxis
 from live_periodic_packet import compact_current
 from native_axis141 import measure_current
 OUT=WORK/'output/periodic_packet_20261026';OUT.mkdir(exist_ok=False)
-(OUT/'live_periodic_packet.py').write_bytes((ROOT/'live_periodic_packet.py').read_bytes())
+(OUT/'live_periodic_packet.py').write_bytes((ROOT/'core/live_periodic_packet.py').read_bytes())
 saved=[json.loads(l) for l in (WORK/'output/live_scale_rollout_RAW_20261026/side_v2/tracking.jsonl').read_text('utf-8').splitlines()]
 body={round(r['t'],6):r for r in saved};axis=SDKFixedPixelAxis(1280,720)
 rows=[];input_bytes=output_bytes=observations=0;latency=[]

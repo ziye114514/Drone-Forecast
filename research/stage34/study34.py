@@ -5,7 +5,7 @@ import argparse,datetime,hashlib,importlib.util,json,sys,time
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage33'),str(ROOT/'research/stage28'),str(ROOT/'research/stage29'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage33'),str(ROOT/'research/stage28'),str(ROOT/'research/stage29'),str(ROOT/'research/stage22')]
 from slots33 import ReplaceStale,RotorSensing,PaperConfig,PARAMS as SLOT_PARAMS
 from axis28 import Predictor
 from select29 import Selector,MODELS,prior

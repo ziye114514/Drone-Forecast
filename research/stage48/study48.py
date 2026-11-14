@@ -2,7 +2,7 @@ from pathlib import Path
 import argparse,copy,datetime,hashlib,importlib.util,json,os,sys
 import numpy as np
 from compose48 import *
-sys.path.insert(0,str(ROOT/'research/stage45'));import graph45
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage45'));import graph45
 OUT=ROOT.parent/'output/stage48_body_rotor_physics_20261019';POSITIONS=graph45.OUT/'sequence';SENSING=ROOT.parent/'output/stage34_slot_frequency_forecast_20261018'
 CASES={'clear6':dict(start=22.,duration=2.,geometry='stage12_clear_22_27_20261017/observations.jsonl'),
     'side6':dict(start=108.,duration=5.,geometry='stage12_side_108_120_20261017/observations.jsonl'),

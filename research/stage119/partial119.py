@@ -8,7 +8,7 @@ import copy,itertools,sys,time
 import cv2,numpy as np
 from scipy.optimize import least_squares
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage117')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage117')]
 from fixed117 import FixedModel,geom,fixed_jac,pose_uncertainty
 TEMPLATE=np.array([[-1.,-1.],[1.,-1.],[1.,1.],[-1.,1.]])
 PARAMS=dict(max_nfev=80,maximum_rms_px=3.,maximum_sigma_px=6.,maximum_shape_center_spread_px=6.,

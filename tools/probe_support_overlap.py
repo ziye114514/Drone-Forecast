@@ -3,7 +3,7 @@ from pathlib import Path
 from multiprocessing import shared_memory
 import hashlib,json,subprocess,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from forecast_runtime import resolve
 from live_local_flow import frame_support
 from run_live_forecast import receive
@@ -19,7 +19,7 @@ design=dict(mechanism='Generate the same current support after GPU request flush
 memory=shared_memory.SharedMemory(create=True,size=720*1280*3);image=np.ndarray((720,1280,3),np.uint8,buffer=memory.buf)
 log=(OUT/'gpu_worker.log').open('x',encoding='utf-8');gpu=None;counter=0;rows=[]
 try:
-    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'live_worker.py'),'--shared-memory',memory.name,
+    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'core/live_worker.py'),'--shared-memory',memory.name,
         '--weights',runtime['detector_weights'],'--expected-sha256',runtime['detector_sha256'],'--cache-dir',runtime['cache_dir']],
         stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=log,text=True,encoding='utf-8',bufsize=1,
         creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

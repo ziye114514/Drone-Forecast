@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage88'),str(ROOT/'research/stage82'),str(ROOT/'research/stage79'),str(ROOT/'research/stage72')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage88'),str(ROOT/'research/stage82'),str(ROOT/'research/stage79'),str(ROOT/'research/stage72')]
 from paired88 import Paired
 from increment72 import ContinuousFrequency
 from stream82 import StreamingActivity

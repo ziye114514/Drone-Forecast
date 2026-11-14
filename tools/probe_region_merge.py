@@ -8,7 +8,7 @@ threshold-free. The frozen rotor conics are used only as a diagnostic reference.
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT)]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from rotor_support_front import merge_region_clusters
 
 BASE=ROOT.parent/'output'

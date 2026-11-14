@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,importlib.util,json,sys
 from increment72 import *
-sys.path[:0]=[str(ROOT/'research/stage70'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage70'),str(ROOT/'research/stage22')]
 import study70 as previous
 base=previous.base;activity=previous.previous.activity;body=previous.previous.body
 load=base.load;save=base.save;sha=base.sha;rows=base.rows

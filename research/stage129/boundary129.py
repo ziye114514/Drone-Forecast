@@ -5,7 +5,7 @@ Keeps the actual measurement in the input list, marking its inferred boundary.
 """
 from pathlib import Path
 import copy,math,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage127')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage127')]
 from independent127 import Independent,NAMES
 PARAMS=dict(rule='Full ellipse must lie inside pixel-center FOV[0,w-1]x[0,h-1]. Analytic rotated-ellipse bounds, no fitted perimeter outside sensor is declared complete.',
     action='Keep current measurement but mark mode=arc, inferred_shape=True, visible_arc_fraction=None, support_fraction=None; original104/119 then reject it as complete four/three input. No point deleted or invented.',

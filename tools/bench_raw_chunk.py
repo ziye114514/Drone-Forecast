@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,time,hashlib,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 
 

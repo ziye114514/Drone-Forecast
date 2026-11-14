@@ -3,7 +3,7 @@ import json
 from common41 import *
 from windows21 import Observer
 from event_drone_forecast.raw_io import open_raw,raw_chunks
-sys.path.insert(0,str(ROOT/'research/stage39'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage39'))
 from audit39 import difference
 def main():
     old={round(r['t'],8):r['methods']['native20']['observation'] for r in map(json.loads,(ROOT.parent/'output/stage21_native_windows_20261018/clear6/observations.jsonl').read_text(encoding='utf-8').splitlines())};results=[]

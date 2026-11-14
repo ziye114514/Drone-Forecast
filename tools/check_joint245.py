@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy,numpy as np
 from unittest.mock import patch
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from joint_phase_bank import JointPhaseBank
 from joint_force_adapter import adapt
 from rotor_cuda_worker import DTYPE

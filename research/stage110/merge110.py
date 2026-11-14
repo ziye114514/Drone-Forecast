@@ -8,7 +8,7 @@ import sys
 import cv2
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage61')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage61')]
 from preline61 import PrelinePaper
 from recovery import RecoveryFrontend
 

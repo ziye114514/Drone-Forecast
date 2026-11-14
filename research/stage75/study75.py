@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,subprocess,sys
 import cv2
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage74')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage74')]
 import run_hybrid_forecast as entry
 import study74 as cache
 base=cache.base;load=base.load;save=base.save;sha=base.sha;rows=base.rows
@@ -26,7 +26,7 @@ def freeze():
 def verify():
     p=load(OUT/'protocol.json');assert p['source_hashes']==sources();return p
 def run(case):
-    verify();cfg=CASES[case];args=[sys.executable,str(ROOT/'run_hybrid_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
+    verify();cfg=CASES[case];args=[sys.executable,str(ROOT/'core/run_hybrid_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix') and case!='negative5':args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

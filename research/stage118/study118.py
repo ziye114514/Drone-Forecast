@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage117'),str(ROOT/'research/stage113')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage117'),str(ROOT/'research/stage113')]
 import run_learned_structure_forecast as entry
 from study117 import OUT as CACHE,stable,rows,save,sha
 OUT=ROOT.parent/'output/stage118_RAW_learned_structure_20261022'
@@ -23,7 +23,7 @@ def freeze():
 def verify():
     p=json.loads((OUT/'protocol118.json').read_text('utf-8'));assert p['sources']==sources();return p
 def run(case):
-    cfg=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_learned_structure_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/'raw'/case),
+    cfg=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_learned_structure_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/'raw'/case),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as log:

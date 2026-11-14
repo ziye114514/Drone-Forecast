@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,datetime,html
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import matplotlib;matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse,Circle

@@ -3,7 +3,7 @@ from multiprocessing import get_context
 from pathlib import Path
 import sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_frames import SharedFrames
 
 pool=SharedFrames(get_context('spawn'),height=8,width=12,slots=3,preview=True)

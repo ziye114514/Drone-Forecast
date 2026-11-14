@@ -7,7 +7,7 @@ from pathlib import Path
 from collections import deque
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage135')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage135')]
 from predictor135 import Predictor as Original,forecast
 PARAMS=dict(window_s=.35,step_s=.02,minimum_span_s=.33,minimum_coverage=.9,maximum_detection_gap_s=.04000001,
     maximum_median_residual_px=6.,minimum_inlier_fraction=.9,

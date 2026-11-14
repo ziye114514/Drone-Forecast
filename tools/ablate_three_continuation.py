@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,time,hashlib
 from collections import Counter
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from fast_structure_front import FastStructure
 from live_decode import native_batches
 from research.stage79.native79 import engine,copy_frequency

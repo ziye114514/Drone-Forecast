@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse,copy,datetime,hashlib,html,importlib.util,inspect,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage54')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage54')]
 import run_roi_forecast as runner
 import study54 as previous
 from roi55 import PARAMS

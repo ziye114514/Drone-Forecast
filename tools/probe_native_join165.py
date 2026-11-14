@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,time,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import join_native
 if __name__=='__main__':
     with np.load(ROOT.parent/'output/rotor_pipeline_20261101/cache/side/0000.npz') as z:e=z['events'].copy()

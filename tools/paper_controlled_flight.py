@@ -6,7 +6,7 @@ pixel gravity matches the nominal prior; it cannot validate real calibration.
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast.paper_bank import PaperForecastBank
 from event_drone_forecast.paper_physics import weak_normal

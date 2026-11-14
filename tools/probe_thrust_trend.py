@@ -1,7 +1,7 @@
 """Freeze experimental relative amplitude rollout before opening dev labels."""
 from pathlib import Path
 import json,sys,collections
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from thrust_trend_forecast import ThrustTrendForecast
 from compare_final_pipeline import score
 

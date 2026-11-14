@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys
 from collections import Counter
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from summarize_live_pilot import reference_at,stats
 from fast_force_response import FastForceResponse
 from live_structure_bridge import GeometryMotion

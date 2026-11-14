@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from rotor_support_front import estimate_region_translation
 from rotor_thrust_bank import RotorThrustBankProxy
 from rotor_force_observer import RotorForceObserver

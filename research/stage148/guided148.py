@@ -9,7 +9,7 @@ import copy,sys
 import numpy as np
 import cv2
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage147')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage147')]
 import curvature147 as curve
 from event_drone_forecast.geometry import _distance,_coverage
 

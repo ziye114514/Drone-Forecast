@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from native_geometry_numba import JITLine
 from fast_geometry_compute import line_geometry_fast
 from check_final_compute import compare

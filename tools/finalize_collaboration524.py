@@ -73,7 +73,7 @@ if __name__=='__main__':
         objective_completed=False,in_progress=False,background_jobs=[],experiments_running=[],current_running_jobs=[],
         status='Collaboration source snapshot523/524 finalized.517 actual6 n102 mean29.997218;FRED11 fixed10–16s both0/25 valid forecasts, FDE=null. No new-video accuracy pass or30FPS. All jobs exited.',
         current_status_document=str(handoff),latest_report=str(out/'docs/RESULTS.md'),
-        candidate_entry=str(ROOT/'run_rotor_background_memory_candidate.py'),best_experimental_entry=str(ROOT/'run_rotor_background_memory_candidate.py'),
+        candidate_entry=str(ROOT/'core/run_rotor_background_memory_candidate.py'),best_experimental_entry=str(ROOT/'core/run_rotor_background_memory_candidate.py'),
         current_precision_mean_px=actual['pooled']['background']['mean'],best_experimental_mean_px=actual['pooled']['background']['mean'],
         aggregate_same102=actual['pooled']['background'],candidate_scores={n:c['background']['original_available'] for n,c in actual['cases'].items()},
         milestone31_achieved=True,milestone30p5_achieved=True,development30_gate_achieved=True,

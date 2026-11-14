@@ -1,7 +1,7 @@
 """Reuse54 isolated current RAW worker; gate geometry only by past body box."""
 from pathlib import Path
 import argparse,hashlib,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage54'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage54'))
 from packets54 import PacketReader
 import rotor_worker54 as previous
 from roi55 import GeometryROI,validate_hint_request

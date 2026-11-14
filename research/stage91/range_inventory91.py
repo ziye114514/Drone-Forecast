@@ -7,7 +7,7 @@ from pathlib import Path
 import datetime, hashlib, io, json, sys, urllib.request, zipfile
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'research/stage88'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage88'))
 from inventory88 import save,load,parse,unique_rows,sha
 OUT=ROOT.parent/'output/stage91_FRED_download_audit_20261022'
 IDS=[8,9,12,20,21,29,34,39,41,46]

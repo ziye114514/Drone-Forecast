@@ -23,7 +23,7 @@ if __name__=='__main__':
     for relative,expected in smoke['source_hashes'].items():assert sha(ROOT/relative)==expected,relative
     snapshot=OUT/'source_snapshot';snapshot.mkdir(exist_ok=True)
     paths=[p for p in Path(__file__).parent.iterdir() if p.is_file() and p.suffix in ['.py','.md']]
-    paths.append(ROOT/'run_state_recovery.py');manifest=[]
+    paths.append(ROOT/'core/run_state_recovery.py');manifest=[]
     for source in paths:
         target=snapshot/source.name;shutil.copyfile(source,target)
         manifest.append(dict(path=str(source.relative_to(ROOT)),sha256=sha(target)))

@@ -3,7 +3,7 @@ from pathlib import Path
 import datetime,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage75'),str(ROOT/'research/stage74')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage75'),str(ROOT/'research/stage74')]
 import study75 as raw
 import study74 as base
 OUT=ROOT.parent/'output/stage76_fusion_failure_audit_20261021'

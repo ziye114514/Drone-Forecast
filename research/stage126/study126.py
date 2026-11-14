@@ -1,7 +1,7 @@
 """Actual RAW-only complementary-support deployment and equivalence checks."""
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage124')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage124')]
 import run_support_forecast as entry
 from study124 import sha,save,rows,stable
 OUT=ROOT.parent/'output/stage126_RAW_complementary_support_20261023'
@@ -57,7 +57,7 @@ def check(case):
         cutoff_and_no_cache_reads=True,active_actual_prefix=case.startswith('prefix'),decoded_frames=decoded,labels_read=False,source_hashes_unchanged=True))
     print(json.dumps(dict(case=case,frames=len(rr),checked=True)),flush=True)
 def run(case):
-    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
+    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as log:r=subprocess.run(args,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     assert r.returncode==0,(case,r.returncode);check(case)

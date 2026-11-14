@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from native_body_workspace import BodyWorkspace
 from research.stage6.silhouette import body_measurement
 from check_final_compute import compare

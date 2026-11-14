@@ -10,7 +10,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'research/stage69'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage69'))
 from force69 import ADDED,MODELS as PREVIOUS_MODELS,prior
 ADDED70=['guarded_events','guarded_constants','guarded_all']
 MODELS=PREVIOUS_MODELS+ADDED70

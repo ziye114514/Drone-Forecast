@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,os,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage117'),str(ROOT/'research/stage110'),str(ROOT/'research/stage107'),str(ROOT/'research/stage21')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage117'),str(ROOT/'research/stage110'),str(ROOT/'research/stage107'),str(ROOT/'research/stage21')]
 from fixed117 import FixedModel,geom
 from merge110 import MergeRecovery
 from center107 import CenterBank,NAMES

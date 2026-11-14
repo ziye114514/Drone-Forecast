@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import datetime,hashlib,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage76')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage78'),str(ROOT/'research/stage77'),str(ROOT/'research/stage76')]
 import study78 as actual
 import study77 as cache
 import diagnose76 as audit
@@ -73,8 +73,8 @@ def run():
         completed_scope='76 saved forecast failure decomposition;77 fixed structural controls preserving39;78 actual RAW full49 and additional fixed recordings.',
         default_promoted=False,new_thrust_input_enabled=True,new_thrust_input_scope='Experimental branches only.',
         latest_report=str(report),previous_report=prior['latest_report'],local_report_links_checked=len(parser.local),
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'run_separated_forecast.py'),experimental_RAW_stage=78,
-        previous_IMM_RAW_entry=str(ROOT/'run_hybrid_forecast.py'),experimental_cache_predictor=str(ROOT/'research/stage77/separated77.py'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'core/run_separated_forecast.py'),experimental_RAW_stage=78,
+        previous_IMM_RAW_entry=str(ROOT/'core/run_hybrid_forecast.py'),experimental_cache_predictor=str(ROOT/'research/stage77/separated77.py'),
         stage78_counts=dict(parent=2185,native10=4370,video_frames_decoded=1850),
         unique_current_context_seconds=38.,unique_native10_current_windows_this_round=3800,
         requested_native10_this_round=4370,count_scope='Old23s + fixed additional15s unique current contexts;5.7s prefix repeats. Warm seek/decode excluded.',

@@ -1,7 +1,7 @@
 """One fixed four-visible native review, automatic ring-phase qualification."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from observed_ring_phase import ring_phase_prior
 from pilot_author_phase180 import transformed
 from pure_visibility170 import window

@@ -5,7 +5,7 @@ import cv2,numpy as np
 import study60 as current
 import raw60
 import isolated60
-ROOT=current.ROOT;sys.path.insert(0,str(ROOT));import run_paired_forecast as runner
+ROOT=current.ROOT;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT));import run_paired_forecast as runner
 from rotor_worker60 import worker_source
 REF=current.previous.previous.previous.OUT
 OUT=current.OUT/'forecast'
@@ -15,7 +15,7 @@ SCORING=list(current.CASES);load=current.load;save=current.save;sha=current.sha;
 
 def sources():
     r=isolated60.sources()
-    for p in [Path(__file__),ROOT/'run_paired_forecast.py',Path(__file__).with_name('rotor_worker60.py')]:r[p.relative_to(ROOT).as_posix()]=sha(p)
+    for p in [Path(__file__),ROOT/'core/run_paired_forecast.py',Path(__file__).with_name('rotor_worker60.py')]:r[p.relative_to(ROOT).as_posix()]=sha(p)
     return r
 
 def freeze():

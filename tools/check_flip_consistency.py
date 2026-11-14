@@ -1,7 +1,7 @@
 """Geometry/gradient checks and one real training-image forward before the run."""
 from pathlib import Path
 import json,sys,hashlib,os
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 OUT=WORK/'output/flip_consistency_20261026'
 os.environ.update(YOLO_OFFLINE='true',YOLO_AUTOINSTALL='false',YOLO_CONFIG_DIR=str(OUT/'local_config'))
 import torch,cv2,numpy as np

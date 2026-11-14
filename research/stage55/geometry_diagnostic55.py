@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse, copy, datetime, sys
 import numpy as np
 import study55 as current
-ROOT=current.ROOT;sys.path.insert(0,str(ROOT/'research/stage49'))
+ROOT=current.ROOT;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage49'))
 import rigid49
 OUT=current.OUT;CASES=['clear6','side6','train3'];PROTOCOL=OUT/'geometry_diagnostic_supplement.json'
 

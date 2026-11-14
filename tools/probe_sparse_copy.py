@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib, json, sys, time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from rotor_cuda_device import DeviceRotorFront
 
 
@@ -34,7 +34,7 @@ def main(output):
         includes_same_device_compute=True,includes_IPC_geometry_decode=False,
         actual_30Hz_or_pipeline_gain_proven=False,
         shape_warmup_each_arm=True,
-        source_sha256=hashlib.sha256((ROOT/'rotor_cuda_device.py').read_bytes()).hexdigest())
+        source_sha256=hashlib.sha256((ROOT/'core/rotor_cuda_device.py').read_bytes()).hexdigest())
     result['per_clip']={clip:{str(fused):float(np.median([r['ms'] for r in records if r['clip']==clip and r['fused']==fused]))
         for fused in [False,True]} for clip,_,_ in windows}
     for fused in [False,True]:

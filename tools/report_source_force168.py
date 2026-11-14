@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from local_period_tracks import LocalPeriodTracks
 BASE=ROOT.parent/'output/source_force168_20261105'
 
@@ -27,7 +27,7 @@ if __name__=='__main__':
     for r in rows:assert track.step(r['t'],r.get('local_temporal_phase') or {})==r['local_source_tracking']
     (BASE/'native_trace_current_code_check.json').write_text(json.dumps(dict(frames=len(rows),current_tracker_reproduces_saved_trace=True,
         later_change='unsupported_normalized_gauge_restart',affects_this_run=False,
-        current_tracker_sha256=hashlib.sha256((ROOT/'local_period_tracks.py').read_bytes()).hexdigest()),indent=2),'utf-8')
+        current_tracker_sha256=hashlib.sha256((ROOT/'core/local_period_tracks.py').read_bytes()).hexdigest()),indent=2),'utf-8')
     fig,axes=plt.subplots(2,2,figsize=(12,8),layout='constrained')
     clips=['pure_side','pure_train2'];x=np.arange(len(clips));width=.35
     axes[0,0].bar(x-width/2,[info[c]['force_inputs']['legacy_algebra'] for c in clips],width,label='正确解析的原输入')

@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 import datetime,hashlib,json,re,sys,zipfile
 from urllib.parse import unquote,urlsplit
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage73'),str(ROOT/'research/stage71'),str(ROOT/'research/stage68')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage73'),str(ROOT/'research/stage71'),str(ROOT/'research/stage68')]
 import study73 as latest
 import study71 as actual
 import study68 as observation
@@ -49,9 +49,9 @@ def run():
         raw_count_scope='All68/71/pilot73 old intervals overlap73 main; do not add repeated contexts as independent samples.',
         new_thrust_input_enabled=True,new_thrust_input_scope='Experimental69/71/72/73 branches only, not default.',
         default_promoted=False,latest_report=str(report),local_report_links_checked=len(parser.local),
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),
-        experimental_RAW_entry=str(ROOT/'run_force_innovation_forecast.py'),experimental_RAW_stage=73,
-        absolute_force_RAW_entry=str(ROOT/'run_event_force_forecast.py'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),
+        experimental_RAW_entry=str(ROOT/'core/run_force_innovation_forecast.py'),experimental_RAW_stage=73,
+        absolute_force_RAW_entry=str(ROOT/'core/run_event_force_forecast.py'),
         experimental_cache_predictor=str(ROOT/'research/stage72/increment72.py'),
         temporal_extension_scores=str(OUT/'temporal_scores73.json'),
         inventory_file=str(OUT/'process_inventory_20261021.json'),

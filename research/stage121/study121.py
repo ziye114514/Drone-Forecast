@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage121'),str(ROOT/'research/stage119')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage121'),str(ROOT/'research/stage119')]
 from validation121 import ValidatedSelector,PARAMS
 from study119 import OUT as INPUT,rows,save,sha,stable,NAMES,REFERENCE
 OUT=ROOT.parent/'output/stage121_causal_model_validation_20261023'

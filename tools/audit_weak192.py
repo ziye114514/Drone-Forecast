@@ -1,7 +1,7 @@
 """Locate native-event loss before modifying frequency or spatial gates."""
 from pathlib import Path
 import sys,json,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from pure_visibility170 import window
 from moving_event_proposal import propose
 BASE=ROOT.parent/'output';OUT=BASE/'weak192_20261107'

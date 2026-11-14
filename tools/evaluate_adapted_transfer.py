@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,os,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 parser=argparse.ArgumentParser();parser.add_argument('--model-dir',type=Path);parser.add_argument('--no-roi',action='store_true')
 parser.add_argument('--baseline-model-dir',type=Path,help='Explicit export.json baseline; default retains the historical original.')
 args=parser.parse_args()

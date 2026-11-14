@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,time,os
 for variable in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):os.environ[variable]='1'
 import numpy as np,torch,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from predictive_harmonics_cuda import predictive_harmonics_cuda
 
 

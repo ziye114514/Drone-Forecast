@@ -16,7 +16,7 @@ import sys
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'research/stage14')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'research/stage14')]
 from motion import build_filters, first_fix  # noqa: E402
 
 SUB_STEP = 0.05          # ADE is integrated on this grid inside each horizon

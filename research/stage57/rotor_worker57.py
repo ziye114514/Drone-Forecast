@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse, hashlib, sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage55'),str(ROOT/'research/stage54')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage55'),str(ROOT/'research/stage54')]
 import rotor_worker55 as previous
 from packets54 import PacketReader
 from roi55 import validate_hint_request

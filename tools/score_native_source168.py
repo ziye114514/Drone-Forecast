@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_nn_rotor166 import load,score,paired
 OUT=ROOT.parent/'output/source_force168_20261105/native_cache_tracked'
 if __name__=='__main__':

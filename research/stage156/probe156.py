@@ -2,10 +2,10 @@
 from pathlib import Path
 import sys,json,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_optimized_forecast as main
 from parallel156 import fronts,Pool,one
-main.install_shared_objective();sys.path.insert(0,str(ROOT/'research/stage153'))
+main.install_shared_objective();sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage153'))
 from lm153 import install
 install()
 OUT=ROOT.parent/'output/stage156_parallel_geometry_20261024';OUT.mkdir(exist_ok=True)

@@ -1,7 +1,7 @@
 """A body-reference correction must not move any current image geometry."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from fast_structure_front import FastStructure
 from coherent_gap_observer import ShortGapObserver
 OUT=ROOT.parent/'output/reference175_20261107'

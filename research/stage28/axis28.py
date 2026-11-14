@@ -4,7 +4,7 @@ import importlib.util,sys
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage27'),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage27'),str(ROOT/'src')]
 import physics27 as prior
 from event_drone_forecast.paper_physics import ThrustAxisFilter,unit
 

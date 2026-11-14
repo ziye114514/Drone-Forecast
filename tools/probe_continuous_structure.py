@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,copy,time
 from collections import Counter
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from continuous_five_circle import ContinuousFiveCircle
 from five_circle_model import FiveCircleModel
 from research.stage146.branches146 import BranchGeometry,plane_axis

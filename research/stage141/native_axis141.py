@@ -6,7 +6,7 @@ from the forecast and never changes force/acceleration merely due to a tone.
 from pathlib import Path
 import sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage79')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage79')]
 import native79
 from event_drone_forecast.geometry import _line
 PARAMS=dict(native_configuration='strict7',frequency_range_hz=[60.,1200.],minimum_body_confidence=.45,

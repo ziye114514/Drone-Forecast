@@ -1,7 +1,7 @@
 """Local report from frozen evidence; no new forecasting or model selection."""
 from pathlib import Path
 import hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from diagnose_maneuver_horizon import OUT,SPECS
 
 

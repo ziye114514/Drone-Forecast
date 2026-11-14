@@ -2,7 +2,7 @@
 from pathlib import Path
 import copy,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from motion_observability import WeakSemanticMotion,visible_motion_box
 from live_local_flow import box,reused_similarity
 from shared_image_motion import SharedImageMotion

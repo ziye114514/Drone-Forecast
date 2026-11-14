@@ -7,7 +7,7 @@ import json,sys,time,argparse
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent
 OUT=WORK/'output/stage148_temporal_rotors_20261024'
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage148'),str(ROOT/'research/stage129')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage148'),str(ROOT/'research/stage129')]
 from temporal148 import BranchObserver
 from polarity import counts
 from event_drone_forecast.raw_io import open_raw,raw_chunks

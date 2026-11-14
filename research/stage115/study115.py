@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,collections,copy,datetime,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage114'),str(ROOT/'research/stage113'),str(ROOT/'research/stage112'),str(ROOT/'research/stage110')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage114'),str(ROOT/'research/stage113'),str(ROOT/'research/stage112'),str(ROOT/'research/stage110')]
 from weak114 import recover,PARAMS as RECOVERY_PARAMS
 from capture112 import SupportFrontend,key,OUT as SUPPORT
 from study113 import geom,stable,CenterBank,NAMES

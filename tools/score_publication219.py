@@ -1,7 +1,7 @@
 """Fixed wall-source queries; include unavailable outputs in denominator."""
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from physical_publication import evaluate
 from compare_final_pipeline import reference_at,stats
 

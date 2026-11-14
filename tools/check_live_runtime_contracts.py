@@ -60,7 +60,7 @@ def backend_contract():
 
 def worker_contract():
     old=node(tree(ROOT/'research/stage47/worker47.py'),'main')
-    new=node(tree(ROOT/'live_worker.py'),'main')
+    new=node(tree(ROOT/'core/live_worker.py'),'main')
     def request_loop(function):
         return next(n for n in ast.walk(function) if isinstance(n,ast.For)
                     and isinstance(n.iter,ast.Attribute) and ast.unparse(n.iter)=='sys.stdin')
@@ -72,7 +72,7 @@ def worker_contract():
     RenameBackend().visit(loop)
     assert dump(loop)==dump(request_loop(new)),'GPU request/NMS/association protocol changed'
     imports=[]
-    for n in ast.walk(tree(ROOT/'live_worker.py')):
+    for n in ast.walk(tree(ROOT/'core/live_worker.py')):
         if isinstance(n,ast.Import):imports.extend(a.name for a in n.names)
         if isinstance(n,ast.ImportFrom):imports.append(n.module)
     assert not any(n and n.startswith(('graph45','common44','common41')) for n in imports)

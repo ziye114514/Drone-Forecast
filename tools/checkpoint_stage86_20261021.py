@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import datetime,hashlib,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-for n in [79,80,81,82,83,84,85]:sys.path.insert(0,str(ROOT/f'research/stage{n}'))
+for n in [79,80,81,82,83,84,85]:sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/f'research/stage{n}'))
 import study79,study80,study81,study82,study83,study84,study85
 MODULES=[study79,study80,study81,study82,study83,study84,study85]
 load=study79.load;save=study79.save;sha=study79.sha;OUT=study85.OUT
@@ -119,8 +119,8 @@ def run():
         completed_scope='79 native SDK input diagnosis;80/82/84 exact computation controls;81/83v2/85 complete RAW deployment;86 recorded deadline audit.',
         default_promoted=False,new_thrust_input_enabled=True,new_thrust_input_scope='Existing78 event branches only; new79 native SDK candidates disabled.',
         latest_report=str(report),previous_report=prior.get('latest_report'),local_report_links_checked=links,
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'run_batched_forecast.py'),experimental_RAW_stage=85,
-        previous_separated_RAW_entry=str(ROOT/'run_separated_forecast.py'),previous_streamed_RAW_entry=str(ROOT/'run_stream_forecast.py'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'core/run_batched_forecast.py'),experimental_RAW_stage=85,
+        previous_separated_RAW_entry=str(ROOT/'core/run_separated_forecast.py'),previous_streamed_RAW_entry=str(ROOT/'core/run_stream_forecast.py'),
         counts_by_stage=delivery['checks'],all49_exact78=True,accuracy_changed=False,
         stable_high_accuracy_realtime_achieved=False,event_RPM_advantage_proven=False,
         same_prefix_recorded_timing=metrics,no_G_or_yolov10_main_access=True,new_dependencies_installed=False,

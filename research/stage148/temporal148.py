@@ -11,7 +11,7 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage147'),str(ROOT/'research/stage146')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage147'),str(ROOT/'research/stage146')]
 import branches146 as old
 from residual148 import ResidualExpert
 from guided148 import GuidedFrontend

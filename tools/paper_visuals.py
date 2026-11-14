@@ -4,7 +4,7 @@ from collections import deque
 import argparse,json,sys
 import cv2,numpy as np
 from PIL import Image
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 from event_drone_forecast.motion import extrapolate
 

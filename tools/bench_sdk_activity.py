@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,time,json
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT.parent/'.cache/numba_cpu_064'),str(ROOT.parent/'.cache/sdk_activity_avx2')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT.parent/'.cache/numba_cpu_064'),str(ROOT.parent/'.cache/sdk_activity_avx2')]
 from llvmlite.binding import get_host_cpu_features
 if not get_host_cpu_features().get('avx2'):raise RuntimeError('Host AVX2 required')
 from _edf_sdk_activity import ActivityAdapter,compiled_AVX2

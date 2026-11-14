@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 from study import ROOT,OUT,save,verify
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from run_guarded import source_hashes
 
 def main():
@@ -19,6 +19,6 @@ def main():
             evidence_scope='Post-diagnostic development fix, not unseen test superiority. Known failure: small target without rotor confirmation remains unavailable.'))
         print('Guarded experiment frozen',flush=True);return
     protocol=json.loads(p.read_text());assert protocol['source_hashes']==source_hashes();case=protocol['cases'][a.action]
-    subprocess.run([sys.executable,str(ROOT/'run_guarded.py'),'--raw',case['raw'],'--duration',str(case['duration_s']),'--output',str(dest/a.action)],check=True)
+    subprocess.run([sys.executable,str(ROOT/'core/run_guarded.py'),'--raw',case['raw'],'--duration',str(case['duration_s']),'--output',str(dest/a.action)],check=True)
 
 if __name__=='__main__':main()

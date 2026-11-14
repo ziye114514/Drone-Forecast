@@ -2,7 +2,7 @@
 from pathlib import Path
 import copy,itertools,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage119')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage119')]
 from study119 import OUT,OLD,REFERENCE,rows,save,stable,baseline
 from partial119 import PartialModel,fit_three
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 p=argparse.ArgumentParser();p.add_argument('--mode',choices=['default','disabled'],required=True)
 p.add_argument('--output',type=Path,required=True);args=p.parse_args()

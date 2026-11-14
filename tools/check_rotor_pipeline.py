@@ -2,7 +2,7 @@
 from pathlib import Path
 import importlib.util,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from rotor_support_front import rotor_support,density_mask,components
 from rotor_only_front import native_reconstruction
 

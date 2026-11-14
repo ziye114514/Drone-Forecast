@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 for k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ[k]='1'
 import sys,json,time,cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from batched_arc_fit import fit_arc_exact,distances_batch
 from fast_geometry_compute import fit_arc_fast
 from research.stage147.curvature147 import notches

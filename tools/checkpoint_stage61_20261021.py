@@ -3,7 +3,7 @@ from pathlib import Path
 import datetime,hashlib,importlib.util,json,re,sys,zipfile
 import cv2
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage61'),str(ROOT/'research/stage60')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage61'),str(ROOT/'research/stage60')]
 import study61 as current
 import delivery61
 import forecast60
@@ -39,7 +39,7 @@ def run():
     assert not (forecast60.OUT/'analysis.json').exists() and not (forecast60.OUT/'raw_prefix_checks.json').exists()
     assert not (forecast60.OUT/'negative5').exists() and not (forecast60.OUT/'prefix_side6').exists() and not (prior/'future_delivery.json').exists()
     save(prior/'stopped_future_attempt_inventory.json',dict(status='Stopped on strict train3 current-geometry regression at26.17; no future scoring, no full-prefix check.',written_and_video_decoded=written,
-        no_future_truth_scoring=True,do_not_run_unchanged60=True,retained_frozen_entry=str(ROOT/'run_paired_forecast.py'),next='Use61 StablePairedFrontend for both baseline/off and paired modes, then fresh full future protocol.'))
+        no_future_truth_scoring=True,do_not_run_unchanged60=True,retained_frozen_entry=str(ROOT/'core/run_paired_forecast.py'),next='Use61 StablePairedFrontend for both baseline/off and paired modes, then fresh full future protocol.'))
     # Pin the actual binary/runtime, in addition to Python source.
     cvfolder=Path(cv2.__file__).parent;binary={p.relative_to(cvfolder).as_posix():dict(bytes=p.stat().st_size,sha256=sha(p)) for p in cvfolder.rglob('*') if p.suffix.lower() in ['.pyd','.dll']}
     assert binary and cv2.__version__==cause['opencv_version']=='5.0.0'
@@ -61,7 +61,7 @@ def run():
     summary.update(completed_scope='Stage numbers60/61 refer to delivered current-module diagnostics only;60 formal future attempt failed before scoring,61 formal future not started.',
         incomplete_attempts=[dict(stage=60,part='full_RAW15_forecast',status='stopped_strict_geometry_regression_failure',future_scored=False,prefix_checked=False,original_outputs_preserved=True)],
         next_action='Start new61 formal protocol/worker/entry using61 StablePairedFrontend injected into existing60 shared-worker namespace. line_mode=off keeps preline active as stable baseline; paired adds60 pairing/fusion. Same clear22-24/side108-113/train3 25-31/empty0-1 RAW, full original frequency/15/RLS, same NN body/six-history/coverage. Wide pilot with no thin route may exactly57; corrected rotor geometry need not exactly old random ellipses. Independent actual RAW prefix must exactly all new states and semantic event hashes. Save all predictions before original22 sparse scoring. Pin runtime61 binary/build. Do not resume unchanged60 or report its unexecuted delivery draft as complete. No new62 started.',
-        latest_report=str(folder/'第六十一阶段先判线再拟合椭圆报告.html'),latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),
+        latest_report=str(folder/'第六十一阶段先判线再拟合椭圆报告.html'),latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),
         experimental_frontend=str(ROOT/'research/stage61/preline61.py'),default_promoted=False,new_future_scoring=False,
         stage61_unique_native10=300,stage61_total_RAW_window_reads=600,all_RNG_controls_exact=True,
         stage60_actual_written_partial_future_counts=written,stage60_full_future_complete=False,

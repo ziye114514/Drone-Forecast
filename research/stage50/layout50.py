@@ -3,7 +3,7 @@ from pathlib import Path
 import itertools,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage4'),str(ROOT/'research/stage33')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage4'),str(ROOT/'research/stage33')]
 import tracker as skeleton
 from slots33 import ReplaceStale,RotorSensing,PaperConfig,geometry_record
 

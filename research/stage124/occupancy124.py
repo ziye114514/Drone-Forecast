@@ -8,7 +8,7 @@ import ast,inspect,sys,textwrap
 import cv2
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage110'),str(ROOT/'research/stage55')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage110'),str(ROOT/'research/stage55')]
 from merge110 import MergeRecovery
 from roi55 import GeometryROI
 import polarity

@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage9'),str(ROOT/'research/stage55')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage9'),str(ROOT/'research/stage55')]
 from recovery import RecoveryFrontend
 from roi55 import GeometryROI
 

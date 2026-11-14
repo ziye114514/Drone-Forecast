@@ -9,7 +9,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import plot_input_learning
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path.insert(0,str(ROOT/'research/stage88'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage88'))
 from inventory88 import save,load,sha
 OUT=WORK/'output/stage93_RAW_complementary_20261022'
 DATA=WORK/'output/stage100_official195_longer_20261022'
@@ -35,7 +35,7 @@ def main():
     recovered=load(WORK/'output/stage102_resumable_native_download_20261022/completion102.json');assert recovered['native_sha256']==native['native_sha256']
     background=load(WORK/'output/stage103_background_motion_audit_20261022/checks103.json')
     for stage,name in [(93,'study93'),(99,'study99'),(100,'longer100')]:
-        sys.path.insert(0,str(ROOT/f'research/stage{stage}'));importlib.import_module(name).verify()
+        sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/f'research/stage{stage}'));importlib.import_module(name).verify()
     for path,h in load(WORK/'output/stage101_complementary_API_20261022/protocol101.json')['source_hashes'].items():assert sha(path)==h
     assert sha(ROOT/'research/stage103/background103.py')==load(WORK/'output/stage103_background_motion_audit_20261022/protocol103.json')['source_sha256']
     mm={r['method']:r for r in s['table'] if r['horizon']==.4 and r['group']=='all'}
@@ -94,7 +94,7 @@ def main():
     summary=dict(prior);summary.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=103,completed=list(range(19,104)),
         execution_status='checkpoint_ready',research_objective_status='incomplete',in_progress=[],experiments_running=[],latest_report=str(report),
         latest_full_forecast_report=str(report),latest_full_forecast_stage=93,latest_native_diagnostic_stage=100,latest_API_stage=101,
-        experimental_API_entry=str(ROOT/'complementary_raw_api.py'),compatibility_API_still_targets=85,
+        experimental_API_entry=str(ROOT/'core/complementary_raw_api.py'),compatibility_API_still_targets=85,
         data195=native['path'],new_recording_event_gain_criterion_met=event_supported,default_promoted=False,
         new_thrust_input_enabled=True,new_thrust_input_scope='Original78 relative-periodic paths retained in RAW93; per-rotor99/100 native-benchmark inputs not promoted to RAW93.',
         prior_archive=prior['archive'],prior_archive_sha256=prior['archive_sha256'],
@@ -107,7 +107,7 @@ def main():
             p=WORK/n
             if p.is_file():files.add(p)
     for stage in range(100,104):files.update(p for p in (ROOT/f'research/stage{stage}').rglob('*') if p.suffix in ['.py','.md'] and '__pycache__' not in p.parts)
-    files.update([Path(__file__),ROOT/'tools/plot_input_learning.py',ROOT/'complementary_raw_api.py',status,readme,work])
+    files.update([Path(__file__),ROOT/'tools/plot_input_learning.py',ROOT/'core/complementary_raw_api.py',status,readme,work])
     for pattern in ['stage100_*','stage101_*','stage102_*','stage103_*','stage93_RAW_complementary_*']:
         for folder in (WORK/'output').glob(pattern):files.update(p for p in folder.rglob('*') if p.is_file() and p.suffix in ['.json','.html','.txt','.md','.log'] and p.stat().st_size<2_000_000)
     archive=WORK/'output/checkpoints'/('research_through_stage103_'+datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f')+'.zip')

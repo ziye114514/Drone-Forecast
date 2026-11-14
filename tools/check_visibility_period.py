@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from visibility_period import VisibilityPeriodProxy,LegacyPeriodProxy,ConservativeSlotPeriodProxy
 
 

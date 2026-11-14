@@ -8,7 +8,7 @@ from types import FunctionType
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'research/stage29'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage29'))
 import select29
 
 HISTORY=['cv','trusted_acc','kf_tuned']

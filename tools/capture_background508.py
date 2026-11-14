@@ -1,7 +1,7 @@
 """One frozen candidate, actual six RAW, old102 intact, replay parity required."""
 from pathlib import Path
 import os,sys,json,subprocess,hashlib,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from physical_publication import evaluate
 from extend_inverse321 import references

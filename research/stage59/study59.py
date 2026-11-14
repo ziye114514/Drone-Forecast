@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,html,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage58'),str(ROOT/'research/stage57'),str(ROOT/'research/stage49')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage58'),str(ROOT/'research/stage57'),str(ROOT/'research/stage49')]
 import study58 as previous
 import rigid49 as rigid
 import line59 as line

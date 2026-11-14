@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse,unquote
 import datetime,hashlib,json,sys,zipfile
 ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT/'research/stage128')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage128')]
 from study128 import OUT,verify,rows,save,sha
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))
 class Links(HTMLParser):
@@ -65,7 +65,7 @@ def main():
     hpath=WORK/'output/checkpoints/latest_handoff.json';handoff=load(hpath);previous=Path(handoff.get('archive') or handoff['prior_archive']);previous_sha=handoff.get('archive_sha256') or handoff['prior_archive_sha256'];assert sha(previous)==previous_sha
     handoff.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),execution_status='checkpoint_ready',research_objective_status='incomplete',last_completed_stage=129,
         algorithm_stage=129,latest_full_forecast_stage=128,experimental_RAW_stage=128,latest_RAW_geometry_stage=129,latest_diagnostic_stage=129,latest_RAW_pilot_stage=129,
-        latest_full_forecast_report=str(report128),latest_report=str(report),latest_checks=str(final129/'final_checks129.json'),experimental_RAW_entry=str(ROOT/'run_independent_support_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'run_FOV_guard_forecast.py'),recommended_forecast_research_stage=122,
+        latest_full_forecast_report=str(report128),latest_report=str(report),latest_checks=str(final129/'final_checks129.json'),experimental_RAW_entry=str(ROOT/'core/run_independent_support_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'core/run_FOV_guard_forecast.py'),recommended_forecast_research_stage=122,
         next_action='ROI pixel temporal periodicity to reject body edges; separate shape-learning and first-frame image gauge bias from position dynamics.129 FOV guard withdraws invalid early lock,235 current and37.642px futureBOX vs33.679 old. Keep diagnostic, do not promote. Side/overlap startup still0; no fake hubs/gate relaxation. CLI/process-safe API; lightweight scheduler then checker/plots, not concurrent heavy parents.',
         completion_scope='Full RAW128790 with original69 exact123/old70 clear exact126;129 additional RAW90 pilot preserves original71. Apparent8-update early-lock gain retracted after6 outside-FOV fits; guard corrects completeness but cached futureBOX regresses. Full1298s/side/COM/RPM/realtime and independent innovation benefit incomplete.',
         source_summary_files=[str(WORK/'PROJECT_STATUS_20261022.md'),str(worklog),str(ROOT/'README.md'),str(ROOT/'research/stage129/README.md')],
@@ -83,7 +83,7 @@ def main():
     save(OUT/'final_checks128.json',dict(report_local_links_checked=checked,interrupted_records_preserved=n,all_checks_complete=True,default_promoted=False,RAW_input_files_size_mtime_unchanged=True,bytewise_RAW_checksum_not_performed=True))
     save(final129/'final_checks129.json',dict(actual128_RAW790_complete=True,actual129_RAW90_pilot_complete=True,original71_prefix60_exact=True,guard_current=235,guard_first22_86=True,apparent_early_gain_retracted=True,guarded_future_error_px=d129['guarded_score'],full129_end_to_end8s=False,default_promoted=False,report_local_links_checked=checked))
     current={}
-    for path in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'run_support_forecast.py',ROOT/'run_independent_support_forecast.py',ROOT/'run_FOV_guard_forecast.py']:
+    for path in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'core/run_support_forecast.py',ROOT/'core/run_independent_support_forecast.py',ROOT/'core/run_FOV_guard_forecast.py']:
         current[path.relative_to(WORK).as_posix()]=path.read_bytes()
     for stage in range(124,130):
         for path in (ROOT/f'research/stage{stage}').rglob('*'):

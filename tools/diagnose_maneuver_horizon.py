@@ -6,7 +6,7 @@ an exact signed-vector error accounting conditional on that noisy reference.
 """
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at,stats
 OUT=ROOT.parent/'output/maneuver_response_20261029'
 SPECS=[('side','motion_consistency_30px_20261028/RAW_side_release_candidate8s/predictions.jsonl','dense_labels_side_110_1195'),

@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage131'),str(ROOT/'research/stage130')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage131'),str(ROOT/'research/stage130')]
 from dynamics131 import Optimized131,PARAMS,forecast
 from optimize130 import CASES,BODY,INPUT,REFERENCE,rows,save,sha,stable
 OUT=ROOT.parent/'output/stage131_damped_prediction_20261024'

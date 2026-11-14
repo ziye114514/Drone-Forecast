@@ -1,7 +1,7 @@
 """Score all predeclared gated modes after annotation-free inference."""
 from pathlib import Path
 import sys,json,zipfile
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_nn_rotor166 import QUERIES,score,paired,load
 from nn_rotor_gate import evaluate_gated
 

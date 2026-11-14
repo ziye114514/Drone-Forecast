@@ -2,7 +2,7 @@
 from pathlib import Path
 import importlib.util,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 import live_flow_acceleration as current
 from live_scale_rollout import ScaleRolloutMotion
 from live_local_flow import velocity_coefficient
@@ -44,5 +44,5 @@ result=dict(exact_coefficients_and_audits_by_case=checks,nonlinear_solver_calls=
     all_fixed_sequence_outputs_exact=True,timing=summary,RAW_or_GPU_started=False,labels_read=False,
     scope='Observer CPU cost only on fixed actual/cached states. No new point accuracy or pipeline timing claim.')
 (OUT/'comparison.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
-(OUT/'source_before.py').write_bytes(frozen.read_bytes());(OUT/'source_after.py').write_bytes((ROOT/'live_flow_acceleration.py').read_bytes())
+(OUT/'source_before.py').write_bytes(frozen.read_bytes());(OUT/'source_after.py').write_bytes((ROOT/'core/live_flow_acceleration.py').read_bytes())
 print(json.dumps(result),flush=True)

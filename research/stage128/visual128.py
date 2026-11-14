@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage128')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage128')]
 from study124 import OUT as INPUT,CASES,rows,save
 from study128 import OUT
 def figures():

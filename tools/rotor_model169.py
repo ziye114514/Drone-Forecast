@@ -5,7 +5,7 @@ No weights or coordinate annotations are loaded by this standalone exporter.
 """
 from pathlib import Path
 import argparse,sys,json
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from rotor_evidence import RotorEvidence,VisibilityLayout
 from local_period_tracks import LocalPeriodTracks
 from run_rotor_only import serial

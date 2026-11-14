@@ -4,7 +4,7 @@ from multiprocessing import shared_memory
 from collections import Counter
 import hashlib,json,subprocess,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT)]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from forecast_runtime import resolve
 from live_decode import native_batches
 from run_live_forecast import receive
@@ -19,7 +19,7 @@ for name in ['live_roi_refine.py','live_worker.py','tools/probe_roi_refine.py']:
 runtime=resolve();memory=shared_memory.SharedMemory(create=True,size=720*1280*3);image=np.ndarray((720,1280,3),np.uint8,buffer=memory.buf)
 log=(OUT/'gpu_worker.log').open('x',encoding='utf-8');gpu=None;counter=0;results={}
 try:
-    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'live_worker.py'),'--shared-memory',memory.name,
+    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'core/live_worker.py'),'--shared-memory',memory.name,
         '--weights',runtime['detector_weights'],'--expected-sha256',runtime['detector_sha256'],'--cache-dir',runtime['cache_dir']],
         stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=log,text=True,encoding='utf-8',bufsize=1,
         creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

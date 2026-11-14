@@ -1,7 +1,7 @@
 """Known shared affine and unequal rotor energy; no real-flight accuracy claim."""
 from pathlib import Path
 import sys,json,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from native_plane_motion import estimate_plane_motion
 
 if __name__=='__main__':

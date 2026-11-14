@@ -2,12 +2,12 @@
 from pathlib import Path
 import json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_center_ensemble import blend_current,DESIGN
 from live_motion import LiveMotion,predictions
 from summarize_live_pilot import reference_at,stats,read_rows
 OUT=WORK/'output/equal_center_ensemble_20261026';OUT.mkdir(exist_ok=False)
-(OUT/'live_center_ensemble.py').write_bytes((ROOT/'live_center_ensemble.py').read_bytes())
+(OUT/'live_center_ensemble.py').write_bytes((ROOT/'core/live_center_ensemble.py').read_bytes())
 (OUT/'design.json').write_text(json.dumps(dict(**DESIGN,
     motivation='Whole adapted model mixed results; try one standard equal ensemble, original starts/observability preserved. Exploratory new mechanism, no weight sweep.',
     gate='Both .4s means decrease; .1s neither worsens more than1px; all original valid targets retained.'),indent=2),encoding='utf-8')

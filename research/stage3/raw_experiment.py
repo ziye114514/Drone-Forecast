@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 from experiments import ROOT,OUT,verify,save
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from run_normals import source_hashes
 
 def main():
@@ -22,6 +22,6 @@ def main():
             caveat='Earlier used local development videos. Single-arc audit still failed some short arcs; retained as separate experimental arm, not default.'))
         print('RAW ablation protocol frozen',flush=True);return
     p=json.loads(protocol.read_text());assert p['source_hashes']==source_hashes();case=p['cases'][a.action]
-    subprocess.run([sys.executable,str(ROOT/'run_normals.py'),'--raw',case['raw'],'--start',str(case['start']),'--duration',str(case['duration']),'--output',str(folder/a.action)],check=True)
+    subprocess.run([sys.executable,str(ROOT/'core/run_normals.py'),'--raw',case['raw'],'--start',str(case['start']),'--duration',str(case['duration']),'--output',str(folder/a.action)],check=True)
 
 if __name__=='__main__':main()

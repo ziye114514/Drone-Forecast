@@ -9,7 +9,7 @@ import argparse,hashlib,json,shutil,sys,time
 from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(Path(__file__).parent),str(ROOT)]
+sys.path[:0]=[str(ROOT/'core'),str(Path(__file__).parent),str(ROOT)]
 from reference_api import AuthorTracker,OUT
 from sign_bank import SignBank
 from live_decode import native_batches
@@ -64,7 +64,7 @@ last_frequency={i:parent['seeds'][str(i)]['frequency_hz'] for i in banks}
 records=[];wall=time.perf_counter()
 period_engine=None
 if args.pixel_period_check:
-    sys.path.insert(0,str(ROOT/'research/stage79'))
+    sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage79'))
     import native79
     period_engine=native79.engine(1280,720,'strict7');period_output=period_engine.get_empty_output_buffer()
 current_q=None

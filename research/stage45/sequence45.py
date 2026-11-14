@@ -3,7 +3,7 @@ import argparse,datetime,importlib.util,json,os,shutil,sys,time
 import cv2,numpy as np
 from graph45 import *
 INPUT=common44.INPUT;SEQ=OUT/'sequence'
-sys.path[:0]=[str(ROOT/'research/stage41'),str(ROOT/'research/stage23')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage41'),str(ROOT/'research/stage23')]
 
 def freeze():
     assert not (SEQ/'protocol.json').exists();p=verify();parent=load(INPUT/'protocol.json');metadata=dict(parent)

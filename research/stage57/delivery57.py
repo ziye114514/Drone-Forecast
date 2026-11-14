@@ -4,7 +4,7 @@ from collections import Counter
 import argparse,datetime,hashlib,html,inspect,sys
 import numpy as np
 import study57 as current
-sys.path[:0]=[str(current.ROOT/'research/stage55'),str(current.ROOT/'research/stage50')]
+sys.path[:0]=[str(ROOT/'core'),str(current.ROOT/'research/stage55'),str(current.ROOT/'research/stage50')]
 import delivery55 as old
 import layout50 as layout
 OUT=current.OUT;CASES=['clear6','side6','train3'];MODELS=['trusted_acc','adaptive_axis_freq','adaptive_all_mix']

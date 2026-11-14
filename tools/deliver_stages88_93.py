@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path.insert(0,str(ROOT/'research/stage88'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage88'))
 from inventory88 import load,save,sha,parse,unique_rows
 OUT=WORK/'output/stage93_RAW_complementary_20261022'
 B88=WORK/'output/stage88_causal_event_controls_20261022'

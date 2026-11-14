@@ -1,7 +1,7 @@
 """Current20ms geometry availability control, unchanged104 geometry gates."""
 from pathlib import Path
 import argparse,collections,datetime,hashlib,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage104')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage104')]
 from rigid104 import PlanarCenter,PARAMS
 OUT=ROOT.parent/'output/stage108_current20_geometry_20261022'
 INPUT=ROOT.parent/'output/stage106_continuous_screen_20261022/raw/observations_forecasts.jsonl'

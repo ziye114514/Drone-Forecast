@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,collections,copy,datetime,hashlib,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage119'),str(ROOT/'research/stage113'),str(ROOT/'research/stage110')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage119'),str(ROOT/'research/stage113'),str(ROOT/'research/stage110')]
 from partial119 import PartialModel,PARAMS,geom,project
 from study113 import stable,CenterBank,NAMES
 from audit109 import rows,save,sha

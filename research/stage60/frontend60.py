@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage57'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage57'))
 from gating57 import CandidateFrontend
 import pairs60 as pairs
 import profile60 as profile

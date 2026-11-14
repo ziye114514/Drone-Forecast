@@ -3,7 +3,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage93'),str(ROOT/'research/stage23'),str(ROOT/'research/stage77')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage93'),str(ROOT/'research/stage23'),str(ROOT/'research/stage77')]
 from online93 import OnlineExtras as Previous,Kinematic
 from robust23 import Predictor as History
 from separated77 import SeparatedBank

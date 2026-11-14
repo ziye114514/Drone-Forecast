@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(Path(__file__).resolve().parent)]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(Path(__file__).resolve().parent)]
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 from metavision_sdk_cv import ActivityNoiseFilterAlgorithm
 from sdkflow151 import FlowObservation,MotionState,PARAMS

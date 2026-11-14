@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from live_innovation_motion import InnovationMotion,DESIGN
 from summarize_live_pilot import reference_at,stats,read_rows
@@ -12,7 +12,7 @@ design=dict(**DESIGN,scope='One fixed candidate, no RAW/NN rerun. Known developm
     sources=['https://arxiv.org/abs/2112.12082','https://filterpy.readthedocs.io/en/latest/kalman/KalmanFilter.html'],
     not_a_reproduction_of_referenced_paper=True,
     provisional_pass_before_new_RAW='Both independent-clock side/train2 .4s means improve; neither .1s mean worsens by more than1px. No default promotion from this replay alone.',
-    module_sha256=hashlib.sha256((ROOT/'live_innovation_motion.py').read_bytes()).hexdigest())
+    module_sha256=hashlib.sha256((ROOT/'core/live_innovation_motion.py').read_bytes()).hexdigest())
 (OUT/'design.json').write_text(json.dumps(design,indent=2),encoding='utf-8')
 results={}
 for cohort,folder in [('old_live','live_forecast_final_v2_20261025'),('independent_clock','live_body_association_v2_20261025')]:

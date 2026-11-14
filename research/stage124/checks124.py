@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage124')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage124')]
 from occupancy124 import SupportFrontend,MergeRecovery
 from study124 import save,OUT
 from polarity import counts

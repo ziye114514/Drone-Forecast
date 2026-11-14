@@ -6,7 +6,7 @@ import datetime,hashlib,importlib,json,os,sys,zipfile
 import numpy as np
 import deliver_stages88_97 as deliver
 ROOT=deliver.ROOT;WORK=ROOT.parent;OUT=deliver.OUT
-sys.path.insert(0,str(ROOT/'research/stage88'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage88'))
 from inventory88 import save,load,sha
 
 
@@ -22,7 +22,7 @@ def main():
     modules=[(88,'study88'),(89,'study89'),(90,'study90'),(92,'study92'),(93,'study93'),(94,'study94'),(95,'study95'),(96,'study96'),(97,'study97'),(98,'per_rotor98'),(99,'study99')]
     validations=[]
     for stage,name in modules:
-        sys.path.insert(0,str(ROOT/f'research/stage{stage}'));module=importlib.import_module(name);module.verify();validations.append(stage)
+        sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/f'research/stage{stage}'));module=importlib.import_module(name);module.verify();validations.append(stage)
     b98=WORK/'output/stage98_four_rotor_measurements_20261022';b99=WORK/'output/stage99_four_rotor_force_input_20261022'
     c98=load(b98/'full/completion98.json');assert load(b98/'prefix/completion98.json')['prefix_exact']
     s99=load(b99/'scores99.json');assert load(b99/'fred/prefix194/completion.json')['actual_event_prefix_exact']
@@ -72,7 +72,7 @@ def main():
     summary=dict(prior);summary.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),execution_status='checkpoint_ready',
         research_objective_status='incomplete',last_completed_stage=99,completed=list(range(19,100)),in_progress=[],experiments_running=[],
         latest_full_forecast_stage=93,latest_cached_forecast_stage=92,latest_native_diagnostic_stage=99,
-        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'run_complementary_forecast.py'),
+        latest_report=str(report),latest_full_forecast_report=str(report),experimental_RAW_entry=str(ROOT/'core/run_complementary_forecast.py'),
         experimental_RAW_stage=93,compatibility_API_still_targets=85,default_promoted=False,
         independent_RPM_gain_proven=False,latest_data194=str(WORK/'output/stage94_official_large_target_20261022/input/events.hdf5'),
         new_thrust_input_enabled=False,new_thrust_input_scope='Original78 relative-periodic paths in RAW93 retained; research96 SDK and99 per-rotor sum not promoted.',
@@ -88,7 +88,7 @@ def main():
             p=WORK/name
             if p.is_file():files.add(p)
     for stage in range(88,100):files.update(p for p in (ROOT/f'research/stage{stage}').rglob('*') if p.suffix in ['.py','.md'] and '__pycache__' not in p.parts)
-    files.update([Path(__file__),ROOT/'tools/deliver_stages88_93.py',ROOT/'tools/deliver_stages88_97.py',ROOT/'run_complementary_forecast.py',status,readme,worklog])
+    files.update([Path(__file__),ROOT/'tools/deliver_stages88_93.py',ROOT/'tools/deliver_stages88_97.py',ROOT/'core/run_complementary_forecast.py',status,readme,worklog])
     for folder in (WORK/'output').glob('stage*20261022'):
         if not any(folder.name.startswith('stage'+str(stage)+'_') for stage in range(88,100)) and not folder.name.startswith('stage91b_'):continue
         files.update(p for p in folder.rglob('*') if p.is_file() and p.suffix in ['.json','.html','.md','.txt','.log'] and p.stat().st_size<2_000_000)

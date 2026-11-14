@@ -1,7 +1,7 @@
 """Freeze and smoke-test the RAW-only persistent local detector bridge."""
 from pathlib import Path
 import argparse,datetime,importlib.util,json,sys
-ROOT=Path(__file__).resolve().parents[2];spec=importlib.util.spec_from_file_location('body_runtime42',ROOT/'run_body_forecast.py');pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)
+ROOT=Path(__file__).resolve().parents[2];spec=importlib.util.spec_from_file_location('body_runtime42',ROOT/'core/run_body_forecast.py');pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)
 OUT=ROOT.parent/'output/stage42_raw_body_bridge_20261018'
 def save(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf-8')
 def freeze():

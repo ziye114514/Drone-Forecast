@@ -7,8 +7,8 @@
 ```text
 python -m venv .venv
 .venv\Scripts\python -m pip install -e .
-.venv\Scripts\python forecast.py doctor --base-only
-.venv\Scripts\python forecast.py demo --output outputs/demo_01
+.venv\Scripts\python core/forecast.py doctor --base-only
+.venv\Scripts\python core/forecast.py demo --output outputs/demo_01
 .venv\Scripts\python -m unittest discover -s tests -v
 ```
 
@@ -43,8 +43,8 @@ SDK及CUDA软件包没有打进源码。
 其他相对路径以配置文件所在目录为基准。填写模型实际SHA256，防止静默换模型后仍沿用旧结果。
 
 ```text
-python forecast.py doctor --config configs/local.json
-python forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/run_01 --start 26 --duration 2 --dry-run
+python core/forecast.py doctor --config configs/local.json
+python core/forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/run_01 --start 26 --duration 2 --dry-run
 ```
 
 dry-run只检查路径/模型哈希和生成命令，不读RAW内容、不创建输出目录、不启动GPU。
@@ -53,7 +53,7 @@ dry-run只检查路径/模型哈希和生成命令，不读RAW内容、不创建
 ## 4. 运行和输出
 
 ```text
-python forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/run_01 --start 26 --duration 2 --preview
+python core/forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/run_01 --start 26 --duration 2 --preview
 ```
 
 默认目标30Hz源更新、10Hz整机神经检测，其间用当前ON/OFF图像位移更新整机ROI；
@@ -73,7 +73,7 @@ python forecast.py predict --config configs/local.json --raw data/event.raw --ou
 
 ```text
 python -m pip install -r requirements-counts.txt
-python forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/candidate_01 --profile candidate
+python core/forecast.py predict --config configs/local.json --raw data/event.raw --output outputs/candidate_01 --profile candidate
 ```
 
 请在兼容SDK环境或隔离目录安装可选Numba0.64/llvmlite0.46；需要Python3.10–3.14与NumPy2.0–2.4范围，

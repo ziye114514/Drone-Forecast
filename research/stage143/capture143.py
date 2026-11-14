@@ -15,7 +15,7 @@ import time
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'src'), str(ROOT / 'research/stage141'), str(ROOT / 'research/stage143')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'src'), str(ROOT / 'research/stage141'), str(ROOT / 'research/stage143')]
 from native_axis141 import NativeAxis  # noqa: E402
 from regions143 import Tracker, cells, hypotheses, latest_per_pixel, roi_pixels, summarise  # noqa: E402
 from event_drone_forecast.raw_io import open_raw, raw_chunks  # noqa: E402

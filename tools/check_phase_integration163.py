@@ -2,7 +2,7 @@
 from pathlib import Path
 import copy,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from shared_phase_fft import SharedPhaseFFT
 from phase_rate_bridge import phase_supported_rates
 from rotor_thrust_bank import RotorThrustBankProxy

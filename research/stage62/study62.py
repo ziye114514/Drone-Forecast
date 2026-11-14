@@ -181,7 +181,7 @@ def score():
     verify()
     assert len(load(OUT/'prefix_checks.json')['table']) == 2
     for case in CASES: assert load(OUT/case/'completion.json')['shared_complete15_exact61']
-    sys.path.insert(0,str(ROOT/'research/stage55')); import study55
+    sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage55')); import study55
     spec=importlib.util.spec_from_file_location('score62_original22',ROOT/'research/stage22/study22.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     module.OUT=OUT;module.INPUT=OUT;module.CASES=CASES;module.FRONTENDS=METHODS;module.MODELS=MODELS;module.verify=verify;module.evaluate=prior.evaluate

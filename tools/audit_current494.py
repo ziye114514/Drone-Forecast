@@ -5,7 +5,7 @@ truth or evidence that a future pilot command was predictable/unpredictable.
 """
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from extend_inverse321 import references
 from compare_final_pipeline import reference_at
 from physical_publication import evaluate

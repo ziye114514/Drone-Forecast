@@ -1,7 +1,7 @@
 """Exact487 stream plus native evidence around the diagnosed early-error case."""
 from pathlib import Path
 import sys,json,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from observed_rotor_predictor import LocalContrastObservedPredictor
 from run_rotor_learned_candidate import main
 OUT=ROOT.parent/'output/native_root496_20261112'

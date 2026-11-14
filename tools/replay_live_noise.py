@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from live_covariance import process_noise,SPECTRAL_DENSITY
 from summarize_live_pilot import reference_at,stats,read_rows

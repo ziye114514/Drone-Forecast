@@ -1,7 +1,7 @@
 """One matched-control pair, fixed five epochs per arm; no forecast labels."""
 from pathlib import Path
 import argparse,copy,hashlib,json,os,sys,time
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 parser=argparse.ArgumentParser();parser.add_argument('--arm',choices=['control','consistency'],required=True)
 a=parser.parse_args();OUT=WORK/'output/flip_consistency_20261026';ARM=OUT/a.arm
 os.environ.update(YOLO_OFFLINE='true',YOLO_AUTOINSTALL='false',YOLO_CONFIG_DIR=str(ARM/'local_config'),

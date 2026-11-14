@@ -2,7 +2,7 @@
 from pathlib import Path
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage28'),str(ROOT/'research/stage29')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage28'),str(ROOT/'research/stage29')]
 from axis28 import Predictor
 from select29 import Selector,MODELS,prior
 METHODS=['legacy_rotors','slotfix_rotors','associated_slotfix']

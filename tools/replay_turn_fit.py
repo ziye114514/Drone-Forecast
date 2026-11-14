@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from live_turn_fit import TurnFitMotion,turn_predictions,fit_turn,turn_design,DESIGN
 from summarize_live_pilot import reference_at,stats,read_rows
@@ -10,7 +10,7 @@ OUT=ROOT.parent/'output/live_turn_fit_v3_20261026';OUT.mkdir(exist_ok=False)
 (OUT/'source_snapshot').mkdir()
 for name in ['live_turn_fit.py','tools/replay_turn_fit.py']:
     dest=OUT/'source_snapshot'/name;dest.parent.mkdir(exist_ok=True,parents=True);dest.write_bytes((ROOT/name).read_bytes())
-design=dict(**DESIGN,source_sha256=hashlib.sha256((ROOT/'live_turn_fit.py').read_bytes()).hexdigest(),
+design=dict(**DESIGN,source_sha256=hashlib.sha256((ROOT/'core/live_turn_fit.py').read_bytes()).hexdigest(),
     gate='Both primary independent-clock .4s means decrease; neither .1s mean worsens more than1px. No tuning after scoring.')
 (OUT/'design.json').write_text(json.dumps(design,indent=2),encoding='utf-8')
 times=np.arange(0,.360001,.04);tau=times-times[-1];state=np.array([500.,300.,1000.,-100.])

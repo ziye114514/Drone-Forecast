@@ -3,7 +3,7 @@ import argparse,datetime,importlib.util,json,sys
 from body36 import ROOT,PARAMS,METHODS,factory
 from checks36 import run as checks
 
-sys.path.insert(0,str(ROOT/'research/stage35'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage35'))
 import study35 as prior
 OLD35=ROOT.parent/'output/stage35_body_feature_flow_20261018';OUT=ROOT.parent/'output/stage36_full_side_body_support_20261018'
 CASES={k:dict(v) for k,v in prior.CASES.items()};CASES['side6']['duration']=12.

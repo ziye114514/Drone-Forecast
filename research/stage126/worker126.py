@@ -5,7 +5,7 @@ Both workers read RAW only, and advance exactly to each requested cutoff.
 """
 from pathlib import Path
 import argparse,json,subprocess,sys,tempfile
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage125')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage125')]
 from occupancy124 import SupportFrontend
 from hybrid125 import Hybrid,NAMES
 from worker122 import guard,Observer,open_raw,raw_chunks

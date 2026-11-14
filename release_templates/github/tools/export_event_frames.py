@@ -1,7 +1,7 @@
 """Export native ON/OFF detector images; never invent bounding-box annotations."""
 from pathlib import Path
 import argparse,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 
 
 def main():

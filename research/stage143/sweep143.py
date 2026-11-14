@@ -15,7 +15,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
 WORK = ROOT.parent
-sys.path[:0] = [str(ROOT / 'research/stage143'), str(ROOT / 'research/stage135')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'research/stage143'), str(ROOT / 'research/stage135')]
 from variants143 import RobustVelocityModel  # noqa: E402
 from predictor135 import forecast  # noqa: E402
 

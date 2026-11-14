@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,hashlib
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from nn_rotor_residual import PreservedNNRotorResidual
 from run_rotor_only import serial
 

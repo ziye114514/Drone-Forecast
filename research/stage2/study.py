@@ -9,7 +9,7 @@ import argparse,datetime,hashlib,itertools,json,sys,time,csv
 import cv2,numpy as np
 from scipy.signal import periodogram
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.geometry import fit_rotor_geometry
 from event_drone_forecast.paper_physics import circle_normal_candidates,weak_normal,unit
 from event_drone_forecast.paper_config import PaperConfig

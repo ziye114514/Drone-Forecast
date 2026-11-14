@@ -5,7 +5,7 @@ earlier attitude/event cue existed, and is not an unpredictable-command label.
 """
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at,score,stats
 from diagnose_maneuver_horizon import SPECS,OUT
 from score_fred_adaptation import matched

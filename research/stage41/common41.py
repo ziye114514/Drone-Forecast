@@ -1,7 +1,7 @@
 """Frozen continuous test of a record-disjoint detector, identical history models."""
 from pathlib import Path
 import datetime,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage40'),str(ROOT/'research/stage21'),str(ROOT/'research/stage23'),str(ROOT/'research/stage22'),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage40'),str(ROOT/'research/stage21'),str(ROOT/'research/stage23'),str(ROOT/'research/stage22'),str(ROOT/'src')]
 import common40
 from common40 import load,save,sha
 OUT=ROOT.parent/'output/stage41_continuous_body_forecast_20261018';PARENT=common40.OUT

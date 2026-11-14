@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import datetime,hashlib,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage75'),str(ROOT/'research/stage74'),str(ROOT/'research/stage73'),str(ROOT/'research/stage71'),str(ROOT/'research/stage68')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage75'),str(ROOT/'research/stage74'),str(ROOT/'research/stage73'),str(ROOT/'research/stage71'),str(ROOT/'research/stage68')]
 import study75 as actual
 import study74 as forecast
 import study73 as extended
@@ -70,8 +70,8 @@ def run():
         completed_scope='68 force activity;69 full force/RLS;70 guard;71 actual RAW;72 increments;73 temporal extension;74 author IMM dual branch;75 actual RAW full39 and prefixes.',
         new_thrust_input_enabled=True,new_thrust_input_scope='Experimental branches only, default unchanged.',default_promoted=False,
         latest_report=str(reports[0]),previous_report=str(reports[1]),local_report_links_checked=link_count,
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'run_hybrid_forecast.py'),experimental_RAW_stage=75,
-        absolute_force_RAW_entry=str(ROOT/'run_event_force_forecast.py'),increment_RAW_entry=str(ROOT/'run_force_innovation_forecast.py'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_RAW_entry=str(ROOT/'core/run_hybrid_forecast.py'),experimental_RAW_stage=75,
+        absolute_force_RAW_entry=str(ROOT/'core/run_event_force_forecast.py'),increment_RAW_entry=str(ROOT/'core/run_force_innovation_forecast.py'),
         experimental_cache_predictor=str(ROOT/'research/stage74/hybrid74.py'),
         stage68_counts=dict(parent=700,native10=1400),stage71_counts=dict(parent=985,native10=1970,video_frames_decoded=650),
         stage71_pilot_counts=dict(parent=40,native10=80,video_frames_decoded=40),stage73_counts=dict(parent=1150,native10=2300,video_frames_decoded=1100),

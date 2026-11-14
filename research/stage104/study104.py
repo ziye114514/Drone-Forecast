@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,collections,datetime,hashlib,html,json,sys,time,subprocess
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage104'),str(ROOT/'research/stage49')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage104'),str(ROOT/'research/stage49')]
 from rigid104 import PlanarCenter,PARAMS
 from online104 import OnlineExtras,NAMES
 import rigid49 as geometry
@@ -151,7 +151,7 @@ def cached():
 
 
 def raw(case):
-    cfg=verify()['raw_cases'][case];args=[sys.executable,str(ROOT/'run_planar_center_forecast.py'),'--raw',cfg['raw'],
+    cfg=verify()['raw_cases'][case];args=[sys.executable,str(ROOT/'core/run_planar_center_forecast.py'),'--raw',cfg['raw'],
         '--output',str(OUT/'raw'/case),'--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

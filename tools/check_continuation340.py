@@ -8,7 +8,7 @@ import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,argparse,numpy as np,cv2
 from types import SimpleNamespace
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT),str(ROOT/'tools')]
 from periodic_track_continuation import PeriodicTrackContinuation
 from native_geometry_kernels import load_backend
 from batched_arc_fit import configure_native

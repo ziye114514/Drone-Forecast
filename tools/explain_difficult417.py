@@ -8,7 +8,7 @@ import sys,json,hashlib,html
 import numpy as np
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from pure_visibility170 import window
 from extend_inverse321 import references
 from physical_publication import evaluate

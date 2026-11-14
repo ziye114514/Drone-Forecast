@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,html,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage59'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage59'))
 import study59 as previous
 import lsd59
 import pairs60 as pairs

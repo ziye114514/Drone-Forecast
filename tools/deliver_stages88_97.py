@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import deliver_stages88_93 as base
 ROOT=base.ROOT;WORK=ROOT.parent;OUT=base.OUT
-sys.path.insert(0,str(ROOT/'research/stage88'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage88'))
 from inventory88 import save,load,sha
 
 

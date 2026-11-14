@@ -1,7 +1,7 @@
 from pathlib import Path
 from types import SimpleNamespace
 import sys,time
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_publication import TimedPublisher
 
 source=SimpleNamespace(epoch=time.perf_counter(),start=10.,done=False)

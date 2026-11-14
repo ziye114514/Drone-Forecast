@@ -6,7 +6,7 @@ no human boxes or future keypoints. Does not alter the first frozen experiment.
 from pathlib import Path
 import hashlib,json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'research/stage5'));sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage5'));sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from projective import ProjectiveFour,ordered_four,fit_joint,project,Q
 from study import OUT,CASES,save,verify
 from event_drone_forecast.motion import KinematicFilter

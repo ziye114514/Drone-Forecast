@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,csv,datetime,hashlib,json,shutil,subprocess,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast.motion import extrapolate
 OUT=ROOT.parent/'output/paper_reproduction_v030'
@@ -59,7 +59,7 @@ def run(names):
     for name in names:
         dest=OUT/f'runs/{name}'
         if (dest/'summary.json').exists():continue
-        subprocess.run([sys.executable,str(ROOT/'run_paper.py'),'--raw',RAWS[name],'--output',str(dest),
+        subprocess.run([sys.executable,str(ROOT/'core/run_paper.py'),'--raw',RAWS[name],'--output',str(dest),
                         '--config',str(OUT/'frozen_config.json')],check=True)
 
 def evaluate():
@@ -144,7 +144,7 @@ def evaluate():
 def prefix():
     dest=OUT/'causality_prefix_check'
     if not (dest/'summary.json').exists():
-        subprocess.run([sys.executable,str(ROOT/'run_paper.py'),'--raw',RAWS['train3'],'--output',str(dest),
+        subprocess.run([sys.executable,str(ROOT/'core/run_paper.py'),'--raw',RAWS['train3'],'--output',str(dest),
                         '--duration','4','--config',str(OUT/'frozen_config.json')],check=True)
     result={}
     for filename in ('observations.jsonl','forecasts.jsonl'):

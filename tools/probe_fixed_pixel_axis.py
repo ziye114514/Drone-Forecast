@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage141')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage141')]
 from live_decode import native_batches
 from live_pixel_axis import FixedPixelAxis
 from native_axis141 import NativeAxis

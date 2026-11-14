@@ -2,7 +2,7 @@ from pathlib import Path
 import sys,json,copy
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage149'),str(ROOT/'research/stage148'),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage149'),str(ROOT/'research/stage148'),str(ROOT/'src')]
 from inertia149 import InertialBank
 from dynamics149 import RelativeScale,ProjectedExpert
 from temporal148 import TemporalBank

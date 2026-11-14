@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,collections,datetime,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage129')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage129')]
 from study124 import OUT as INPUT,CASES,rows,sha,save,stable
 from boundary129 import Guarded,bounded,PARAMS,NAMES
 OUT=ROOT.parent/'output/stage129_FOV_guard_20261024'

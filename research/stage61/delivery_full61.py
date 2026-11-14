@@ -12,7 +12,7 @@ def table(rr):
     cols=list(rr[0]);return '<div class="scroll"><table><tr>'+''.join('<th>'+html.escape(k)+'</th>' for k in cols)+'</tr>'+''.join('<tr>'+''.join('<td>'+html.escape(str(round(r[k],5) if isinstance(r[k],float) else r[k]))+'</td>' for k in cols)+'</tr>' for r in rr)+'</table></div>'
 
 def old_layout_gate():
-    sys.path.insert(0,str(ROOT/'research/stage50'));import layout50 as old
+    sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage50'));import layout50 as old
     report=[]
     for case in current.SCORING:
         if current.CASES[case]['reference']=='negative5':continue

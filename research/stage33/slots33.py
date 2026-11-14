@@ -4,7 +4,7 @@ import sys
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast.rotor_sensing import RotorSensing
 

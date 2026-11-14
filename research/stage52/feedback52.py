@@ -1,7 +1,7 @@
 """Separate launch-feature validity from delayed position-feedback validity."""
 from pathlib import Path
 import inspect,sys,textwrap
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'research/stage51'))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage51'))
 from reference51 import Managed,Predictor,prior
 
 def update_source():

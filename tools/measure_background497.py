@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,numpy as np,cv2,hashlib
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from background_unknown_response import BackgroundMotion
 
 SOURCES={'13':'phase185_20261107/cache_recording13','15':'motion181_20261107/cache_recording15',

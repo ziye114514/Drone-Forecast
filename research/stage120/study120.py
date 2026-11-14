@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage119')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage119')]
 import run_partial_structure_forecast as entry
 from study119 import OUT as CACHE,stable,rows,save,sha
 OUT=ROOT.parent/'output/stage120_RAW_partial_structure_20261023'
@@ -65,7 +65,7 @@ def check(case):
     print(json.dumps(dict(case=case,frames=n,old64_exact=True,new4_exact=True)),flush=True)
 
 def run(case):
-    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_partial_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),
+    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_partial_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),
         '--start',str(c['start']),'--duration',str(c['duration']),'--dropout-mask',str(c['dropout']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:r=subprocess.run(args,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

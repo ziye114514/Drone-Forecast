@@ -5,7 +5,7 @@ measurement fallback, not a learned gate or a claim of novel fusion.
 """
 from pathlib import Path
 import sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage122')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage122')]
 from worker122 import PartialModel,geom,CenterBank,NAMES
 PARAMS=dict(selection='Use count_global whenever its unchanged104 full-four check is valid. Otherwise use occupancy_roi only if its same104 check is valid. Otherwise retain count_global actual observations for original partial/hold logic.',
     primary='Does complementary support close initialization gaps without harming successful count measurements? No threshold/fit/lock change, no future label in selection.',

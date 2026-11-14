@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,copy,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from summarize_live_pilot import reference_at,stats,read_rows
 parser=argparse.ArgumentParser();parser.add_argument('--model-dir',type=Path);args=parser.parse_args()

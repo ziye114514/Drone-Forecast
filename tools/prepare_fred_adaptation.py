@@ -8,7 +8,7 @@ import collections,hashlib,json,os,shutil,sys,zipfile
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
 OUT=WORK/'output/fred_domain_adaptation_20261029'
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 import cv2,numpy as np
 from prepare_fred_transfer import parse,sha
 from live_decode import native_batches

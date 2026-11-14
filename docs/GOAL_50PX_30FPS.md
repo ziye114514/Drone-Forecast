@@ -5,7 +5,7 @@
 候选运行：
 
 ```powershell
-python run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_goal_run --goal-profile --paced --verify-frames
+python core/run_fast_structure.py --raw E:/dataset/train/6/media/event.raw --start 110 --duration 4 --output ../output/my_goal_run --goal-profile --paced --verify-frames
 ```
 
 `--goal-profile`启用已有等价计算优化、异步NN、子进程同规则SDK降噪，以及本轮的当前侧轴/完整桨盘多速率调度、近期未知力修正与Singer外推。推理只读RAW和固定权重，不读标签。它是候选配置，不是性能保证。原力学默认和原计算`--reference-compute`均保留，已发布ZIP未重新打包。

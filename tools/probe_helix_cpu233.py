@@ -6,7 +6,7 @@ No author ground-truth initializer; geometry/sign/frequency from early events.
 from pathlib import Path
 import os,sys,json,hashlib,numpy as np
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools'),str(ROOT/'research/helix_reference')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools'),str(ROOT/'research/helix_reference')]
 from reference_api import AuthorTracker
 from angular_phase_candidates import ring_phase_candidates,ring_phase_samples
 from pure_visibility170 import window

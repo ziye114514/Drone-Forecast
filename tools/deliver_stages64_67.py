@@ -4,7 +4,7 @@ from collections import Counter
 import html,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT/'research/stage64'),str(ROOT/'research/stage65'),str(ROOT/'research/stage67')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage64'),str(ROOT/'research/stage65'),str(ROOT/'research/stage67')]
 import study64 as motion
 import study65 as forecast
 import study67 as periodic

@@ -1,7 +1,7 @@
 """Small same-input OpenCV threading probe; no forecast or label tuning."""
 from pathlib import Path
 import sys,json,time,hashlib
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_optimized_forecast as main
 import cv2,numpy as np
 main.install_shared_objective();OUT=ROOT.parent/'output/stage155_frontend_threads_20261024';OUT.mkdir(exist_ok=True)

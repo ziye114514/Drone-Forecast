@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion
 from summarize_live_pilot import reference_at,stats,read_rows
 OUT=WORK/'output/center_ensemble_RAW_20261026';results={}

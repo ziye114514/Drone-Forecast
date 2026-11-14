@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,collections,datetime,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage127')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage127')]
 from study124 import OUT as INPUT,CASES,rows,sha,save,stable
 from independent127 import MeasurementFusion,PARAMS,NAMES
 OUT=ROOT.parent/'output/stage127_independent_support_20261023'

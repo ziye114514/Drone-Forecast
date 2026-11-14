@@ -5,7 +5,7 @@
 ## 当前入口
 
 ```text
-python forecast_mainline.py structure-fast --raw <event.raw> --output <新目录> --start 110 --duration 3 --async-nn --paced --verify-frames
+python core/forecast_mainline.py structure-fast --raw <event.raw> --output <新目录> --start 110 --duration 3 --async-nn --paced --verify-frames
 ```
 
 默认**不运行传统加速度拟合、尺度外推或传统预测输出**。当前位置/速度的最小滤波仍保留，作为力学积分初始条件。原v7代码、旧结果保留，传统对照在保存当前预测后离线重建；它不占用这条实时循环。

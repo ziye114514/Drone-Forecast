@@ -27,7 +27,7 @@ import sys
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'research/stage11')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'research/stage11')]
 from identity import RigidTracker  # noqa: E402
 
 FRAGMENT_FRACTION = 0.5

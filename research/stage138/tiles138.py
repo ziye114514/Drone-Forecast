@@ -7,7 +7,7 @@ Global contour coordinates and global activity-map size remain unchanged.
 from pathlib import Path
 import ast,copy,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage137')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage137')]
 import fast137
 from fast137 import occupancy124,polarity,SupportFrontend,MergeRecovery
 from merge110 import PARAMS as MERGE

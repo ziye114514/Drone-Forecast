@@ -1,7 +1,7 @@
 """Check causal discard and SDK-update ordering, without RAW or wall sleeps."""
 from pathlib import Path
 import ast,json,sys
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_stream import packet_expired
 cap=.16;checked=0
 for start in [0.,22.,110.]:
@@ -18,7 +18,7 @@ for start in [0.,22.,110.]:
                         checked+=1
 assert not packet_expired(1.,0.,None,0.,cap)
 assert not packet_expired(1.,0.,0.,5.,None)
-tree=ast.parse((ROOT/'live_process.py').read_text('utf-8'))
+tree=ast.parse((ROOT/'core/live_process.py').read_text('utf-8'))
 producer=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='_producer')
 lines={}
 for n in ast.walk(producer):

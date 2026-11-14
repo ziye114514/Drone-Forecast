@@ -6,7 +6,7 @@ Scoring recordings0/7/8/9/10 never enter the new dataset.
 from pathlib import Path
 import hashlib,json,shutil,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 
 

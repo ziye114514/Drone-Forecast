@@ -5,7 +5,7 @@ from collections import Counter
 import hashlib,html,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;OUT=WORK/'output/five_circle_bridge_20261026'
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from summarize_live_pilot import reference_at,stats
 from five_circle_model import diagonal_center
 
@@ -18,10 +18,10 @@ def preserve(run):
     protocol=load(run/'protocol.json');expected=dict(protocol['sources'])
     expected.update(protocol['structural_extension']['sources'])
     snapshot=run/'complete_source_snapshot';snapshot.mkdir(exist_ok=True)
-    current=(ROOT/'run_optimized_forecast.py').read_text('utf-8')
+    current=(ROOT/'core/run_optimized_forecast.py').read_text('utf-8')
     variants=[current]
     variants.append(current.replace("    paths += [ROOT/'research/stage6/silhouette.py']\n",'').replace(',image=image,prepared=prepared)',',image=image)'))
-    variants.append(variants[-1].replace("    paths += [ROOT/'whole_body_axis.py']\n",''))
+    variants.append(variants[-1].replace("    paths += [ROOT/'core/whole_body_axis.py']\n",''))
     recovery=[]
     for name,sha in expected.items():
         choices=[ROOT/name,run/'structure_source_snapshot'/name,run/'structure_source_snapshot'/Path(name).name]

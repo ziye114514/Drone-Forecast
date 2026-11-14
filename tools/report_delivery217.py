@@ -1,7 +1,7 @@
 """Consolidate actual gains, regressions, latency and failed hypotheses."""
 from pathlib import Path
 import sys,json,html,numpy as np
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

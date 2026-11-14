@@ -1,7 +1,7 @@
 """One matched-availability control; do not rerun native GPU extraction."""
 from pathlib import Path
 import sys,json,hashlib
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from replay_gated_nn166 import run,guard
 from run_rotor_only import serial
 

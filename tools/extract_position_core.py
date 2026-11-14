@@ -7,7 +7,7 @@ author arithmetic remains in unmodified, licensed source snapshots.
 from pathlib import Path
 import ast,copy,hashlib,json,pprint,shutil,sys
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 OUT=WORK/'output/portable_position_core_20261025';OUT.mkdir(exist_ok=False)
 BACKUP=OUT/'before';BACKUP.mkdir()
 for name in ['live_motion.py','live_measurement_kf.py','live_covariance.py','live_gain.py','run_live_forecast.py','pyproject.toml']:
@@ -48,14 +48,14 @@ def emit(name,header,nodes):
     (DEST/name).write_text(header+'\n\n'+ast.unparse(ast.Module(body=nodes,type_ignores=[]))+'\n',encoding='utf-8')
 
 kf=select(ROOT/'research/stage107/center107.py',['coefficient','SimpleKF'])
-kf+=select(ROOT/'live_measurement_kf.py',['MeasurementKF'])
+kf+=select(ROOT/'core/live_measurement_kf.py',['MeasurementKF'])
 kf=[LocalCovarianceImport().visit(copy.deepcopy(n)) for n in kf]
 emit('kalman.py','"""Unchanged107 KF state and existing measurement update; imports only moved."""\nimport numpy as np\nfrom ._filterpy import predict,update\nPARAMS='+pprint.pformat(center107.PARAMS,sort_dicts=False),kf)
 emit('robust.py','"""Existing23 robust acceleration math; frozen parameters, no history imports."""\nimport numpy as np\nfrom scipy.optimize import least_squares\nPARAMS='+pprint.pformat(robust23.PARAMS,sort_dicts=False),select(ROOT/'research/stage23/robust23.py',['cap','robust_acceleration']))
 shutil.copy2(ROOT/'research/stage154/turn154.py',DEST/'rollout.py')
-emit('motion.py','"""Current live motion state; mechanically extracted, same numerical rules."""\nfrom collections import deque\nimport copy,math\nimport numpy as np\nfrom .kalman import MeasurementKF\nfrom .robust import robust_acceleration,cap\nfrom .rollout import forecast as curved_forecast',select(ROOT/'live_motion.py',['LiveMotion','predictions']))
+emit('motion.py','"""Current live motion state; mechanically extracted, same numerical rules."""\nfrom collections import deque\nimport copy,math\nimport numpy as np\nfrom .kalman import MeasurementKF\nfrom .robust import robust_acceleration,cap\nfrom .rollout import forecast as curved_forecast',select(ROOT/'core/live_motion.py',['LiveMotion','predictions']))
 
-cov=(ROOT/'live_covariance.py').read_text(encoding='utf-8')
+cov=(ROOT/'core/live_covariance.py').read_text(encoding='utf-8')
 begin=cov.index('ROOT=');end=cov.index('snapshot=json.loads')
 cov=cov[:begin]+"from .kalman import SimpleKF,predict,update,coefficient,PARAMS\nVENDOR=Path(__file__).resolve().parents[1]/'_vendor/filterpy_process_upstream'\n"+cov[end:]
 (DEST/'covariance.py').write_text(cov,encoding='utf-8')

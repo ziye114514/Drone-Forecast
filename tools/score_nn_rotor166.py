@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,zipfile
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from physical_publication import evaluate
 from compare_final_pipeline import reference_at,stats
 from nn_rotor_fusion import ARMS

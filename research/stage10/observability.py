@@ -15,7 +15,7 @@ import time
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'src'), str(ROOT / 'research/stage8')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'src'), str(ROOT / 'research/stage8')]
 from polarity import PolarityFrontend  # noqa: E402
 from event_drone_forecast.raw_io import open_raw  # noqa: E402
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import copy,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage123'),str(ROOT/'research/stage110'),str(ROOT/'research/stage109'),str(ROOT/'research/stage21')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage123'),str(ROOT/'research/stage110'),str(ROOT/'research/stage109'),str(ROOT/'research/stage21')]
 from study123 import OUT,CASES,rows,save,sha,verify
 from merge110 import MergeRecovery
 from windows21 import Observer

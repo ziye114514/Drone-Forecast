@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_local_flow import FeatureFlow,velocity_coefficient,DESIGN
 parser=argparse.ArgumentParser();parser.add_argument('--crop',action='store_true');parser.add_argument('--padding',type=int,default=192)
 parser.add_argument('--output-dir',type=Path);args=parser.parse_args()

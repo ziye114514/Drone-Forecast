@@ -1,7 +1,7 @@
 """Isolate size-prune savings from previously optimized geometry; no labels."""
 from pathlib import Path
 import sys,json,time,numpy as np,cv2
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 import fast_geometry_compute as compute
 from fast_structure_front import FastStructure
 from check_final_compute import compare

@@ -3,7 +3,7 @@ import os
 for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ[key]='1'
 from pathlib import Path
 import sys,cProfile,pstats,io,json
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import numpy as np,cv2
 from run_rotor_only import RotorPredictor,serial
 

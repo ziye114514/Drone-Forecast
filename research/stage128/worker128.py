@@ -1,7 +1,7 @@
 """Current RAW126 observations -> independent occupancy model/shared filter."""
 from pathlib import Path
 import argparse,json,subprocess,sys,tempfile
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage127')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage127')]
 from independent127 import MeasurementFusion,PartialModel,geom,NAMES
 from worker122 import guard
 def main(raw,start,duration):

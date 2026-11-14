@@ -3,7 +3,7 @@ from pathlib import Path
 import datetime,hashlib,json,sys,zipfile
 from html.parser import HTMLParser
 from urllib.parse import unquote,urlparse
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage123')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage123')]
 from study123 import OUT,verify,save,sha
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))
 def main():
@@ -47,7 +47,7 @@ def main():
     cp=ROOT.parent/'output/checkpoints';h=load(cp/'latest_handoff.json');prior=Path(h['archive']);assert sha(prior)==h['archive_sha256'];archive=cp/f'research_through_stage123_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")}.zip'
     h.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=123,completed=sorted(set(h['completed']+[123])),latest_full_forecast_stage=123,
         latest_diagnostic_stage=123,latest_RAW_geometry_stage=123,algorithm_stage=122,latest_report=str(report),latest_full_forecast_report=str(report),latest_checks=str(OUT/'delivery_checks123.json'),
-        experimental_RAW_stage=122,experimental_RAW_entry=str(ROOT/'run_validated_structure_forecast.py'),in_progress=[],experiments_running=[],default_promoted=False,
+        experimental_RAW_stage=122,experimental_RAW_entry=str(ROOT/'core/run_validated_structure_forecast.py'),in_progress=[],experiments_running=[],default_promoted=False,
         completed_scope='123 frozen natural RAW1190, two extension recordings/no model, natural positive6 partial updates/no100ms recovery, sparse manual BOX scoring, exact300 geometry extraction trace.',
         completion_scope='Frozen expansion exposed initialization/support bottleneck; no blind efficacy/COM/extreme-side/realtime or independent innovation gain proven.',
         next_action='Review reusable occupancy/bipolar support and NNROI approaches before changing extraction. Fixed occupancy-vs-rate controls on123 failed clips and negative, score first-lock/contour completeness/false detections. Retain123 as development regression and reserve other continuous data. Do not lower gates or claim pixel-loss ratio from different support definitions. Use CLI/process-safe API, not old in-process entry.run.',

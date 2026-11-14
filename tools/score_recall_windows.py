@@ -4,7 +4,7 @@ import json
 import sys
 import cv2
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_fred_transfer import reference
 from prepare_fred_transfer import parse
 

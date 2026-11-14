@@ -2,7 +2,7 @@
 from pathlib import Path
 import ast,collections,copy,hashlib,json,os,re,shutil,sys,textwrap,zipfile
 BASE=Path(__file__).resolve().parents[2];ROOT=BASE/'event_drone_forecast'
-sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from run_rotor_only import SOURCE_FILES
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()

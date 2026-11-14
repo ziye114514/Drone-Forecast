@@ -3,8 +3,8 @@ from pathlib import Path
 import hashlib,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'research/stage4'))
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage4'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from study import OUT,RAW,save,verify
 from tracker import Skeleton,fit_affine,X
 from event_drone_forecast.raw_io import open_raw,raw_chunks

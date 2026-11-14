@@ -65,7 +65,7 @@ def main():
     handoff.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=104,
         completed=sorted(set(handoff['completed']+[104])),latest_full_forecast_stage=104,latest_cached_forecast_stage=104,
         latest_report=str(report),latest_full_forecast_report=str(report),previous_report=str(BASE/'第八十八至一百零三阶段实验总览.html'),
-        latest_checks=str(OUT/'delivery_checks104.json'),experimental_RAW_entry=str(ROOT/'run_planar_center_forecast.py'),experimental_RAW_stage=104,
+        latest_checks=str(OUT/'delivery_checks104.json'),experimental_RAW_entry=str(ROOT/'core/run_planar_center_forecast.py'),experimental_RAW_stage=104,
         completed_scope='104 center/layout separation with known-motion controls, matched body-only controls, four actual RAW checks and native videos.',
         completion_scope='104 research branch implemented and audited; general high-accuracy realtime objective incomplete.',
         in_progress=[],experiments_running=[],default_promoted=False,accuracy_changed=True,
@@ -78,7 +78,7 @@ def main():
     handoff['retained_failed_attempts'].append('104 initial validator compared nested elapsed time; original source retained, deterministic fields/predictions checked after validation-only amendment; first RAW outer old-SHA check subsequently rechecked.')
     handoff['source_summary_files']=[str(status),str(worklog),str(ROOT/'README.md'),str(ROOT/'research/stage104/README.md')]
     save(checkpoint/'latest_handoff.json',handoff)
-    additions=[status,worklog,ROOT/'README.md',ROOT/'run_planar_center_forecast.py',checkpoint/'latest_handoff.json']
+    additions=[status,worklog,ROOT/'README.md',ROOT/'core/run_planar_center_forecast.py',checkpoint/'latest_handoff.json']
     additions+=list((ROOT/'research/stage104').glob('*.py'))+list((ROOT/'research/stage104').glob('*.md'))
     additions+=[p for p in OUT.rglob('*') if p.is_file() and p.suffix in ['.json','.html','.png','.py'] and 'cached' not in p.relative_to(OUT).parts]
     overlay={p.relative_to(ROOT.parent).as_posix():p.read_bytes() for p in additions}

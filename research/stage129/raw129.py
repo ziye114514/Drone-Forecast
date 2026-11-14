@@ -1,7 +1,7 @@
 """Small actualRAW guard pilot; full8s evaluation remains cached diagnostic."""
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage129'),str(ROOT/'research/stage128')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage129'),str(ROOT/'research/stage128')]
 import run_FOV_guard_forecast as entry
 from study129 import OUT,rows,sha,save,stable
 from study128 import OUT as PREVIOUS

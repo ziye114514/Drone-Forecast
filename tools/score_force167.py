@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,zipfile
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_nn_rotor166 import QUERIES,load,score,paired
 from visible_force_dynamics import evaluate_visible
 

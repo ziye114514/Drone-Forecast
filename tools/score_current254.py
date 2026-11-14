@@ -1,7 +1,7 @@
 """Score this batch at the actual publication time with fixed missing count."""
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT.parent/'output';sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from physical_publication import evaluate
 from compare_final_pipeline import reference_at,stats
 

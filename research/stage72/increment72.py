@@ -9,7 +9,7 @@ from collections import deque
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage69'),str(ROOT/'research/stage68')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage69'),str(ROOT/'research/stage68')]
 from force69 import Direction,prior
 from activity68 import Reference
 ADDED=['increment_density_constant','increment_density','increment_periodic_constant','increment_periodic']

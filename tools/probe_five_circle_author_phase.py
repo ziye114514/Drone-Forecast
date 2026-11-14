@@ -9,7 +9,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'research/helix_reference'),str(ROOT/'research/stage79'),str(ROOT/'research/stage141')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'research/helix_reference'),str(ROOT/'research/stage79'),str(ROOT/'research/stage141')]
 from live_decode import native_batches
 from phase_state import RotorPhaseObserver
 from reference_api import AuthorTracker

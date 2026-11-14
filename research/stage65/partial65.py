@@ -4,7 +4,7 @@ from collections import deque
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage62'),str(ROOT/'research/stage6')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage62'),str(ROOT/'research/stage6')]
 from independent62 import Predictor62,Managed62,Selector,MODELS,prior
 from silhouette import angle_distance
 

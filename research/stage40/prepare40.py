@@ -2,7 +2,7 @@
 import math,sys
 import cv2,numpy as np
 from common40 import *
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.raw_io import open_raw
 from metavision_sdk_cv import ActivityNoiseFilterAlgorithm
 from metavision_sdk_core import BaseFrameGenerationAlgorithm

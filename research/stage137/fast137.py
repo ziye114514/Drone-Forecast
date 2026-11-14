@@ -8,7 +8,7 @@ from pathlib import Path
 import ast,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage117')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage117')]
 import occupancy124,polarity,fixed117
 from occupancy124 import SupportFrontend,MergeRecovery
 PARAMS=dict(geometry_objective='unchanged pixel Sampson distance and optimizer',

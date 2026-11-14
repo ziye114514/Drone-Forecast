@@ -3,7 +3,7 @@ import argparse,copy,datetime,hashlib,html,importlib.util,json,os,sys
 import numpy as np
 from reference51 import *
 from checks51 import run as checks
-sys.path.insert(0,str(ROOT/'research/stage48'));import study48 as base
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage48'));import study48 as base
 from select29 import Selector,MODELS
 BASE=ROOT.parent/'output';OUT=BASE/'stage51_preserved_physics_reference_20261020';CASES=base.CASES
 load=base.load;save=base.save;sha=base.sha;rows=base.rows

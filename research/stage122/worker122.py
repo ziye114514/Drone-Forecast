@@ -1,7 +1,7 @@
 """RAW worker with causal full-view adequacy checks and shared-state forecast."""
 from pathlib import Path
 import argparse,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage120'),str(ROOT/'research/stage121')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage120'),str(ROOT/'research/stage121')]
 from worker120 import np,guard,PartialModel,geom,PARAMS,MergeRecovery,CenterBank,NAMES,Observer,open_raw,raw_chunks,NAMES120
 from validation121 import ValidatedSelector
 

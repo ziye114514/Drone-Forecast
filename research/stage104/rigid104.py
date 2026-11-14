@@ -10,7 +10,7 @@ import sys,time,copy
 import cv2,numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage58'),str(ROOT/'research/stage49')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage58'),str(ROOT/'research/stage49')]
 from geometry58 import joint_fit,from_rotor
 from rigid49 import intersection
 

@@ -65,7 +65,7 @@ if 'id="accumulated-mainline-update"' not in s:
 handoff=OUTPUT/'checkpoints/latest_handoff.json';d=read(handoff)
 d.update(utc=datetime.now(timezone.utc).isoformat(),execution_status='active goal; accumulated development mainline established',
     experiments_running=False,current_running_jobs=[],latest_report=str(OUT/'index.html'),
-    latest_live_revision='accumulated_v1',current_mainline_entry=str(ROOT/'forecast_mainline.py'),
+    latest_live_revision='accumulated_v1',current_mainline_entry=str(ROOT/'core/forecast_mainline.py'),
     original_baseline_entry='forecast_mainline.py run --profile live-baseline',
     accumulation_ledger=str(OUT/'ledger.json'),
     next_action='Use accumulated_v1 as the next optimization baseline; preserve baseline_v0 for reference. Revisit small prior gains under the user-requested aggregate policy; no all-recordings-win veto. Then research reusable temporal localization consistency before code. Check quota before each batch; pause at remaining10%.')

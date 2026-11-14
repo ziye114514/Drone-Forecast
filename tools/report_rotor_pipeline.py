@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,json,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from responsive_force import DampedResponsiveForce
 from physical_publication import evaluate
 from compare_final_pipeline import score,reference_at,stats

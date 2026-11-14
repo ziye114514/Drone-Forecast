@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,binascii,datetime,hashlib,json,struct,sys,time,urllib.request,zipfile,zlib
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage91'),str(ROOT/'research/stage88')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage91'),str(ROOT/'research/stage88')]
 import range_inventory91 as ranged
 from inventory88 import save,load,sha,parse,unique_rows
 OUT=ROOT.parent/'output/stage94_official_large_target_20261022'

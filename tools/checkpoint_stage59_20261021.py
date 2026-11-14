@@ -2,7 +2,7 @@
 from pathlib import Path
 import datetime,hashlib,importlib.util,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path.insert(0,str(ROOT/'research/stage59'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage59'))
 import study59 as current
 import lsd59
 import delivery59
@@ -35,7 +35,7 @@ def run():
         for ref in re.findall(r'(?:href|src)="([^"]+)"',p.read_text(encoding='utf-8')):
             if '://' not in ref and not ref.startswith('#'):assert (p.parent/ref).exists(),(p,ref)
     summary.update(next_action='No new experiment60 started. Validate single-rotor line identity and full endpoints: pair opposite rim edges into a centerline, cross-threshold/time consistency and past slot/period evidence. Missing endpoints => axis-only update with large along-line center uncertainty. Then fuse ellipse/line observations into shared existing state with quality weighting/hysteresis and compare same-body-position full future controls. No raw event count as thrust truth or forced four points.',
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),experimental_entry=str(ROOT/'run_candidate_forecast.py'),latest_report=str(folder/'结论与分支融合方案.html'),
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),experimental_entry=str(ROOT/'core/run_candidate_forecast.py'),latest_report=str(folder/'结论与分支融合方案.html'),
         verified59_unique_native10=450,verified59_total_RAW_window_reads=900,stage58_known_truth_trials=28,stage58_uniform_current_samples=130,
         original_geometry_exact57=True,lsd_density_threshold_exact59=True,default_promoted=False,new_future_scoring=False,
         stage58_upstream_executed=True,stage59_RT_EvLDT_executed=False,stage59_actual_reuse='unchanged local geometry._line,57/9/8 and installed OpenCV LSD',

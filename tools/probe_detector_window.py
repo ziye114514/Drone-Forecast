@@ -5,7 +5,7 @@ from multiprocessing import shared_memory
 import hashlib,json,subprocess,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent
-sys.path[:0]=[str(ROOT)]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT)]
 from live_decode import native_batches
 from live_detector_window import DetectorWindow
 from live_stream import RateGate
@@ -26,7 +26,7 @@ design=dict(windows_ms=[20,60],selection='Preserve20ms detections; query60ms onl
 (OUT/'design.json').write_text(json.dumps(design,indent=2),encoding='utf-8')
 results={}
 try:
-    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'live_worker.py'),'--shared-memory',memory.name,
+    gpu=subprocess.Popen([runtime['gpu_python'],str(ROOT/'core/live_worker.py'),'--shared-memory',memory.name,
         '--weights',runtime['detector_weights'],'--expected-sha256',runtime['detector_sha256'],
         '--cache-dir',runtime['cache_dir']],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=log,text=True,
         encoding='utf-8',bufsize=1,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

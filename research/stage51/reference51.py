@@ -3,7 +3,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage28'),str(ROOT/'research/stage48')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage28'),str(ROOT/'research/stage48')]
 from axis28 import Predictor,prior
 from compose48 import associate,observation,empty_sensing
 

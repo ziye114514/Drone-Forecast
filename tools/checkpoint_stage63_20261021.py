@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import datetime,hashlib,json,re,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];PROJECT=ROOT.parent;BASE=PROJECT/'output'
-sys.path[:0]=[str(ROOT/'research/stage63'),str(ROOT/'research/stage62'),str(ROOT/'research/stage61')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage63'),str(ROOT/'research/stage62'),str(ROOT/'research/stage61')]
 import study63 as obs
 import raw62 as live
 import forecast61 as full61
@@ -66,8 +66,8 @@ def run():
         stage62_counts=d62['raw_checks']['totals'],stage62_scoring_rows=540,
         stage63_counts=dict(native10=1400,parent=700),stage63_future_scored=False,
         latest_report=str(reports[1]),latest_observation_report=str(reports[2]),
-        latest_verified_baseline_entry=str(ROOT/'run_deploy_forecast.py'),
-        experimental_entry=str(ROOT/'run_axis_forecast.py'),experimental_axis_mode='axis_learn',
+        latest_verified_baseline_entry=str(ROOT/'core/run_deploy_forecast.py'),
+        experimental_entry=str(ROOT/'core/run_axis_forecast.py'),experimental_axis_mode='axis_learn',
         default_promoted=False,report_links=report_checks,
         terminal_batches=[71092,97719,5237,61122],
         retained_failures=['stage60 formal strict geometry regression, unscored',

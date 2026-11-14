@@ -16,20 +16,20 @@
 复制 `configs/runtime.example.json` 为 `configs/local.json`，填写 SDK/GPU Python 的完整路径、权重路径和 SHA256。路径相对于配置文件所在目录；`python` 这样的命令名从 PATH 解析。
 
 ```powershell
-python forecast.py doctor --config configs/local.json
+python core/forecast.py doctor --config configs/local.json
 ```
 
 自检会检查依赖导入、CUDA/ORT provider、权重哈希。它不能替代一次真实推理，也不证明达到某个实时频率。只看帮助不需要 SDK 或权重：
 
 ```powershell
-python forecast.py --help
-python forecast.py run --help
+python core/forecast.py --help
+python core/forecast.py run --help
 ```
 
 ## 最小运行
 
 ```powershell
-python forecast.py run --config configs/local.json `
+python core/forecast.py run --config configs/local.json `
   --raw 'E:\dataset\train\6\media\event.raw' `
   --output 'D:\drone forecast\output\my_first_demo' `
   --start 22 --duration 2 --profile research --preview

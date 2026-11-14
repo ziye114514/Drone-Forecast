@@ -6,7 +6,7 @@ saved-input replay, not another RAW/FPS measurement or mechanical thrust test.
 from pathlib import Path
 import os,sys,json,time,collections
 for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[key]='1'
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 import numpy as np
 from thrust_trend_forecast import ThrustTrendForecast,SourceAwareThrustTrendForecast
 from axis_amplitude_bridge import current_axis_qualified

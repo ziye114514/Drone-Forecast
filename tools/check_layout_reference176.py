@@ -1,7 +1,7 @@
 """Reference invariants, baseline parity and source-offset cancellation."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src')]
 from coherent_gap_observer import ShortGapObserver
 from layout_reference_observer import LayoutReferenceObserver,NativeControlLayoutObserver
 from physical_publication import evaluate

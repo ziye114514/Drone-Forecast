@@ -4,7 +4,7 @@ import argparse,datetime,importlib.util,json,sys
 from guard70 import *
 import study69 as previous
 base=previous.base
-sys.path.insert(0,str(ROOT/'research/stage22'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage22'))
 OUT=ROOT.parent/'output/stage70_guarded_event_force_20261021'
 CASES=previous.CASES;load=base.load;save=base.save;sha=base.sha;rows=base.rows
 

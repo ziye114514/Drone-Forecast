@@ -6,7 +6,7 @@ This is model-based estimation using standard optimization, not a novelty claim.
 from pathlib import Path
 import ast,copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage113')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage113')]
 import support113 as geom
 PARAMS=dict(modes=['free_structure','fixed_structure','fixed_guarded'],
     calibration='Exactly existing104 qualified five-frame lock. Canonicalize90deg template relabel, median log common-radius and frame aspect. Additional canonical aspect spread<=existing1.35 factor. No metric dimensions or manual shape.',

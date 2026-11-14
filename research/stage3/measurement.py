@@ -7,7 +7,7 @@ from pathlib import Path
 import itertools,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 from event_drone_forecast.paper_physics import unit,circle_normal_candidates,rotate_normal
 
 def axis_error(a,b):return float(np.rad2deg(np.arccos(np.clip(abs(unit(a)@unit(b)),0,1))))

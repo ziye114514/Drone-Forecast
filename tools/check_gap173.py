@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy,subprocess,ast,re
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from coherent_gap_observer import ShortGapObserver,CoherentGapObserver
 from relative_rotor_observer import RelativeRotorForceObserver
 from run_rotor_only import RotorPredictor

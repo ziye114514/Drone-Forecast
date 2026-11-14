@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,importlib.util,sys
 import numpy as np
 from partial65 import *
-sys.path[:0]=[str(ROOT/'research/stage64'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage64'),str(ROOT/'research/stage22')]
 import study64 as observation
 base=observation.prior.previous
 OUT=ROOT.parent/'output/stage65_partial_heading_20261021'

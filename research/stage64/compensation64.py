@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage21'),str(ROOT/'research/stage6')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage21'),str(ROOT/'research/stage6')]
 from windows21 import warp
 from silhouette import body_measurement,angle_distance
 

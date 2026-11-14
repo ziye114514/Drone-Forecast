@@ -13,7 +13,7 @@ def table(headers,rows):return '<div class="scroll"><table><tr>'+''.join('<th>'+
 
 def figures(a):
     from pathlib import Path
-    sys.path.insert(0,str(ROOT/'src'))
+    sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
     from event_drone_forecast.raw_io import open_raw,raw_chunks
     source=load(INPUT/'protocol.json');chosen=[]
     for case in ['clear6','side6','review4']:

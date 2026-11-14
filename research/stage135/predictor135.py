@@ -6,7 +6,7 @@ CV branch. Learned structure and current geometric motion remain separate.
 """
 from pathlib import Path
 import copy,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage132')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage132')]
 from fast132 import Fast,forecast
 PARAMS=dict(rule='Before either guarded model learns structure: body CV. After guarded structure exists for the same current body identity: relative-geometry velocity + unchanged23 uncertainty-shrunk robust acceleration rollout. Body/velocity state is not anchored to first conic position.',
     geometry='Only current129 FOV-qualified model centers update velocity; constant source offset cancels. Old model memory is not a new measurement.',

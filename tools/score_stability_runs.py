@@ -1,7 +1,7 @@
 """Score current short RAW attempts without hiding unavailable old origins."""
 from pathlib import Path
 import sys,json
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'tools'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'tools'))
 from prepare_fred_transfer import parse
 from score_fred_transfer import score,reference
 from score_fred_adaptation import matched

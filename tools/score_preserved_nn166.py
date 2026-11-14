@@ -1,7 +1,7 @@
 """Score native increments on the verified original NN motion backbone."""
 from pathlib import Path
 import sys,json,zipfile
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from score_nn_rotor166 import QUERIES,score,paired,load
 
 BASE=ROOT.parent/'output';OUT=BASE/'nn_rotor166_20261105'

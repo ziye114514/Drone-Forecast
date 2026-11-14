@@ -14,7 +14,7 @@ from pathlib import Path
 from collections import deque
 import json,sys,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_decode import native_batches
 from rotor_support_front import RegionTracker,RotorSupportTracker
 from probe_same_window_motion import replay

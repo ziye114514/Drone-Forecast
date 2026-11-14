@@ -1,7 +1,7 @@
 """Causal hybrid pilot from fixed124 observations; explicitly cached input."""
 from pathlib import Path
 import argparse,collections,datetime,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage125')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage125')]
 from study124 import OUT as INPUT,CASES,rows,sha,save,stable
 from hybrid125 import Hybrid,PARAMS,NAMES
 OUT=ROOT.parent/'output/stage125_complementary_support_20261023'

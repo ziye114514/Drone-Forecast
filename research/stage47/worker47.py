@@ -16,13 +16,13 @@ def main(name,precision,weights=None,expected_sha256=None,cache_dir=None,body_as
         os.environ['YOLO_CONFIG_DIR']=str(cache/'ultralytics');os.environ['CUDA_CACHE_PATH']=str(cache/'cuda')
     sys.addaudithook(guard);began=time.perf_counter();model=Path(weights).resolve() if weights else (MODEL16 if precision==16 else MODEL32);expected=expected_sha256 or (SHA16 if precision==16 else SHA32);assert hashlib.sha256(model.read_bytes()).hexdigest()==expected
     import cv2,numpy as np,torch
-    torch.set_num_threads(2);sys.path.insert(0,str(ROOT/'research/stage45'))
+    torch.set_num_threads(2);sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage45'))
     import graph45
     with contextlib.redirect_stdout(sys.stderr):
         backend=graph45.Backend('graph',model_path=model)
         associator=None
         if body_association:
-            sys.path.insert(0,str(ROOT))
+            sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
             from body_association import BodyAssociation
             associator=BodyAssociation(frame_rate)
     shared=shared_memory.SharedMemory(name=name,create=False);image=np.ndarray((720,1280,3),np.uint8,buffer=shared.buf);image.setflags(write=False);counter=0

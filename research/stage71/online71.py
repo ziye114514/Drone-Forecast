@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage68'),str(ROOT/'research/stage69'),str(ROOT/'research/stage70'),str(ROOT/'research/stage64')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage68'),str(ROOT/'research/stage69'),str(ROOT/'research/stage70'),str(ROOT/'research/stage64')]
 from activity68 import Activity
 from force69 import ForceForecast
 from guard70 import Guard

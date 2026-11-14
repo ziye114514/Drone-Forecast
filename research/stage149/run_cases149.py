@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,json,time,traceback
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from run_optimized_forecast import run
 OUT=ROOT.parent/'output/stage149_inertia_scale_20261024'
 cases=[('clear','E:/dataset/train/6/media/event.raw',22.,8.),

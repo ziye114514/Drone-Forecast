@@ -7,7 +7,7 @@ from pathlib import Path
 import hashlib,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(Path(__file__).parent),str(ROOT),str(ROOT/'src'),str(ROOT/'research/stage79')]
+sys.path[:0]=[str(ROOT/'core'),str(Path(__file__).parent),str(ROOT),str(ROOT/'src'),str(ROOT/'research/stage79')]
 from reference_api import AuthorTracker,OUT
 from live_decode import native_batches
 import native79

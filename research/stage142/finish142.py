@@ -23,7 +23,7 @@ def main():
     runs=[]
     for stage,folder,names,snapshot in [(138,WORK/'output/stage138_shared_objective_20261024',['fast100','natural6','side50','negative5'],ROOT/'research/stage138/run_optimized_forecast_v5.py'),
         (140,OUT,['continuous6','extension2','prefix_natural6','negative5_raw'],ROOT/'research/stage140/run_optimized_forecast_v6.py'),
-        (141,WORK/'output/stage141_periodic_axis_20261024',['continuous6'],ROOT/'run_optimized_forecast.py')]:
+        (141,WORK/'output/stage141_periodic_axis_20261024',['continuous6'],ROOT/'core/run_optimized_forecast.py')]:
         for name in names:
             p=load(folder/name/'protocol.json');c=load(folder/name/'completion.json');assert c['sources_unchanged'] and not c['labels_read'] and not c['output_caches_read']
             for rel,digest in p['sources'].items():assert sha(snapshot if rel=='run_optimized_forecast.py' else ROOT/rel)==digest,(stage,name,rel)
@@ -51,7 +51,7 @@ def main():
     for p in [WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md']:p.write_text(intro+'以下137及更早为历史。\n\n'+p.read_text('utf-8'),'utf-8')
     handoff.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),last_completed_stage=142,algorithm_stage=140,geometry_execution_stage=138,optional_periodic_axis_stage=141,
         latest_full_forecast_stage=141,experimental_RAW_stage=141,latest_RAW_geometry_stage=141,latest_RAW_pilot_stage=141,latest_diagnostic_stage=142,
-        latest_report=str(report),latest_full_forecast_report=str(report),latest_checks=str(OUT/'final_checks142.json'),experimental_RAW_entry=str(ROOT/'run_optimized_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'run_optimized_forecast.py'),recommended_forecast_research_stage=140,latest_completed_stages=list(range(138,143)),
+        latest_report=str(report),latest_full_forecast_report=str(report),latest_checks=str(OUT/'final_checks142.json'),experimental_RAW_entry=str(ROOT/'core/run_optimized_forecast.py'),experimental_RAW_pilot_entry=str(ROOT/'core/run_optimized_forecast.py'),recommended_forecast_research_stage=140,latest_completed_stages=list(range(138,143)),
         next_action='Resolve multimotor/harmonic frequency ambiguity and validate unsigned periodic-line direction against available public module truth before trusting a force feature. 142 RLS feature model regressed48.776->50.891 and remains unadopted. Keep138 compute +140 dense/unclipped-body fallback, optional141 axis observer separate. Reduce global support/NN cost with one small fixed clip per actual change, no historical-control expansion.',
         completion_scope='138 actual RAW580 retains geometry/135 predictions and common100188.557->145.860ms;140 actual RAW865 dense-history+body-boundary fallback yields side0.4s61.095->48.776 (10/11),extension271.099->63.626(6/8),clear30.834 replay unchanged. Short0.1 slight regressions retained.141 actual RAW475 periodic observer332 qualified/235 unsigned lines, predictions exact140; not direction/RPM truth.142 replay force-feature pilot worse50.891, unadopted. Total RAW1920. Still not realtime or independent innovation/generalization proof.',
         source_summary_files=[str(worklog),str(WORK/'PROJECT_STATUS_20261022.md'),str(ROOT/'README.md'),str(ROOT/'research/stage140/README.md'),str(ROOT/'research/stage141/README.md'),str(ROOT/'research/stage142/README.md')],
@@ -63,7 +63,7 @@ def main():
     handoff.pop('archive',None);handoff.pop('archive_sha256',None);handoff['zip_verified']=False;save(hpath,handoff)
     save(OUT/'final_checks142.json',dict(report_local_links_checked=links,actual_RAW_runs=runs,total_successful_RAW_frames=1920,source_snapshots_match_all_run_protocols=True,raw_size_mtime_unchanged=True,RAW_bytewise_checksum_not_performed=True,plots_and_periodic_preview_visually_checked=True,all_new_videos_completely_decoded=True,periodic_observer_does_not_change_forecast=True,failed142_not_adopted=True,independent_test=False,realtime=False,running_jobs=[]))
     current={}
-    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'run_optimized_forecast.py',ROOT/'research/stage137/run_optimized_forecast_v4.py',WORK/'output/latest_optimized_forecast.html']:current[p.relative_to(WORK).as_posix()]=p.read_bytes()
+    for p in [worklog,WORK/'PROJECT_STATUS_20261022.md',ROOT/'README.md',hpath,ROOT/'core/run_optimized_forecast.py',ROOT/'research/stage137/run_optimized_forecast_v4.py',WORK/'output/latest_optimized_forecast.html']:current[p.relative_to(WORK).as_posix()]=p.read_bytes()
     for stage in range(138,143):
         for folder in [ROOT/f'research/stage{stage}',*list((WORK/'output').glob(f'stage{stage}_*'))]:
             for p in folder.rglob('*'):

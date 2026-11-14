@@ -4,7 +4,7 @@ from collections import deque,Counter
 import argparse,datetime,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage64')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage64')]
 from periodicity66 import *
 import study64 as previous
 from compensation64 import PastVelocity

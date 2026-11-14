@@ -34,7 +34,7 @@ FRED9同120个当前框、全部源预测逐项相同，延后74次无信息几�
 从项目目录运行小目标候选（本机已有SDK/Numba环境）：
 
 ```powershell
-python run_fast_structure.py --raw '<events.raw>' --output '<新目录>' --start 32 --duration 4 --sdk-avx2 --structure-guided-nn --recall90 --detector-model 'models/small_target_native33_v1.onnx' --detector-sha256 fc228a1b355a3b8396c05df63f7eb8beaf192bca758bf5089898e16e893a4255
+python core/run_fast_structure.py --raw '<events.raw>' --output '<新目录>' --start 32 --duration 4 --sdk-avx2 --structure-guided-nn --recall90 --detector-model 'models/small_target_native33_v1.onnx' --detector-sha256 fc228a1b355a3b8396c05df63f7eb8beaf192bca758bf5089898e16e893a4255
 ```
 
 `--recall90`是目标名称，不是认证；组合完整包NN、共享Singer、当前获取、身份门控、无结构时stride3几何。`--unresolved-geometry-stride1`保留完整几何频率。原`--realtime30`、`--legacy-realtime30`及原模型保留，大目标自采侧视仍优先原入口；不能将新模型全局覆盖。

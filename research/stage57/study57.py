@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,html,inspect,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage55')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage55')]
 import run_candidate_forecast as runner
 import study55 as previous
 from gating57 import PARAMS

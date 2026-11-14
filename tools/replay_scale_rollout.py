@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from live_motion import LiveMotion,predictions
 from live_scale_rollout import ScaleRolloutMotion,scale_predictions,estimate_scale,DESIGN
 from summarize_live_pilot import reference_at,stats,read_rows
@@ -10,7 +10,7 @@ from summarize_live_pilot import reference_at,stats,read_rows
 OUT=ROOT.parent/'output/live_scale_rollout_20261026';OUT.mkdir(exist_ok=False)
 design=dict(**DESIGN,kind='Own conditional projective correction, not a paper reproduction or novelty claim.',
     provisional_gate='Both primary independent-clock .4s means decrease; neither .1s mean worsens by more than1px.',
-    source_sha256=hashlib.sha256((ROOT/'live_scale_rollout.py').read_bytes()).hexdigest(),
+    source_sha256=hashlib.sha256((ROOT/'core/live_scale_rollout.py').read_bytes()).hexdigest(),
     related_source='https://openaccess.thecvf.com/content_cvpr_2018/html/Yagi_Future_Person_Localization_CVPR_2018_paper.html',
     estimator_source='https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.theilslopes.html')
 (OUT/'design.json').write_text(json.dumps(design,indent=2),encoding='utf-8')

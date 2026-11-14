@@ -1,7 +1,7 @@
 """Rank-aware two-force prototype on fixed current observations."""
 from pathlib import Path
 import collections,json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from geometry_force_observer import GeometryForceObserver,projected_fit
 from compare_final_pipeline import score
 

@@ -8,7 +8,7 @@ from pathlib import Path
 import copy,hashlib,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage69'),str(ROOT/'research/stage14')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage69'),str(ROOT/'research/stage14')]
 from force69 import Direction,prior
 VENDOR=ROOT/'external/filterpy_imm_upstream'
 snapshot=json.loads((VENDOR/'UPSTREAM_SNAPSHOT.json').read_text('utf-8'))

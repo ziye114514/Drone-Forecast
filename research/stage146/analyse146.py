@@ -13,7 +13,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 WORK = ROOT.parent
 OUT = WORK/'output/stage146_threshold_branches_20261024'
-sys.path[:0] = [str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage144')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage144')]
 from branches146 import ThresholdFrontend, render_panel
 from polarity import counts
 from score_dense import nearest, load_labels

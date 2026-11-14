@@ -10,7 +10,7 @@ from collections import deque
 from types import SimpleNamespace
 import ast,copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage132')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage132')]
 from fast132 import Fast,forecast
 ADDED=['body_acc','geometry_acc','body_acc_constant','geometry_acc_constant']
 source=ast.parse((ROOT/'research/stage70/guard70.py').read_text('utf-8'));node=next(n for n in source.body if isinstance(n,ast.ClassDef) and n.name=='Guard')

@@ -1,7 +1,7 @@
 """Keep parallel resource failure evidence without altering frozen inference."""
 from pathlib import Path
 import datetime,json,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage123')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage123')]
 from study123 import OUT,save,sha
 def main():
     failed=OUT/'failed_parallel_startup';records=[]

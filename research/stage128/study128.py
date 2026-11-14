@@ -1,7 +1,7 @@
 """Freeze and verify actualRAW independent-support augmentation."""
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage126')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage126')]
 import run_independent_support_forecast as entry
 from study126 import CASES,REF,CACHE,rows,sha,save,stable,OUT as PRIOR
 OUT=ROOT.parent/'output/stage128_RAW_independent_support_20261023'
@@ -56,7 +56,7 @@ def check(case):
         occupancy_exact124=True,simple_hybrid_exact125=True,independent_model_exact124=True,independent_fusion_exact127=True,cutoff_and_no_cache_reads=True,active_actual_prefix=case.startswith('prefix'),decoded_frames=decoded,labels_read=False,source_hashes_unchanged=True))
     print(json.dumps(dict(case=case,frames=len(rr),checked=True)),flush=True)
 def run(case):
-    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_independent_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
+    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_independent_support_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as log:r=subprocess.run(args,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     assert r.returncode==0,(case,r.returncode);check(case)

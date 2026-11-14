@@ -1,7 +1,7 @@
 """One frozen response fit: aligned vs zero vs causal past-delayed input."""
 from pathlib import Path
 import sys,json,hashlib,os
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from calibrated_force_head import features_at,fit_head,predict_head
 OUT=ROOT.parent/'output/decision169_20261105'
 ARMS=('aligned','zero','past_delayed')

@@ -10,7 +10,7 @@ import numpy as np
 import metavision_sdk_cv as sdk
 
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'research/stage107'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage107'))
 from center107 import SimpleKF,update,coefficient
 
 PARAMS=dict(sdk_preset='FastObjects',minimum_tracks=4,minimum_track_span_s=.04,

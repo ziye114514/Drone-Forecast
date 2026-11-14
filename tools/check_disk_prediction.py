@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from normal_turn_forecast import NormalTurnForecast
 from temporal_period_support import TemporalPeriodSupport
 DTYPE=np.dtype([('x','u2'),('y','u2'),('t','i8'),('frequency','f4')])

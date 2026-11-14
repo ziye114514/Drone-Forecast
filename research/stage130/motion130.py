@@ -7,7 +7,7 @@ from pathlib import Path
 from collections import deque
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage107')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage107')]
 from center107 import BiasFilter,SimpleKF,predict,update,coefficient,PARAMS as KF
 PARAMS=dict(offset_tau_s=1.,motion_window_s=.08,motion_min_span_s=.04,motion_min_points=3,
     motion_max_gap_s=.04000001,geometry_position_sigma_floor_px=2.,velocity_sigma_floor_px_s=30.,

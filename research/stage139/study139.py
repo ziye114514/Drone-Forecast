@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'research/stage139')]
+ROOT=Path(__file__).resolve().parents[2];WORK=ROOT.parent;sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage139')]
 from dense139 import DenseGate,PARAMS,forecast
 OUT=WORK/'output/stage139_dense_fallback_20261024';OLD=WORK/'output/stage135_optimized_forecast_20261024';BODY=WORK/'output/stage124_occupancy_support_20261023'
 def load(p):return json.loads(Path(p).read_text('utf-8-sig'))

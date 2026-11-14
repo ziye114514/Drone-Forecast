@@ -8,8 +8,8 @@ from pathlib import Path
 import argparse,hashlib,json,os,subprocess,sys,time
 from multiprocessing import shared_memory
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parent
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage140'),str(ROOT/'research/stage138'),str(ROOT/'research/stage137'),str(ROOT/'research/stage136'),str(ROOT/'research/stage135'),str(ROOT/'research/stage129'),str(ROOT/'research/stage124')]
+ROOT=Path(__file__).resolve().parents[1]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage140'),str(ROOT/'research/stage138'),str(ROOT/'research/stage137'),str(ROOT/'research/stage136'),str(ROOT/'research/stage135'),str(ROOT/'research/stage129'),str(ROOT/'research/stage124')]
 from predictor135 import Predictor,forecast
 from visible140 import Predictor as VisiblePredictor
 from publication135 import Publication

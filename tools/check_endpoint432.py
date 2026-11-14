@@ -1,7 +1,7 @@
 """Independent dense conditioning of correlated difference measurements."""
 from pathlib import Path
 import sys,json,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from shared_endpoint_observer import EndpointNoiseMixin
 from relative_rotor_observer import RelativeRotorForceObserver
 

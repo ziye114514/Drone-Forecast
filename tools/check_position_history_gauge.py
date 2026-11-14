@@ -1,7 +1,7 @@
 """Behavioral checks: shape reanchors, true translation, and rotating clutter."""
 from pathlib import Path
 import json,sys,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from shared_image_motion import SharedImageMotion
 
 

@@ -7,7 +7,7 @@ from pathlib import Path
 import argparse,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT/'tools')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'tools')]
 from compare_final_pipeline import reference_at,score,stats
 from diagnose_maneuver_horizon import SPECS
 from score_fred_adaptation import matched

@@ -2,7 +2,7 @@
 from pathlib import Path
 import collections,json,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage124'),str(ROOT/'research/stage125'),str(ROOT/'research/stage126')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage124'),str(ROOT/'research/stage125'),str(ROOT/'research/stage126')]
 from study124 import OUT as INPUT,CASES,rows,save
 from study126 import OUT as RAW,CASES as RAWCASES
 from hybrid125 import NAMES

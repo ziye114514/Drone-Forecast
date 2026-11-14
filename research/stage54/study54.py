@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse,copy,datetime,hashlib,html,importlib.util,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage53')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage53')]
 import run_deploy_forecast as runner
 import study53 as previous
 from checks54 import run as checks

@@ -56,7 +56,7 @@ for name in ['clear','side','train2']:
 (OUT/'scores_actual154.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
 (OUT/'checks154.json').write_text(json.dumps(checks,indent=2),encoding='utf-8')
 snapshot=OUT/'source_snapshot';snapshot.mkdir(exist_ok=True)
-for path in [ROOT/'run_optimized_forecast.py',ROOT/'research/stage153/lm153.py',ROOT/'research/stage154/turn154.py']:
+for path in [ROOT/'core/run_optimized_forecast.py',ROOT/'research/stage153/lm153.py',ROOT/'research/stage154/turn154.py']:
     shutil.copy2(path,snapshot/path.name)
 
 import matplotlib

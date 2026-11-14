@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,json,sys,time,collections
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'research/stage2'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage2'))
 from activity_fallback_fixed import ActivityTracker
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 from event_drone_forecast.rotor_sensing import PaperPerception

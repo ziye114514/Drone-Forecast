@@ -7,7 +7,7 @@ cases=[('clear','E:/dataset/train/6/media/event.raw',22.,8.),
     ('side','E:/dataset/train/6/media/event.raw',110.,9.5),
     ('train2','E:/dataset/train/2/aligned/event.raw',40.,6.)]
 if len(sys.argv)>1:
-    sys.path.insert(0,str(ROOT));from run_optimized_forecast import run
+    sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT));from run_optimized_forecast import run
     name,raw,start,duration=next(c for c in cases if c[0]==sys.argv[1])
     run(raw,OUT/name,start,duration,True,True,pose_solver='lm',
         curved_rollout=True,skip_unobserved_geometry=True,preview_window_ms=5.)

@@ -1,9 +1,9 @@
 from pathlib import Path
 import argparse,copy,datetime,hashlib,html,importlib.util,json,sys
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 import run_joint_forecast as runner
-sys.path.insert(0,str(ROOT/'research/stage52'));import study52 as previous
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage52'));import study52 as previous
 BASE=ROOT.parent/'output';OUT=BASE/'stage53_raw_joint_physics_20261020';POS=BASE/'stage45_cuda_graph_20261019/sequence';SENSING=BASE/'stage34_slot_frequency_forecast_20261018'
 CASES={c:dict(cfg,raw='E:/dataset/train/3/aligned/event.raw' if c=='train3' else ('E:/dataset/train/5/media/event.raw' if c=='negative5' else 'E:/dataset/train/6/media/event.raw'),reference=c) for c,cfg in previous.CASES.items()}
 CASES.update(pilot_clear6=dict(CASES['clear6'],duration=.8),pilot_negative5=dict(CASES['negative5'],duration=.2),prefix_side6=dict(CASES['side6'],duration=4.5))

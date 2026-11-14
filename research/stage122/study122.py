@@ -1,7 +1,7 @@
 """Actual RAW69-forecast equivalence, cache-read ban and independent prefix."""
 from pathlib import Path
 import argparse,datetime,json,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'research/stage120')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage120')]
 import run_validated_structure_forecast as entry
 from study120 import CASES,OUT as PREVIOUS,rows,save,sha,stable
 OUT=ROOT.parent/'output/stage122_RAW_validated_structure_20261023'
@@ -48,7 +48,7 @@ def check(case):
         no_fourth_read_during_three=True,current_cutoff_valid=True,actual_prefix=case.startswith('prefix'),decoded_frames=decoded,default_promoted=False))
     print(json.dumps(dict(case=case,frames=n,old68_exact=True,selector_exact121=cached is not None)),flush=True)
 def run(case):
-    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'run_validated_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--dropout-mask',str(c['dropout']),'--verify-frames']
+    c=verify()['cases'][case];args=[sys.executable,str(ROOT/'core/run_validated_structure_forecast.py'),'--raw',c['raw'],'--output',str(OUT/'raw'/case),'--start',str(c['start']),'--duration',str(c['duration']),'--dropout-mask',str(c['dropout']),'--verify-frames']
     if not case.startswith('prefix'):args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:r=subprocess.run(args,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
     assert r.returncode==0,(case,r.returncode);check(case)

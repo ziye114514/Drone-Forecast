@@ -124,7 +124,7 @@ handoff.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8
 relative=report.relative_to(WORK/'output').as_posix()
 (WORK/'output/latest_optimized_forecast.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url='+relative+'"><a href="'+relative+'">打开原弧引导与真实预测对照</a>',encoding='utf-8')
 for name in ['temporal148.py','residual148.py','guided148.py']:shutil.copyfile(ROOT/'research/stage148'/name,OUT/(name[:-3]+'_final.py'))
-shutil.copyfile(ROOT/'run_optimized_forecast.py',OUT/'run_optimized148_final.py')
+shutil.copyfile(ROOT/'core/run_optimized_forecast.py',OUT/'run_optimized148_final.py')
 for target in re.findall(r'(?:href|src)="([^"]+)"',page):
     if not target.startswith(('http:','https:','#')):assert (OUT/target).exists(),target
 print(json.dumps(dict(report=str(report),worklog_section=153,local_links_ok=True,default_algorithm=144,running_jobs=[]),ensure_ascii=False))

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,sys
 import numpy as np
 from force69 import *
-sys.path[:0]=[str(ROOT/'research/stage68'),str(ROOT/'research/stage64')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage68'),str(ROOT/'research/stage64')]
 import study68 as activity
 import study64 as body
 base=body.prior.previous

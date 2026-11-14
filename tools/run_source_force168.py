@@ -6,7 +6,7 @@ All ablations use the same p/v and current motion measurements.
 from pathlib import Path
 import sys,json,copy,hashlib,time
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 from local_period_tracks import LocalPeriodTracks,InnovationUnknownForce
 from visible_force_dynamics import VisibleForceDynamics,evaluate_visible
 from run_force167 import pure_observation,pure_motion

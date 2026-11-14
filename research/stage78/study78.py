@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,importlib.util,json,subprocess,sys
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage77'),str(ROOT/'research/stage75'),str(ROOT/'research/stage22')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage77'),str(ROOT/'research/stage75'),str(ROOT/'research/stage22')]
 import run_separated_forecast as entry
 import study77 as cache
 previous=cache.actual;base=cache.base
@@ -45,7 +45,7 @@ def verify():
         s=Path(n).stat();assert m==dict(bytes=s.st_size,mtime_ns=s.st_mtime_ns)
     return p
 def run(case):
-    verify();cfg=CASES[case];args=[sys.executable,str(ROOT/'run_separated_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
+    verify();cfg=CASES[case];args=[sys.executable,str(ROOT/'core/run_separated_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/case),
         '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--verify-frames']
     if not case.startswith('prefix') and case!='negative5':args.append('--preview')
     with (OUT/(case+'_parent.log')).open('x',encoding='utf-8') as f:

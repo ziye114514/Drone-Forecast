@@ -7,7 +7,7 @@ from pathlib import Path
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='1'
 import sys,json,time,hashlib,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from helixtrack_adapter import HelixCore
 from pure_visibility170 import window
 OUT=ROOT.parent/'output/helix_bridge180_20261107'
@@ -87,7 +87,7 @@ if __name__=='__main__':
         finally:tracker.close()
         out.append(dict(direction=direction,pose_refinement=solve_pose,phase_prior_hz=prior,prior_source=prior_source,
             prior_is_independent_RPM_truth=False,warm_phase_concentration=warm_R,records=branch))
-    files=[ROOT/'native/helixtrack_bridge.cpp',ROOT/'helixtrack_adapter.py',Path('D:/drone forecast/helixtrack-main/helixtrack_tracker.h')]
+    files=[ROOT/'native/helixtrack_bridge.cpp',ROOT/'core/helixtrack_adapter.py',Path('D:/drone forecast/helixtrack-main/helixtrack_tracker.h')]
     result=dict(seed_t=seed_t,ellipse=ellipse,branches=out,NN_used=False,coordinate_labels_used=False,
         author_GT_initialization_used=False,author_code_modified=False,force_feedback_enabled=False,
         mechanical_RPM_validated=False,forecast_improvement_claimed=False,

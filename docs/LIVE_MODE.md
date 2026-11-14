@@ -5,7 +5,7 @@
 位置更新与外推现由可安装`event_drone_forecast.position`提供，根目录数学文件保留兼容导入；迁移保持632次实际输入的全部数值与资格不变，见[位置核心](POSITION_CORE.md)。
 
 ```powershell
-python forecast.py run --profile live --config configs/local.json `
+python core/forecast.py run --profile live --config configs/local.json `
   --raw 'E:\dataset\train\6\media\event.raw' --output '<新的输出目录>' `
   --start 110 --duration 4 --tracker-hz 25 --publish-hz 5 --preview
 ```

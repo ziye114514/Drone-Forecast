@@ -4,7 +4,7 @@ from collections import Counter
 import argparse, copy, datetime, hashlib, html, json, os, sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage55'),str(ROOT/'research/stage50')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage55'),str(ROOT/'research/stage50')]
 import study55 as previous
 import layout50 as layout
 OUT=ROOT.parent/'output/stage56_roi_layout_association_20261021'

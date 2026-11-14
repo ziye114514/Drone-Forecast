@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,sys,time
 import cv2,numpy as np
-ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1];WORK=ROOT.parent;sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 from live_decode import native_batches
 from live_local_flow import FeatureFlow,event_support,frame_support
 from metavision_sdk_cv import ActivityNoiseFilterAlgorithm

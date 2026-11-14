@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys,itertools
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'research/stage4'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage4'))
 from study import OUT, save
 from tracker import fit_affine,X,initialization
 

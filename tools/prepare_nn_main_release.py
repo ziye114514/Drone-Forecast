@@ -15,7 +15,7 @@ def write(name,text):
 
 
 def portable(s):
-    s=re.sub(r'sys\.path\[:0\]\s*=\s*\[.*?\]',"sys.path[:0]=[str(ROOT/'src')]",s,flags=re.S)
+    s=re.sub(r'sys\.path\[:0\]\s*=\s*\[.*?\]',"sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src')]",s,flags=re.S)
     replacements={
         'from research.stage146.branches146 import':'from rotor_geometry import',
         'from research.stage147.curvature147 import':'from curvature_split import',
@@ -32,8 +32,8 @@ def portable(s):
         'research/stage79/native79.py':'frequency_features.py',
     }
     for a,b in replacements.items():s=s.replace(a,b)
-    s=s.replace("sys.path.insert(0,str(ROOT/'research/stage141'))","sys.path.insert(0,str(ROOT/'src'))")
-    s=s.replace("sys.path.insert(0,str(ROOT/'research/stage79'))","sys.path.insert(0,str(ROOT/'src'))")
+    s=s.replace("sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage141'))","sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))")
+    s=s.replace("sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage79'))","sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))")
     return s
 
 
@@ -128,8 +128,8 @@ if __name__=='__main__':
     write('nn_assist_replay.py','''"""Replay fixed detector-led NN states, optionally add experimental166 rotor residual."""
 from pathlib import Path
 import argparse,json,sys
-ROOT=Path(__file__).resolve().parent
-sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))
 
 def replay(nn_path,output,rotor_path=None,mode='baseline'):
     if output.exists():raise FileExistsError('Use a new output: '+str(output))
@@ -161,8 +161,8 @@ if __name__=='__main__':main()
     write('nn_forecast.py','''"""NN-led release entry. NN detects/localizes; tracking/model rollout predicts position."""
 from pathlib import Path
 import argparse,json,subprocess,sys
-ROOT=Path(__file__).resolve().parent
-sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
@@ -182,7 +182,7 @@ def main():
     from forecast import settings
     cfg=settings(a)
     if a.start<0 or a.duration<=0:p.error('Require start>=0 and duration>0')
-    command=[cfg['sdk_python'],'-X','utf8',str(ROOT/'run_fast_structure.py'),'--raw',str(a.raw.resolve()),'--output',str(a.output.resolve()),
+    command=[cfg['sdk_python'],'-X','utf8',str(ROOT/'core/run_fast_structure.py'),'--raw',str(a.raw.resolve()),'--output',str(a.output.resolve()),
         '--start',str(a.start),'--duration',str(a.duration),'--hz','30','--realtime30','--gpu-python',cfg['gpu_python'],
         '--detector-weights',cfg['detector_weights'],'--detector-sha256',cfg['detector_sha256'],'--cache-dir',cfg['cache_dir']]
     if a.preview:command+=['--preview']
@@ -311,7 +311,7 @@ RAW主入口与辅助回放是两条明确的运行能力：nn_forecast.py predi
         NN_source_selection='recorded clear NN-led runtime snapshot; historical clip configurations differ',
         additional_auxiliary_default=False,auxiliary_live_integration_proven=False),indent=2))
     write('tools/check_nn_aux.py',(ROOT/'tools/check_nn_rotor166.py').read_text('utf-8')
-          .replace('sys.path.insert(0,str(ROOT))',"sys.path.insert(0,str(ROOT/'src'))")
+          .replace('sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT))',"sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))")
           .replace('from nn_rotor_gate import','from event_drone_forecast.experimental_nn_aux.nn_rotor_gate import')
           .replace('from nn_rotor_residual import','from event_drone_forecast.experimental_nn_aux.nn_rotor_residual import')
           .replace('from adaptive_force_memory import','from event_drone_forecast.experimental_nn_aux.adaptive_force_memory import')

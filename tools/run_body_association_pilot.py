@@ -9,7 +9,7 @@ cases=[('train2','E:/dataset/train/2/aligned/event.raw',40.,6.),
        ('clear','E:/dataset/train/6/media/event.raw',22.,2.),
        ('negative','E:/dataset/train/5/media/event.raw',0.,1.)]
 for name,raw,start,duration in cases:
-    cmd=[sys.executable,'-X','utf8',str(ROOT/'forecast.py'),'run','--config',str(ROOT/'configs/local.json'),
+    cmd=[sys.executable,'-X','utf8',str(ROOT/'core/forecast.py'),'run','--config',str(ROOT/'configs/local.json'),
          '--profile','live','--body-association','bytetrack','--publication-clock','independent','--raw',raw,'--output',str(OUT/name),
          '--start',str(start),'--duration',str(duration),'--preview','--verify-frames']
     with (OUT/(name+'.log')).open('x',encoding='utf-8') as log:

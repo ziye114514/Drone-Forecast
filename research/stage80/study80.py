@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,cProfile,datetime,hashlib,io,json,pstats,sys,time
 import numpy as np
 from exact80 import *
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage79'),str(ROOT/'research/stage62')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage79'),str(ROOT/'research/stage62')]
 import study79 as utils
 from independent62 import Managed62,Selector
 from event_drone_forecast.raw_io import open_raw,raw_chunks

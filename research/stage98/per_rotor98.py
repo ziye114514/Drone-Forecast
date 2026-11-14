@@ -9,7 +9,7 @@ from dataclasses import asdict
 import argparse,datetime,json,sys,time
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage88')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage88')]
 from inventory88 import save,load,sha,parse,unique_rows
 from event_drone_forecast.paper_config import PaperConfig
 from event_drone_forecast.rotor_sensing import PaperPerception,RotorSensing

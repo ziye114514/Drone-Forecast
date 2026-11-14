@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,types
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage66')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage66')]
 import periodicity66 as original
 PARAMS=dict(original.PARAMS,matching='Keep original top5 peaks with individual peak/noise>=8. '
     'A full-window peak must have a qualified peak within one half-window FFT '

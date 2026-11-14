@@ -1,7 +1,7 @@
 """Two explicit peak-geometry mechanisms, six RAWs, fixed scoring cohort."""
 from pathlib import Path
 import os,subprocess,sys,json,hashlib,numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from run_rotor_only import SOURCE_FILES
 from extend_inverse321 import references
 from score_rotor164 import score

@@ -24,7 +24,7 @@ import sys
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT / 'research/stage142'), str(ROOT / 'src'), str(ROOT / 'research/stage135')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT / 'research/stage142'), str(ROOT / 'src'), str(ROOT / 'research/stage135')]
 from feature_model142 import AxisFeatureModel  # noqa: E402
 from predictor135 import forecast  # noqa: E402
 from event_drone_forecast.paper_config import PaperConfig  # noqa: E402

@@ -11,7 +11,7 @@ import numpy as np
 import cv2
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage129')]
+sys.path[:0] = [str(ROOT/'core'),str(ROOT/'src'), str(ROOT/'research/stage146'), str(ROOT/'research/stage129')]
 from branches146 import ThresholdFrontend, BranchGeometry, render_panel
 from boundary129 import bounded
 from polarity import counts

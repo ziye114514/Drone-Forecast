@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,copy,hashlib
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'tools')]
 from local_period_tracks import LocalPeriodTracks
 from rotor_thrust_bank import RotorThrustBankProxy
 from rotor_force_observer import RotorForceObserver

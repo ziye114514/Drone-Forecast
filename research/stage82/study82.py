@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,json,sys,time
 import numpy as np
 from stream82 import *
-sys.path[:0]=[str(ROOT/'src'),str(ROOT/'research/stage79'),str(ROOT/'research/stage64')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'src'),str(ROOT/'research/stage79'),str(ROOT/'research/stage64')]
 import study79 as utils
 from compensation64 import PastVelocity
 from event_drone_forecast.raw_io import open_raw,raw_chunks

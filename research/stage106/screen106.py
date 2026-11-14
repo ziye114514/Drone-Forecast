@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,json,subprocess,sys,collections
 import cv2,numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT),str(ROOT/'research/stage104')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'research/stage104')]
 import run_planar_center_forecast as entry
 OUT=ROOT.parent/'output/stage106_continuous_screen_20261022'
 CASE=dict(raw='E:/dataset/train/6/media/event.raw',start=110.,duration=9.5)
@@ -24,7 +24,7 @@ def verify():
     p=load(OUT/'protocol106.json');assert p['sources']==sources();return p
 def run():
     cfg=verify()['case']
-    args=[sys.executable,str(ROOT/'run_planar_center_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/'raw'),
+    args=[sys.executable,str(ROOT/'core/run_planar_center_forecast.py'),'--raw',cfg['raw'],'--output',str(OUT/'raw'),
           '--start',str(cfg['start']),'--duration',str(cfg['duration']),'--preview','--verify-frames']
     with (OUT/'parent.log').open('x',encoding='utf-8') as f:
         r=subprocess.run(args,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))

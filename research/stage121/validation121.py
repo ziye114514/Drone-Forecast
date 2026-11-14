@@ -8,7 +8,7 @@ from pathlib import Path
 import copy,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path[:0]=[str(ROOT/'research/stage119')]
+sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage119')]
 from partial119 import PartialModel,native_H
 from study119 import CenterBank
 PARAMS=dict(validation_tau_s=.2,minimum_valid_full_checks=5,

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,importlib.util,json,sys,time
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'research/stage8'))
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage8'))
 spec=importlib.util.spec_from_file_location('legacy8_study',ROOT/'research/stage8/study.py')
 legacy8=importlib.util.module_from_spec(spec);spec.loader.exec_module(legacy8)
 from recovery import RecoveryFrontend,PARAMS,tests

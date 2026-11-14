@@ -4,7 +4,7 @@ from collections import Counter
 import argparse,datetime,sys,time
 import cv2,numpy as np
 from compensation64 import *
-sys.path.insert(0,str(ROOT/'research/stage63'));import study63 as prior
+sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage63'));import study63 as prior
 from event_drone_forecast.raw_io import open_raw,raw_chunks
 OUT=ROOT.parent/'output/stage64_motion_compensated_axis_20261021'
 CASES=dict(prior.CASES);CASES.update(prefix_side6=dict(CASES['side6'],duration=4.5),prefix_train3=dict(CASES['train3'],duration=1.2))

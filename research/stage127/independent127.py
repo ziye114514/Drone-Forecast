@@ -7,7 +7,7 @@ box once. This is an image-coordinate gauge, not COM calibration.
 from pathlib import Path
 import copy,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage122')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage122')]
 from worker122 import PartialModel,geom,CenterBank,NAMES
 PARAMS=dict(rule='Prefer current count-model geometry; otherwise use current independently learned occupancy-model geometry; otherwise count-model hold/body fallback.',
     structure='Two unchanged119 affine3 models, each learns its own five-full-frame dimensionless shape. Never insert occupancy ellipses into count learned shape.',

@@ -2,7 +2,7 @@
 from pathlib import Path
 import ast,sys
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'research/stage137')]
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'core'),str(ROOT/'research/stage137')]
 import fast137
 fixed117=fast137.fixed117
 

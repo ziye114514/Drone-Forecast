@@ -1,7 +1,7 @@
 """Portable invariants: no RAW, GPU, private weights or SDK required."""
 from pathlib import Path
 import json,sys,tempfile,unittest
-ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'core'),str(ROOT),str(ROOT/'src'),str(ROOT/'tools')]
 
 
 class Controls(unittest.TestCase):
