@@ -269,6 +269,7 @@ $$k(h) = 1 - \alpha h^2, \quad \alpha = 0.9$$
 - [流程图、输出字段与代码导航](docs/ARCHITECTURE.md)
 - [结果与当前缺陷](docs/RESULTS.md)
 - [协作邀请指南](docs/COLLABORATION_INVITE.md)
+- [待办清单与已证伪方向](docs/TASKS.md)
 
 **按主题**
 - [低延迟位置通道](docs/LIVE_MODE.md)
@@ -307,6 +308,7 @@ python -m unittest discover -s tests                  # 25 个单测，约 1.4 �
 ```
 
 具体怎么找到人、怎么给新人派第一个任务，写在 [协作邀请指南](docs/COLLABORATION_INVITE.md) 里。
+可直接接手的任务清单、以及已经证伪别再试的方向，见 [待办清单](docs/TASKS.md)。
 
 ---
 
