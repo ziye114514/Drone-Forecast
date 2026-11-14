@@ -3,18 +3,27 @@
 Builds a withdrawn Tk root, drives store / navigate / clear / undo / accept_model
 the same way the mouse and keys do, and checks what lands in labels.json. No
 window is shown and no RAW is decoded.
+
+This is a manual harness, not a unittest case: it needs a prepared case directory
+and a display. Imports happen inside main() so that `unittest discover` can import
+this module on a machine without tkinter (CI runs it that way).
 """
 from pathlib import Path
 import json
 import sys
-import tkinter as tk
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'tools'))
-from annotate_dense_gui import Labeller  # noqa: E402
 
 
 def main():
+    try:
+        import tkinter as tk
+    except ImportError:
+        print(json.dumps(dict(ok=False, skipped='tkinter is not available')))
+        return
+    sys.path.insert(0, str(ROOT / 'tools'))
+    from annotate_dense_gui import Labeller
+
     case = Path(sys.argv[1]).resolve()
     label_path = case / 'labels.json'
     if label_path.exists():

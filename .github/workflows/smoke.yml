@@ -1,0 +1,91 @@
+name: 冒烟与单测
+
+# 这个工作流只跑不需要 RAW、不需要权重、不需要 SDK/CUDA 的部分。
+# 真正的管线跑不了（数据不在仓库里），但"搬家之后 import 有没有断"
+# 和"25 个单测还过不过"必须在每次 PR 上自动检查。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy scipy opencv-python-headless pillow
+
+      - name: 单元测试
+        run: python -m unittest discover -s tests -v
+
+      - name: 全部模块语法可解析
+        run: |
+          python - <<'PY'
+          import ast, pathlib, sys
+          bad = []
+          for p in pathlib.Path('.').rglob('*.py'):
+              if any(q in p.parts for q in ('.git', '__pycache__')):
+                  continue
+              try:
+                  ast.parse(p.read_text(encoding='utf-8'))
+              except SyntaxError as e:
+                  bad.append(f'{p}: {e}')
+          print(f'checked, {len(bad)} broken')
+          for b in bad:
+              print(' ', b)
+          sys.exit(1 if bad else 0)
+          PY
+
+  imports:
+    # core/ 是平铺命名空间，模块之间靠裸名 import 互相找。搬家/改名之后
+    # 最容易坏的就是这里，所以单独跑一次：把 core/ 和 tools/ 加进 sys.path，
+    # 逐个 import 所有有 __main__ 的入口，看有没有 ModuleNotFoundError。
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 安装依赖
+        run: |
+          python -m pip install numpy scipy opencv-python-headless pillow
+      - name: 平铺命名空间可导入
+        run: |
+          python - <<'PY'
+          import ast, pathlib, sys
+          root = pathlib.Path('.').resolve()
+          sys.path[:0] = [str(root/'core'), str(root/'src'), str(root/'tools'), str(root)]
+          broken = []
+          for p in sorted((root/'core').glob('*.py')):
+              text = p.read_text(encoding='utf-8')
+              if '__main__' not in text:
+                  continue          # 库模块不单独跑
+              try:
+                  compile(text, str(p), 'exec')
+              except SyntaxError as e:
+                  broken.append(f'{p.name}: {e}')
+          print(f'{len(broken)} syntax failures among entry points')
+          for b in broken:
+              print(' ', b)
+          sys.exit(1 if broken else 0)
+          PY
+
+      - name: 平铺文件名仍可解析
+        run: python tools/check_flat_names.py

@@ -268,6 +268,7 @@ $$k(h) = 1 - \alpha h^2, \quad \alpha = 0.9$$
 - [快速开始与评分](docs/QUICKSTART.md)
 - [流程图、输出字段与代码导航](docs/ARCHITECTURE.md)
 - [结果与当前缺陷](docs/RESULTS.md)
+- [协作邀请指南](docs/COLLABORATION_INVITE.md)
 
 **按主题**
 - [低延迟位置通道](docs/LIVE_MODE.md)
@@ -297,6 +298,15 @@ $$k(h) = 1 - \alpha h^2, \quad \alpha = 0.9$$
 模型权重的 SHA256 清单见 `MODELS.md`。
 
 研究记录只写仓库内那份 `WORKLOG.md`（曾经在上级目录有一份，已废弃）。
+
+**想参与但没有数据？** 下面这两条不需要 RAW、权重或 GPU：
+
+```powershell
+python tools\demo_synthetic.py --output D:\tmp\demo   # 合成控制，验证几何/相位逻辑
+python -m unittest discover -s tests                  # 25 个单测，约 1.4 秒
+```
+
+具体怎么找到人、怎么给新人派第一个任务，写在 [协作邀请指南](docs/COLLABORATION_INVITE.md) 里。
 
 ---
 
