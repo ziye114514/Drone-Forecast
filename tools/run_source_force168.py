@@ -17,6 +17,13 @@ BASE=ROOT.parent/'output';PREV=BASE/'nn_rotor166_20261105';OUT=BASE/'source_forc
 ARMS=('zero_algebra','legacy_algebra','tracked_algebra','zero_innovation','legacy_innovation','tracked_innovation','tracked_innovation_normal')
 SOURCES=['local_period_tracks.py','visible_force_dynamics.py','rotor_thrust_bank.py','normal_turn_forecast.py',
     'flow_identifiable_gain.py','flow_force_balance.py','adaptive_force_memory.py','tools/run_source_force168.py','tools/run_force167.py']
+# Sources moved out of the repository root; resolve a flat name to wherever it lives now.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def source_path(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 
 
 def acceleration_covariance(motion):
@@ -76,7 +83,7 @@ def replay(base_rows,observations,pure=False):
 if __name__=='__main__':
     sys.addaudithook(guard);OUT.mkdir(exist_ok=False);snapshot=OUT/'source_snapshot';snapshot.mkdir();hashes={}
     for name in SOURCES:
-        data=(ROOT/name).read_bytes();dest=snapshot/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data);hashes[name]=hashlib.sha256(data).hexdigest()
+        data=(source_path(name)).read_bytes();dest=snapshot/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data);hashes[name]=hashlib.sha256(data).hexdigest()
     sources={};configs=json.loads((PREV/'summary.json').read_text('utf-8'))
     for clip,config in configs.items():
         obs=[json.loads(s) for s in (PREV/f'{clip}_observations.jsonl').read_text('utf-8').splitlines()]

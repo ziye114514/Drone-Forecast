@@ -7,7 +7,7 @@
 
 | 入库 | 不入库（见 `.gitignore`） |
 |---|---|
-| 源码（`src/`、`research/stage*/`、`tools/`、`run_*.py`） | 原生 RAW 与视频（`.raw/.avi/.mp4`，单段 0.5–1.9 GB） |
+| 源码（`core/`、`src/`、`research/stage*/`、`tools/`） | 原生 RAW 与视频（`.raw/.avi/.mp4`，单段 0.5–1.9 GB） |
 | 文档（`*.md`）与协议/日志中的小 JSON | ONNX 权重（~50 MB，获取方式见 `MODELS.md`） |
 | 第三方快照（`external/`，含 LICENSE） | 全部运行输出（`output/`，17+ GB） |
 | 测试与复现脚本 | `__pycache__`、`Ultralytics/settings.json`（含本机路径与 uuid） |
@@ -68,13 +68,17 @@ stage144: 外推阻尼升为默认
 
 ```
 event_drone_forecast/
-├── src/event_drone_forecast/   主包（几何/感知/运动模型）
-├── research/stage1..149/       逐阶段实验，一个阶段一个目录
-├── tools/                      报告生成、标注工具、评测脚本
-├── run_*.py                    各入口；默认入口是 run_optimized_forecast.py
+├── core/                       全部算法模块与入口（平铺命名空间，默认入口 run_optimized_forecast.py）
+├── src/event_drone_forecast/   可安装主包（几何/感知/运动模型）
+├── research/stage1..156/       逐阶段实验，一个阶段一个目录
+├── tools/                      报告生成、标注工具、评测脚本、自检 check_*.py
+├── models/                     权重放这里（不入 git，见 MODELS.md）
 ├── MODELS.md                   权重获取与校验
 └── WORKLOG.md                  完整实验记录（本项目最重要的文件）
 ```
+
+`core/` 里的 340 个模块是平铺的：彼此之间仍然写 `import live_decode` 这样的裸名，
+靠入口脚本把 `core/` 塞进 `sys.path` 来找。所以新增模块直接放进 `core/`，不要建子包。
 
 ## 冲突怎么办
 

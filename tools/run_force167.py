@@ -12,6 +12,13 @@ BASE=ROOT.parent/'output';PREV=BASE/'nn_rotor166_20261105';OUT=BASE/'visible_for
 MODES=('zero','normal_only','full_fixed','full_learned')
 SOURCES=('visible_force_dynamics.py','tools/run_force167.py','flow_identifiable_gain.py',
     'flow_force_balance.py','normal_turn_forecast.py','rotor_thrust_bank.py','adaptive_force_memory.py')
+# Sources moved out of the repository root; resolve a flat name to wherever it lives now.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def source_path(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 
 
 def pure_observation(row):
@@ -71,7 +78,7 @@ def replay(base_rows,observations,pure=False):
 if __name__=='__main__':
     sys.addaudithook(guard);OUT.mkdir(exist_ok=False);snap=OUT/'source_snapshot';snap.mkdir();hashes={}
     for name in SOURCES:
-        data=(ROOT/name).read_bytes();dest=snap/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data);hashes[name]=hashlib.sha256(data).hexdigest()
+        data=(source_path(name)).read_bytes();dest=snap/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data);hashes[name]=hashlib.sha256(data).hexdigest()
     configs=json.loads((PREV/'summary.json').read_text('utf-8'));summary={}
     for clip,config in configs.items():
         observations=[json.loads(s) for s in (PREV/f'{clip}_observations.jsonl').read_text('utf-8').splitlines()]

@@ -3,6 +3,14 @@ from pathlib import Path
 import argparse,ast,hashlib,json,re,shutil,zipfile,csv
 ROOT=Path(__file__).resolve().parents[1];TEMPLATES=ROOT/'release_templates/github'
 VERSION='0.4.0-alpha.2'
+# Flat names are both the in-package destination path and the source name. Sources live
+# in core/ (moved out of the repository root), tools/, or the root itself.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def src(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 COPY=('normal_turn_forecast.py','temporal_period_support.py','rotor_thrust_bank.py','propeller_physics.py','curved_flow_motion.py','flow_anchor_gauge.py','adaptive_force_memory.py','thrust_trend_forecast.py','aligned_period_recovery.py','body_period_stream.py','endpoint_force_balance.py','fast_raw_reader.py','period_process.py','sdk_activity_backend.py','native/sdk_activity_avx2.cpp','forecast_runtime.py','fast_structure_front.py','fast_geometry_compute.py','native_counts_numba.py','native_geometry_numba.py','native_latest_frequency.py','requirements-counts.txt','shared_image_motion.py','motion_observability.py','live_flow_spatial.py','flow_force_balance.py','projected_unknown_force.py','axis_amplitude_bridge.py','live_local_flow.py','live_flow_acceleration.py','native_render.py','responsive_force.py','continuous_five_circle.py',
     'five_circle_model.py','shared_arc_recovery.py','partial_arc_information.py','fast_force_response.py','visibility_period.py',
     'shared_phase_fft.py','live_decode.py','live_pixel_axis.py','live_frequency_pixels.py','live_scale_rollout.py',
@@ -28,7 +36,7 @@ def write(root,name,data):
     p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
     p.write_bytes(data if isinstance(data,bytes) else data.encode('utf-8'));return p
 def extract(source,names,imports):
-    text=(ROOT/source).read_text('utf-8');tree=ast.parse(text);parts=[];selected=[]
+    text=(source if Path(source).is_absolute() else ROOT/source).read_text('utf-8');tree=ast.parse(text);parts=[];selected=[]
     for n in tree.body:
         name=getattr(n,'name',None)
         if isinstance(n,ast.Assign):name=next((t.id for t in n.targets if isinstance(t,ast.Name)),None)
@@ -46,8 +54,8 @@ def build(out):
     if archive.exists():raise FileExistsError(archive)
     out.mkdir(parents=True);provenance=[]
     for f in COPY:
-        b=(ROOT/f).read_bytes();write(out,f,b)
-        provenance.append(dict(destination=f,original=f,original_sha256=digest(b),mode='copy_or_path_interface_adaptation'))
+        b=src(f).read_bytes();write(out,f,b)
+        provenance.append(dict(destination=f,original=src(f).relative_to(ROOT).as_posix(),original_sha256=digest(b),mode='copy_or_path_interface_adaptation'))
     package=ROOT/'src/event_drone_forecast'
     selected=[package/f for f in ['__init__.py','geometry.py','detector_backend.py','raw_io.py']]
     selected+=list((package/'position').glob('*.py'))
@@ -72,10 +80,10 @@ def build(out):
         ('lumped_disturbance.py','lumped_disturbance.py',['PARAMS','LumpedDisturbance','forecasts'],
         'import numpy as np\nfrom event_drone_forecast.position._filterpy import predict,update')]
     for dest,source,names,imports in exports:
-        text,defs=extract(source,names,imports);write(out,dest,text)
-        provenance.append(dict(destination=dest,original=source,original_sha256=digest((ROOT/source).read_bytes()),
+        text,defs=extract(src(source),names,imports);write(out,dest,text)
+        provenance.append(dict(destination=dest,original=src(source).relative_to(ROOT).as_posix(),original_sha256=digest(src(source).read_bytes()),
             mode='AST_verified_definition_extraction',definitions=defs))
-    for f in TESTS:write(out,'tools/'+f,(ROOT/'tools'/f).read_bytes())
+    for f in TESTS:write(out,'tools/'+f,src(f).read_bytes())
     for p in TEMPLATES.rglob('*'):
         if p.is_file() and p.name!='LICENSE_AGPL.txt':write(out,p.relative_to(TEMPLATES).as_posix(),p.read_bytes())
     license_text=(TEMPLATES/'LICENSE_AGPL.txt').read_bytes()

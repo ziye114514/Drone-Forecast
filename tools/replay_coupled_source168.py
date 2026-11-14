@@ -15,6 +15,13 @@ from run_rotor_only import serial
 BASE=ROOT.parent/'output';OUT=BASE/'source_force168_20261105/single_observer_relativefix'
 SOURCES=['tools/replay_coupled_source168.py','tools/run_force167.py','local_period_tracks.py',
     'rotor_thrust_bank.py','rotor_force_observer.py','relative_rotor_observer.py','physical_publication.py']
+# Sources moved out of the repository root; resolve a flat name to wherever it lives now.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def source_path(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 
 
 def replay(source,relative):
@@ -49,7 +56,7 @@ def replay(source,relative):
 if __name__=='__main__':
     sys.addaudithook(guard);OUT.mkdir(exist_ok=False);snap=OUT/'source_snapshot';snap.mkdir();hashes={}
     for name in SOURCES:
-        b=(ROOT/name).read_bytes();p=snap/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b);hashes[name]=hashlib.sha256(b).hexdigest()
+        b=(source_path(name)).read_bytes();p=snap/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b);hashes[name]=hashlib.sha256(b).hexdigest()
     summary={}
     for clip,path,relative in [('pure_side',BASE/'native_plane165_20261104/cold_relative_True.jsonl',True),
         ('pure_train2',BASE/'native_plane165_20261104/train2_cache_border/predictions.jsonl',True)]:

@@ -12,6 +12,13 @@ MODES=('native_pose','native_four','native_visible')
 SOURCES=('nn_rotor_gate.py','nn_rotor_residual.py','tools/replay_gated_nn166.py',
     'adaptive_force_memory.py','physical_publication.py','rotor_thrust_bank.py',
     'fast_force_response.py','endpoint_force_balance.py','normal_turn_forecast.py')
+# Sources moved out of the repository root; resolve a flat name to wherever it lives now.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def source_path(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 
 
 def guard(event,args):
@@ -36,7 +43,7 @@ if __name__=='__main__':
     sys.addaudithook(guard);snapshot=OUT/'gated_source_snapshot';snapshot.mkdir(exist_ok=False)
     hashes={}
     for name in SOURCES:
-        b=(ROOT/name).read_bytes();p=snapshot/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+        b=(source_path(name)).read_bytes();p=snapshot/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
         hashes[name]=hashlib.sha256(b).hexdigest()
     summary={};info=json.loads((OUT/'summary.json').read_text('utf-8'))
     for clip,config in info.items():

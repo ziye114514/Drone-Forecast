@@ -19,6 +19,14 @@ from phase_rate_bridge import phase_supported_rates
 from local_pixel_phase import local_pixel_phase
 
 ROOT=Path(__file__).resolve().parents[1]
+# Names below are flat both in the working tree (under core/) and in the public export
+# (where every module sits next to the entry point). Resolve at use time, never rewrite names.
+SOURCE_DIRS=(ROOT/'core',ROOT/'tools',ROOT)
+def source_path(name):
+    for base in SOURCE_DIRS:
+        p=base/name
+        if p.exists():return p
+    raise FileNotFoundError('source not found: '+name)
 SOURCE_FILES = ['run_rotor_only.py','rotor_only_front.py','rotor_period_worker.py',
     'rotor_support_front.py','predictive_harmonics.py','predictive_harmonics_cuda.py',
     'fast_structure_front.py','rotor_force_observer.py','rotor_cuda_device.py',
@@ -460,7 +468,7 @@ def run(args,predictor_factory=RotorPredictor):
     # running process to edits made while its already-imported code executes.
     sources={};snapshot=out/'source_snapshot';snapshot.mkdir()
     for name in SOURCE_FILES:
-        data=(ROOT/name).read_bytes();target=snapshot/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+        data=(source_path(name)).read_bytes();target=snapshot/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
         sources[name]=hashlib.sha256(data).hexdigest()
     decoder_prepare_s=0.
     if getattr(args,'rotor_reader_ready',False) and not getattr(args,'cache',None):
@@ -572,7 +580,7 @@ def run(args,predictor_factory=RotorPredictor):
         labels_used=False,pixel_segmentation_precision_measured=False)
     (out/'skipped_observations.json').write_text(json.dumps(getattr(args,'_skipped_observations',[]),indent=2),'utf-8')
     (out/'summary.json').write_text(json.dumps(summary,indent=2,default=serial),'utf-8')
-    changed=[name for name in SOURCE_FILES if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=sources[name]]
+    changed=[name for name in SOURCE_FILES if hashlib.sha256((source_path(name)).read_bytes()).hexdigest()!=sources[name]]
     (out/'protocol.json').write_text(json.dumps(dict(raw=getattr(args,'raw',None),cache=getattr(args,'cache',None),
         no_model_weights_read=not hasattr(predictor,'response_model_info'),
         body_NN_weights_read=False,native_response_model=getattr(predictor,'response_model_info',None),
