@@ -111,6 +111,10 @@ def build(out):
         s=s.replace('from native79 import','from frequency_features import')
         s=s.replace("sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'research/stage79'))","sys.path.insert(0,str(ROOT/'core'));sys.path.insert(0,str(ROOT/'src'))")
         p.write_text(s,'utf-8')
+    # A hardcoded CUDA install path is a private-workspace default; the export reads
+    # ProgramFiles instead so the package carries no absolute Windows path.
+    change('rotor_nvrtc.py',"root=Path(os.environ.get('CUDA_PATH','C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2'))",
+        "root=Path(os.environ['CUDA_PATH']) if os.environ.get('CUDA_PATH') else Path(os.environ['ProgramFiles'])/'NVIDIA GPU Computing Toolkit/CUDA/v13.2'")
     change('forecast_runtime.py',"REFERENCE_SHA256 = 'e2531556ad0431d904fb0d1d432727a2e2dd9eaed9e098a6ed3d9e55f474db0b'", "REFERENCE_SHA256 = 'ed8016494a798df884573ffbbcec0e69d1331886da3222909e90135048c0f7a4'")
     change('forecast_runtime.py',"cfg.get(key, default)","(cfg.get(key) if cfg.get(key) is not None else default)")
     p=out/'run_fast_structure.py';s=p.read_text('utf-8');tree=ast.parse(s)
@@ -125,6 +129,19 @@ def build(out):
         and isinstance(n.iter,ast.List) and any(isinstance(v,ast.Constant) and v.value=='run_fast_structure.py' for v in n.iter.elts))
     core=sorted(p.relative_to(out).as_posix() for p in out.rglob('*') if p.is_file() and p.suffix in ('.py','.cpp') and not any(q in p.relative_to(out).parts for q in ['tests','tools']))
     s=s.replace(ast.get_source_segment(s,loop.iter),repr(core));p.write_text(s,'utf-8')
+    # run_rotor_only.py carries the same private-workspace guards (output, then input).
+    p=out/'run_rotor_only.py';s=p.read_text('utf-8')
+    while True:
+        tree=ast.parse(s)
+        guards=[n for n in ast.walk(tree) if isinstance(n,ast.For) and isinstance(n.target,ast.Name) and n.target.id=='protected']
+        if not guards:break
+        s=s.replace(ast.get_source_segment(s,guards[0]),'# Private workspace guards are not part of the public source export.')
+    while True:
+        tree=ast.parse(s)
+        guards=[n for n in ast.walk(tree) if isinstance(n,ast.If) and 'yolov10-main' in ast.get_source_segment(s,n.test)]
+        if not guards:break
+        s=s.replace(ast.get_source_segment(s,guards[0]),'# Private workspace guards are not part of the public source export.')
+    p.write_text(s,'utf-8')
     change('src/event_drone_forecast/__init__.py',"'0.3.1'","'0.4.0a2'")
     write(out,'configs/runtime.example.json',json.dumps(dict(sdk_python=None,gpu_python=None,
         detector_weights='../weights/best.onnx',detector_sha256='ed8016494a798df884573ffbbcec0e69d1331886da3222909e90135048c0f7a4',cache_dir='../.cache'),indent=2))
