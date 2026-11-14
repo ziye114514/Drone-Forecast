@@ -1,0 +1,21 @@
+{
+  "model": "D:\\drone forecast\\output\\recall90_motion_20261031\\native33_adaptation\\export\\best.onnx",
+  "sha256": "fc228a1b355a3b8396c05df63f7eb8beaf192bca758bf5089898e16e893a4255",
+  "source_weight_sha256": "b6dd7935b56df298fddc2b0e23ff5904cfc4cb0585675176b482e60f624d458a",
+  "trained_FRED": [
+    3,
+    4,
+    5
+  ],
+  "validation_FRED": [
+    6
+  ],
+  "source_window_us": 33333,
+  "epochs": 5,
+  "test_trajectories_used_for_checkpoint_selection": false,
+  "local_installed_path": "D:\\drone forecast\\event_drone_forecast\\models\\small_target_native33_v1.onnx",
+  "scope": "Optional small-target domain model, not universal default",
+  "empty_self5_frames_with_detections": 6,
+  "empty_control_frames": 60,
+  "original_model_unchanged": true
+}

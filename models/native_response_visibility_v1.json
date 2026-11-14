@@ -1,0 +1,104 @@
+{
+  "weights": [
+    -0.3636620078786345,
+    -0.07848831302443243,
+    -0.7211562683591123,
+    -0.09236713016993384,
+    -0.021472113661905243,
+    -0.06604512035723996,
+    -0.0830200211172667,
+    0.1889066373107013,
+    -0.33657178846413854,
+    -0.020726988979285373
+  ],
+  "mode": "camera",
+  "training_samples": 186,
+  "training_sources": 7,
+  "objective": 28.876460963107483,
+  "unit_Gaussian_prior": true,
+  "manual_labels_used": false,
+  "video_ID_or_coordinates_used": false,
+  "hyperparameter_search": false,
+  "future_rate_is_learned_prior_not_observed_force": true,
+  "prior_weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "group_normalized": true,
+  "net_force_history_used": false,
+  "visibility_conditioned": true,
+  "visibility_context_mean": 0.20079927616939017,
+  "one_global_model_all_sources": true,
+  "current_p_v_a_preserved": true,
+  "explicit_hidden_rotor_force_owner_unchanged": true,
+  "current_geometry_not_heading_used": true,
+  "training_manifest": {
+    "1": {
+      "teachers": 41,
+      "visibility_mean": 0.4464086549882796
+    },
+    "2": {
+      "teachers": 42,
+      "visibility_mean": 0.14489133480948668
+    },
+    "5": {
+      "teachers": 35,
+      "visibility_mean": 0.41065040637113964
+    },
+    "6": {
+      "teachers": 0,
+      "visibility_mean": null
+    },
+    "7": {
+      "teachers": 3,
+      "visibility_mean": 0.0
+    },
+    "8": {
+      "teachers": 0,
+      "visibility_mean": null
+    },
+    "9": {
+      "teachers": 0,
+      "visibility_mean": null
+    },
+    "10": {
+      "teachers": 14,
+      "visibility_mean": 0.010151919017947078
+    },
+    "12": {
+      "teachers": 23,
+      "visibility_mean": 1.928499569916118e-14
+    },
+    "14": {
+      "teachers": 28,
+      "visibility_mean": 0.3934926179988589
+    },
+    "17": {
+      "teachers": 0,
+      "visibility_mean": null
+    },
+    "18": {
+      "teachers": 0,
+      "visibility_mean": null
+    },
+    "19": {
+      "teachers": 0,
+      "visibility_mean": null
+    }
+  },
+  "all6_evaluation_sources_excluded": true,
+  "experimental": true,
+  "all6_evaluation_sources_excluded_from_fit": true,
+  "target35px_achieved": false,
+  "reported_metric": "same102 source-time0.4s mean36.91904489833078, weak visible-outline references, all evaluation cases exposed development",
+  "RAW_FPS_certificate": false,
+  "not_metric_thrust_or_mass_identification": true
+}

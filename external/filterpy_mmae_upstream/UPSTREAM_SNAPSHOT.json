@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/rlabbe/filterpy",
+  "commit": "3b51149ebcff0401ff1e10bf08ffca7b6bbc4a33",
+  "files": [
+    {
+      "path": "mmae.py",
+      "upstream_path": "filterpy/kalman/mmae.py",
+      "sha256": "a7c236d64bbb3ea725040d2bff56672b71c8a5360ce35c486719742c7a86432b",
+      "git_blob_sha1": "f28d9debf353e55c4456ea170d910b9c0015eda1"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "8ffce1097f1b1c0fba42e4449ef49aa05cb7b45566dd0989407839dba07af99c"
+    }
+  ],
+  "license": "MIT",
+  "adaptation": "Runtime pretty_str display import only; core author bank retained. Markov prior wrapper external."
+}

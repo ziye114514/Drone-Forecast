@@ -1,0 +1,9 @@
+# 本机HelixTrack作者核心接口
+
+仅作本机参考实验。直接包含用户已经下载的helixtrack-main原头文件，使用现有Visual Studio/Prophesee Eigen与OpenCV构建，不修改上游文件；不复制上游源或分发DLL。
+
+当前下载目录未发现LICENSE文件，所以本目录以及编译产物暂不放入公开源码候选包。不是整篇论文或原数据集成绩的复现。原作者程序需要初始化；自动初始化和未知叶片数仍要单独处理。
+
+reference_api中的phase_equivalent_rpm直接表示状态omega对应的相位频率×60。双叶片几何的相位残差使用B*theta，因此机械RPM与相位频率的单位关系必须用已知B/控制试验明确，不把原字段名称直接当物理真值。
+
+synthetic_reference是旋转坐标/闪烁反例控制，不是事件相机光度仿真。真实自采数据实验不得借它宣称已经具有机械RPM真值。

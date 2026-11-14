@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "event-drone-forecast"
+version = "0.3.1"
+description = "Causal RAW-only event-camera rotor tracking and adaptive image-plane forecasting"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2", "scipy>=1.14", "opencv-python-headless>=4.10", "pillow>=10"]
+
+[project.optional-dependencies]
+report = ["matplotlib>=3.9"]
+
+[project.scripts]
+event-drone-forecast = "event_drone_forecast.cli:main"
+event-drone-forecast-paper = "event_drone_forecast.paper_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["event_drone_forecast*"]
+
+[tool.setuptools.package-data]
+event_drone_forecast = ["_vendor/filterpy_linear_upstream/*", "_vendor/filterpy_process_upstream/*"]

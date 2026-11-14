@@ -1,0 +1,45 @@
+{
+  "repository": "https://github.com/Jaraxxus-Me/PVT_pp",
+  "revision": "d71cad0ed0bfede979469088704f6ba1d5a6f38c",
+  "files": [
+    {
+      "path": "MODEL_ZOO.md",
+      "git_blob_sha1": "f14e7f7575c6a8b6bc41aef56342dddf3973e6b6",
+      "sha256": "6e471c54b8e09c1247dc54ec96e5ff8d1b10f6dee447f0f8c6a3a6a9cd2a4666",
+      "bytes": 2247
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha1": "ef43b77c09a10c9b3563a47176816d0dd57cb647",
+      "sha256": "03cfcff627eccd81201aa0308decde4ee210c1480e338abf7b7cafb4b6cb76cc",
+      "bytes": 6489
+    },
+    {
+      "path": "pysot/models/predictor/lb_5.py",
+      "git_blob_sha1": "91f3630ef75fe4cca067e0d6febf5d634dc0e553",
+      "sha256": "7a39ff00b09632e9f60ff3ca9b139a1a96c20f72460c99f431320be90930d211",
+      "bytes": 5870
+    },
+    {
+      "path": "pysot/models/predictor/base_predictor.py",
+      "git_blob_sha1": "d983bf83b8c2c92b8cbb9c23074c64d1f1611347",
+      "sha256": "501e47ecb5dd966641353ed6dd09aff017851b73f7237dadf5be79bbfcc79b06",
+      "bytes": 1045
+    },
+    {
+      "path": "pysot/models/predictor/__init__.py",
+      "git_blob_sha1": "0ab982266cf5582bc81510a56e01a124624437e9",
+      "sha256": "19edaf48a740c9013c9bc4a7c059e1f593172cc4a92bb009cab1b93ae2d0983f",
+      "bytes": 680
+    },
+    {
+      "path": "experiments/siamrpn_mobilev2_l234_dwxcorr/pre_lb_config.yaml",
+      "git_blob_sha1": "c84d9568f7abc09db73240030b43a1cbb4f6c190",
+      "sha256": "6747eb498805e31f6c3247c8cba51391e76288cf371c82ad194154cfb9203714",
+      "bytes": 1772
+    }
+  ],
+  "license_file_found": false,
+  "redistribution_assumed": false,
+  "local_reference_only": true
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "engineering_iteration_policy_after_user_feedback_20261026",
+  "not_a_preregistered_statistical_claim": true,
+  "primary_comparison": "new complete cumulative stack versus current cumulative stack; original remains frozen reference",
+  "accuracy": {
+    "priority_horizon_s": 0.4,
+    "aggregate": "equal-recording mean on common valid origins, compatible horizons and same targets",
+    "every_recording_must_improve": false,
+    "mean_regression_allowance": {"absolute_px": 2.0, "relative_fraction": 0.05, "combination": "maximum"},
+    "p95_regression_allowance": {"absolute_px": 6.0, "relative_fraction": 0.10, "combination": "maximum"},
+    "allowance_meaning": "initial engineering trade-off, not a measured noise confidence interval; freeze before future candidate evaluation",
+    "no_mixed_horizon_pooling": true
+  },
+  "guards": [
+    "No future observations or labels in inference",
+    "No manufactured rotor centers, force, identity or missing detections",
+    "Report common coverage and lost outputs instead of excluding difficult cases",
+    "Retain material failures and tail regressions",
+    "Measure the full combined version; independent gains cannot simply be added"
+  ],
+  "semantics_preserving_optimizations": "May enter the cumulative recipe based on preserved observation semantics and bounded execution; they need not improve point error themselves.",
+  "unverified_candidates": "Keep as experiments, not discard merely for small gain; mixedFP16 needs RAW/trajectory evidence and investigation of logged cuDNN messages."
+}

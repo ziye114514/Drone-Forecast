@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "purpose": "Separate physical observer validation from external event-camera perception validation",
+  "datasets": [
+    {"name": "VID Dataset / VID-Fusion", "url": "https://github.com/ZJU-FAST-Lab/VID-Dataset", "code": "https://github.com/ZJU-FAST-Lab/VID-Fusion", "recommended_sequences": [17,18], "available": ["motor speed/current", "IMU", "Vicon on indoor sequences", "six-axis force sensor on rope-pulled sequences17/18"], "external_event_video": false, "use": "Independent external disturbance evaluation; rope force is not a wind-speed measurement", "access": "Official repository and published download link inspected; rosbag payload not downloaded or verified", "code_license_as_listed": "AGPL-3.0; upstream code not copied into this project"},
+    {"name": "NeuroBEM", "url": "https://rpg.ifi.uzh.ch/NeuroBEM.html", "readme": "https://rpg.ifi.uzh.ch/neuro_bem/Readme.html", "download": "https://download.ifi.uzh.ch/rpg/NeuroBEM/", "available": ["400Hz position/pose", "body velocity/acceleration", "individual motor speeds"], "external_event_video": false, "independent_external_force_sensor": false, "use": "Aerodynamic residual and short-horizon motion module test", "access": "One lexically first CSV actually fetched by HTTP Range;435901network bytes,791846decompressed bytes,1008rows,2.5175s", "local_input": "output/five_circle_v3_20261026/neurobem_input/sample.csv", "redistribution": "Local test input excluded from source release; no new license granted by this registry"},
+    {"name": "Blackbird", "url": "https://arxiv.org/abs/1810.01987", "download": "http://blackbird-dataset.mit.edu/", "available": ["motor speed", "IMU", "motion capture", "rendered onboard camera images"], "external_event_video": false, "independent_force_truth": false, "use": "Aggressive-flight dynamics/trajectory module evaluation", "access": "Paper inspected; payload not downloaded"},
+    {"name": "FRED", "url": "https://github.com/miccunifi/FRED", "available": ["external RGB/events", "bounding boxes", "track identities"], "independent_RPM_or_force_truth": false, "use": "External drone detection/tracking/forecast benchmark; not direct force-estimation validation"}
+  ],
+  "related_methods": [
+    {"name": "VIMO", "url": "https://www.roboticsproceedings.org/rss15/p82.pdf", "relevance": "Joint motion/external force estimation; external and drag forces cannot be separated without extra assumptions"},
+    {"name": "VID-Fusion", "url": "https://github.com/ZJU-FAST-Lab/VID-Fusion", "relevance": "Open-source visual-inertial-dynamics external force estimation; not a drop-in external event-camera target observer"},
+    {"name": "Extended state observer", "url": "https://www.mathworks.com/help/slcontrol/ug/extendedstateobserver.html", "relevance": "Established total-disturbance representation; not a novelty claim"},
+    {"name": "CoHelix", "url": "https://arxiv.org/abs/2610.31384", "relevance": "Shared projective geometry across four coplanar propellers"},
+    {"name": "Four/three/two rotor pose estimation", "url": "https://www.scitepress.org/PublishedPapers/2014/49060/", "relevance": "Prior visibility-count-conditioned estimation; reduced-rotor cases use target IMU"}
+  ]
+}

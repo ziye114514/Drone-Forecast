@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: Apache-2.0
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "circular-center-calibration"
+version = "0.2.0"
+description = "Modular 3D and 2D circular-center estimation and calibration experiments"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.17",
+    "PyYAML>=5.4",
+]
+
+[project.optional-dependencies]
+all = [
+    "Cython>=3,<4",
+    "matplotlib>=3.5",
+    "opencv-python>=4.5",
+    "scipy>=1.7",
+    "pytest>=7,<9",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+circular-center-run = "circular_center.experiments.runner:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+extend-exclude = ["thirdparty"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+ignore = ["E402"]

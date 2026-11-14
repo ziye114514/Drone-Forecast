@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/rlabbe/filterpy",
+  "commit": "3b51149ebcff0401ff1e10bf08ffca7b6bbc4a33",
+  "files": [
+    {
+      "path": "IMM.py",
+      "upstream_path": "filterpy/kalman/IMM.py",
+      "sha256": "22b86f0fef3989445e61243cfe78f1b141ab373622a4583c249ba34f2d9ef556",
+      "git_blob_sha1": "84808fa4cdf913a606822375c67e8e0000754540"
+    },
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "8ffce1097f1b1c0fba42e4449ef49aa05cb7b45566dd0989407839dba07af99c",
+      "git_blob_sha1": "558870702fa539764c1efba5028240066b9c960e"
+    }
+  ],
+  "license": "MIT",
+  "adaptation": "Unchanged source; runtime import adapter only supplies display pretty_str without installing package."
+}

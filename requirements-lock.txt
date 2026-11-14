@@ -1,0 +1,5 @@
+# Validated Windows Python 3.11 environment. Metavision SDK is supplied by Prophesee.
+numpy==2.4.6
+scipy==1.17.1
+opencv-python-headless==5.0.0.93
+pillow==12.3.0

@@ -1,0 +1,22 @@
+{
+  "entry": "forecast_mainline.py structure-fast",
+  "strategy": 3,
+  "continuous_shared_geometry": true,
+  "shared_current_arc_recovery": true,
+  "shared_arc_recovery_disable_flag": "--no-shared-arc-recovery",
+  "legacy_structure_flag": "--legacy-structure",
+  "partial_two_center_is_prior_conditioned": true,
+  "target_source_hz": 30,
+  "native_step_us": 33333,
+  "shape_window_us": 20000,
+  "runtime_traditional_acceleration_branch": false,
+  "position_velocity_state_required_for_mechanics": true,
+  "recommended_flags": ["--async-nn", "--paced", "--verify-frames"],
+  "nn_stride": 3,
+  "decoder": "separate process, bounded two slots, FIFO, no drops",
+  "periodic_sampling": "existing SDK fixed25% spatial pixels, all native times retained",
+  "conic_uncertainty_reuse_default": false,
+  "force_equation": "a_image = k * relative_f_squared * n_image + d_slow",
+  "force_units": "effective image acceleration; not calibrated Newton thrust",
+  "status": "research prototype, not stable30FPS, no proven physical prediction advantage"
+}

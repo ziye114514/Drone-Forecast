@@ -1,0 +1,148 @@
+{
+  "repository": "https://github.com/xiahaa/circular-center-calibration",
+  "commit": "168b85c1cb241937a0c3e563ef382c20ad0be456",
+  "fetched_utc": "2026-10-21T01:28:16.3927138Z",
+  "scope": "Selected unchanged2D Python source, author synthetic protocol and license; not a complete repository checkout",
+  "git_blob_hashes_verified": true,
+  "upstream_agents_files": [],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 911,
+      "git_blob_sha1": "b17ebd10b8031544cf4494862221415a642a6109",
+      "sha256": "19cb2ef2bc76a024e1b97623c76010d3425d7a4ac86779beec1fdb5a85e7ccde"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4870,
+      "git_blob_sha1": "afff6d05fac40f4224335676533dfa5181fc6aff",
+      "sha256": "5e0f2529a8c4853429b9fc78250ab3e3131d437a4bfbbaabc3783523600027a7"
+    },
+    {
+      "path": "docs/experiments/synthetic_2d_accuracy/README.md",
+      "bytes": 3729,
+      "git_blob_sha1": "c8105209068f05ad495203dc76c7a4f584591fac",
+      "sha256": "ff217bc6fbeb13746dcef031d93aa2bbc7e228fc8d5a4a452956633c0381b58b"
+    },
+    {
+      "path": "docs/experiments/synthetic_2d_accuracy/README_zh.md",
+      "bytes": 3487,
+      "git_blob_sha1": "6276b6d57c4e357219f55ccc2e28ab7b5ef82f6e",
+      "sha256": "cb68e2e90c12028b0b8d8700d85c82d9ed539b4f016ecd40113c4e4ac7cbf152"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/PROTOCOL.md",
+      "bytes": 1059,
+      "git_blob_sha1": "99620239e8aa44efdbf7aab016b7ba215c822030",
+      "sha256": "ce30e6eff2b04d4cd721cab570d1d99cdf7125d9550572c2e80d5f167b57657f"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/__init__.py",
+      "bytes": 65,
+      "git_blob_sha1": "34d511e05465541f804a7df0bff3d5dab22a3702",
+      "sha256": "604a6357a3785d4742efbdddd36257d279a92e2d4a65fd8ae832c4c081a8d897"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/experiment.py",
+      "bytes": 9617,
+      "git_blob_sha1": "6b17dadb5e2da3a84df456ff10f8a8cbf4b71f14",
+      "sha256": "210e0be2f592843125f43815db98e380c8adf379b4e6d460195663584e84b795"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/generators.py",
+      "bytes": 6426,
+      "git_blob_sha1": "c1333c60e264056b3df559a213bbef1f1ec7ab18",
+      "sha256": "79e9853ac1c97a56d15cd4c7f5e6af08661aa7c3904c77c65259cdd0e0659364"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/profiles/ci.yaml",
+      "bytes": 71,
+      "git_blob_sha1": "eff671b27a405e4dd92e0ac3fc6b3e249d12f9f0",
+      "sha256": "f1bd5fe3d424dbeb16de29ee71cedbd268bec887d7e7ef62a02d25fdeb31d8b7"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/profiles/paper.yaml",
+      "bytes": 76,
+      "git_blob_sha1": "1f29593c4619141fb3f43188569d4ae99fd020f1",
+      "sha256": "b9c827d5a3177b3633a3675921a22258a61db5fd660eaa22a529c3f711ba8fd5"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/protocol.py",
+      "bytes": 3999,
+      "git_blob_sha1": "81dc5e29b86fb4616edca381a40063feff54f7d7",
+      "sha256": "5fd4181eb0b515dc6e1a29d6a6b59f4c0780bae23def4909a1265eebf073cda4"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/protocol.yaml",
+      "bytes": 2167,
+      "git_blob_sha1": "7ce61d3e1dad63b31c6f60295d5c018b08570a24",
+      "sha256": "2b5e825f84ff70d86b69a134433658ea2d81451fefc8419f5ae6336b111c282c"
+    },
+    {
+      "path": "experiments/synthetic_2d_accuracy/reporting.py",
+      "bytes": 9292,
+      "git_blob_sha1": "105e47d2bb698bd33fe0ee82d2937d8b49993ad0",
+      "sha256": "a0277f904d00d0f052eb86c4b47f95c180ddb00101d689063e26d2e1168baa7f"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1123,
+      "git_blob_sha1": "eb7edd4b8efc7607b99556895175bf67bdddcc24",
+      "sha256": "41a2df59891872198980c06388da5a25b955719a4c8ff262b310981138415789"
+    },
+    {
+      "path": "src/circular_center/__init__.py",
+      "bytes": 136,
+      "git_blob_sha1": "2413566ed3488be83d4334c1db84890151eb0d7d",
+      "sha256": "8be152539252f3d82b89381dfe9f7cee821eb2c97e882f96722669c97a0dcbf1"
+    },
+    {
+      "path": "src/circular_center/center2d/__init__.py",
+      "bytes": 1353,
+      "git_blob_sha1": "1cbd5d64a16b6a7ae13abee0e516a39179f808b7",
+      "sha256": "587e77af349ec450ea6254a5690d601a1478485365e97a4ac026e2e2b1066502"
+    },
+    {
+      "path": "src/circular_center/center2d/ellipse_center_refinement.py",
+      "bytes": 9512,
+      "git_blob_sha1": "e6bd5244e68d4a933074b45b492b0d859e070074",
+      "sha256": "883d24577a7a45cce6d48c79ba7b2d02947d89841291b0a344d89691e05829dc"
+    },
+    {
+      "path": "src/circular_center/center2d/find_rectify_homography.py",
+      "bytes": 4919,
+      "git_blob_sha1": "91f1de5f9aacaba64dd508c4578dd4a335fd5234",
+      "sha256": "6be768608a070b0894f18f74ed862da977cbb305840ceff1021b91586789966e"
+    },
+    {
+      "path": "src/circular_center/center2d/grid_search_refinement.py",
+      "bytes": 21268,
+      "git_blob_sha1": "e1e0fc4363131d3aac773a2bd408ebdc91b100a4",
+      "sha256": "dfbfbf73e289783223854d6a337ee8aca7c2bdff45aca3f288559bcaa0cde2fd"
+    },
+    {
+      "path": "src/circular_center/center2d/ransac_validation.py",
+      "bytes": 12400,
+      "git_blob_sha1": "c7f262ca3d3867b3ea10e796e47f290b49f59389",
+      "sha256": "2804b43c6eb11db27b76f0940f4280c1f97d81bcdc924def798719a35936654c"
+    },
+    {
+      "path": "src/circular_center/center2d/rectification.py",
+      "bytes": 2026,
+      "git_blob_sha1": "386b35e24fe4ef54c0ae5004039d1d38714f7111",
+      "sha256": "1bb16c367d24ab25a40f8a2a9efe73dfc745b9df1e690de2a8544227d053b257"
+    },
+    {
+      "path": "src/circular_center/center2d/types.py",
+      "bytes": 1180,
+      "git_blob_sha1": "66fbcc2f099f706d53019515b384a7faaa7a26fa",
+      "sha256": "1b54c453910e30fc7f5076046fa990255506a6299c8bd857b1270d7d04139f8b"
+    }
+  ]
+}

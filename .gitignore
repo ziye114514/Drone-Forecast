@@ -1,0 +1,53 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.nbc
+*.nbi
+*.egg-info/
+build/
+dist/
+.venv*/
+venv/
+.cache/
+
+# ---- 大体积二进制：不入库，用说明文件替代 ----
+# 5 个 ONNX 检测器共 ~50 MB，是逐像素定位用的冻结权重。
+# 协作方需要时按 MODELS.md 的校验和自行获取/放置，不要提交进 git。
+*.onnx
+*.pt
+*.pth
+*.engine
+*.trt
+
+# ---- 数据与实验产物 ----
+# 原生事件数据从不入库（单段 0.5–1.9 GB），数据集在 E:\dataset。
+*.raw
+*.avi
+*.mp4
+*.webm
+*.npy
+*.npz
+*.zip
+
+# ---- 运行输出：全部在仓库的 output/ 下，17+ GB ----
+output/
+runs/
+logs/
+*.log
+
+# ---- 本地配置与凭据 ----
+configs/local.json
+.env
+*.key
+*.pem
+id_rsa*
+*_local.json
+
+# ---- 操作系统 ----
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- 第三方运行时的本机状态（含绝对路径与 uuid） ----
+Ultralytics/settings.json
+Ultralytics/*.json

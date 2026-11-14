@@ -1,0 +1,42 @@
+{
+  "weights": [
+    -0.27599153151744443,
+    -0.16055896208043938,
+    -0.7821955934434512,
+    0.07440560225111005,
+    0.09603995062270915
+  ],
+  "mode": "camera",
+  "training_samples": 74,
+  "training_sources": 6,
+  "objective": 28.728336476795675,
+  "unit_Gaussian_prior": true,
+  "manual_labels_used": false,
+  "video_ID_or_coordinates_used": false,
+  "hyperparameter_search": false,
+  "future_rate_is_learned_prior_not_observed_force": true,
+  "prior_weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "group_normalized": true,
+  "net_force_history_used": false,
+  "experimental": true,
+  "target35px_achieved": false,
+  "training_scope": "74 native weak teachers from six exposed development recordings",
+  "reported38_62px_scope": "Source-excluded camera-frame382 folds, not independent score of this all-source model on training sources",
+  "known_and_estimated_axial_response_remains_in_rotor_plane": true,
+  "added_lumped_net_force_residual_in_fixed_image_coordinates": true,
+  "future_unseen_accuracy_guaranteed": false,
+  "source_sha256": {
+    "13.jsonl:force357_20261109": "13e8feedb4e4080567383da8202254265291d3a34bab60a047b296c6603a30b5",
+    "15.jsonl:force357_20261109": "1e5b7f8268ef17f1a4750280b2c89d5b4468755f92c9caba938524fbebb9bc74",
+    "16.jsonl:force357_20261109": "81a7fc33a864c5c37ca1650297a755449853a0aa1bcad271f40c844d6f3d533e",
+    "11.jsonl:force357_20261109": "60fd8906d7c3f55ec12bdf9d10025872b8f2a6ef52f9f3384d2b3b1bd41bb077",
+    "3.jsonl:force357_20261109": "411cdf89e4f6f4c771e8dbc90b86065adb8a60dc5e97f6463d21783ebd408835",
+    "4.jsonl:force357_20261109": "ea41158146f90a27cf3ca951484aa0ce77dd6bd0ee2b80c36ea6ac38b8a5d56b"
+  }
+}

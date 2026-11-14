@@ -1,0 +1,15 @@
+{
+  "selected_research_mechanism": 3,
+  "entry": "forecast_mainline.py structure",
+  "definition": "Five-circle prior plus visibility-qualified switching, degradation and confirmed relock",
+  "controls": {"1": "independent observed rotor centroid", "2": "complete four-hub rigid observations only"},
+  "detector": "live_position_accumulated_v1.onnx",
+  "production_position_reference": "accumulated_v7_flow_acceleration",
+  "research_runner_nominal": "optimized_geometry144 with optional154 curved control; not the complete v7 live runtime",
+  "disturbance": "total residual image acceleration; no separate wind, drag, gravity or mass identification",
+  "independent_force_ground_truth": false,
+  "position_coupling": "Optional same-observation v7 math with fixed symmetric position CI; independent wall publisher not integrated",
+  "axis_fallback": "Current collinear regions independent of count; stage6 whole-body ON/OFF count-density fallback",
+  "latest_report": "output/five_circle_bridge_20261026/index.html",
+  "real_time_claim": false
+}

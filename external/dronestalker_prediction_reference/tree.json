@@ -1,0 +1,65 @@
+[
+  {
+    "path": "prediction/.python-version",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "e4fba2183587225f216eeada4c78dfab6b2e65f5",
+    "size": 5,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/e4fba2183587225f216eeada4c78dfab6b2e65f5"
+  },
+  {
+    "path": "prediction/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "size": 0,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "prediction/__pycache__",
+    "mode": "040000",
+    "type": "tree",
+    "sha": "728ac177f24ee6ec6944a508c3587495de1abe0f",
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/trees/728ac177f24ee6ec6944a508c3587495de1abe0f"
+  },
+  {
+    "path": "prediction/__pycache__/main.cpython-313.pyc",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "a0cd706c56fefcd15165d88318155587fb3bf167",
+    "size": 35673,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/a0cd706c56fefcd15165d88318155587fb3bf167"
+  },
+  {
+    "path": "prediction/best_model.pth",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "4c3236e30b7773d0cde851b58cb02db9dd601807",
+    "size": 37113103,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/4c3236e30b7773d0cde851b58cb02db9dd601807"
+  },
+  {
+    "path": "prediction/main.py",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "51d8afaf77ec68735b94535e7e1ea93a8398dc55",
+    "size": 32345,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/51d8afaf77ec68735b94535e7e1ea93a8398dc55"
+  },
+  {
+    "path": "prediction/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "23f2c9f4807a20c347448513a4334f30438c46a5",
+    "size": 237,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/23f2c9f4807a20c347448513a4334f30438c46a5"
+  },
+  {
+    "path": "prediction/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "ade956dbec23ee676a148c1c5edaac821ae441ba",
+    "size": 293167,
+    "url": "https://api.github.com/repos/takara-ai/DroneStalker/git/blobs/ade956dbec23ee676a148c1c5edaac821ae441ba"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "weights": [
+    -0.2737888493407279,
+    -0.14711057896102983,
+    -0.33764050529068607,
+    0.03451600922768446,
+    0.08331270255000685
+  ],
+  "mode": "disk",
+  "training_samples": 74,
+  "training_sources": 6,
+  "objective": 29.60824657016493,
+  "unit_Gaussian_prior": true,
+  "manual_labels_used": false,
+  "video_ID_or_coordinates_used": false,
+  "hyperparameter_search": false,
+  "future_rate_is_learned_prior_not_observed_force": true,
+  "experimental": true,
+  "target35px_achieved": false,
+  "model_source_sha256": "d811cfa6934db85d671636f942a6810a20a2654beb4ca8ca5b2e03b2256eec5b",
+  "training_scope": "six exposed development sources,74 native pseudo-teachers, no manual reference labels",
+  "reported39_65px_scope": "Source-excluded cross-fit models in382, NOT accuracy of this all-source model on its own training recordings.",
+  "future_unseen_accuracy_guaranteed": false
+}

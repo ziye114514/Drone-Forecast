@@ -1,0 +1,9 @@
+{
+  "sdk_python": "python",
+  "gpu_python": "python",
+  "detector_weights": "../weights/best.onnx",
+  "detector_sha256": "e2531556ad0431d904fb0d1d432727a2e2dd9eaed9e098a6ed3d9e55f474db0b",
+  "cache_dir": "../.cache",
+  "profile": "research",
+  "preview_window_ms": 5
+}
